@@ -38,7 +38,7 @@ label {
 .form-input,
 .form-select {
     width: 100%;
-    padding: 4px;
+    padding: 7px;
     /* Reduced padding */
     border: 1px solid #ced4da;
     border-radius: 8px;
