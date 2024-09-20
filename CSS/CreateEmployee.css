@@ -1,129 +1,144 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 40px;
-    /* background: url('https://source.unsplash.com/1600x900/?interior') no-repeat center center fixed; */
-    /* background-image: url(Sirajbedroom1.PNG); */
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 0;
+    background-color: #f3f4f6;
+    /* Light gray background */
 }
- 
-.employee-form-container {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(8px);
-    width: 100%;
-    /* background-image: url(srirajstudyroom.PNG); */
+
+.employee-profile-form {
+    background: #ffffff;
+    padding: 20px;
+    /* Reduced padding */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     max-width: 600px;
-    border: 1px solid #ddd;
-    transition: transform 0.3s, box-shadow 0.3s;
+    margin: auto;
+    transition: box-shadow 0.3s;
 }
 
-.employee-form-container:hover {
-    /* transform: translateY(-5px); */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+.employee-profile-form:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.employee-form-container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-    font-family: 'Georgia', serif;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+.form-section {
+    margin-bottom: 15px;
+    /* Reduced margin */
 }
 
-
-.employee-form-label {
+label {
     display: block;
-    margin: 15px 0 5px;
-    color: #555;
-    font-weight: bold;
+    font-weight: 600;
+    margin-bottom: 8px;
+    /* Adjusted margin */
+    color: #000000;
+    /* Set color to black */
 }
 
-.employee-form-input,
-.employee-form-select,
-.employee-form-date {
-    width: calc(100% - 24px);
-    padding: 14px;
-    margin-bottom: 20px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 4px;
+    /* Reduced padding */
+    border: 1px solid #ced4da;
+    border-radius: 8px;
     box-sizing: border-box;
+    font-size: 14px;
+    /* Reduced font size */
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.employee-form-input:focus,
-.employee-form-select:focus,
-.employee-form-date:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+.form-input:focus,
+.form-select:focus {
+    border-color: #007bff;
+    /* Blue border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
     outline: none;
 }
 
-.employee-form-button {
-    width: 100%;
-    padding: 14px;
-    background-color: #3498db;
-    color: #ffffff;
+.form-button {
+    padding: 10px;
+    /* Reduced padding */
+    background-color: #007bff;
+    /* Blue background */
+    color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    /* Reduced font size */
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.employee-form-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
+.form-button:hover {
+    background-color: #0056b3;
+    /* Darker blue */
+    transform: translateY(-2px);
 }
 
-.employee-form-hidden {
+.form-button:active {
+    background-color: #003d80;
+    /* Even darker blue on click */
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flex .form-section {
+    width: 48%;
+}
+
+.hidden {
     display: none;
 }
 
-.form-row {
-    display: flex;
-    justify-content: space-between;
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    /* Adjusted margin */
+    font-size: 20px;
+    font-weight: bold;
+    color: #343a40;
 }
 
-.form-row>div {
-    flex: 1;
-    margin-right: 10px;
+.form-section span {
+    color: red;
 }
 
-.form-row>div:last-child {
-    margin-right: 0;
-}
-
+/* Media Query for Responsive Design */
 @media (max-width: 600px) {
-    body {
-        padding: 20px;
-    }
-
-    .employee-form-input,
-    .employee-form-select,
-    .employee-form-button,
-    .employee-form-date {
-        padding: 12px;
-        width: 100%;
-    }
-
-    .form-row {
+    .flex {
         flex-direction: column;
     }
 
-    .form-row>div {
-        margin-right: 0;
-        margin-bottom: 10px;
+    .flex .form-section {
+        width: 100%;
+    }
+}
+
+/* Media Query for screens below 400px */
+@media (max-width: 400px) {
+    .employee-profile-form {
+        padding: 20px;
+        /* Adjusted padding */
     }
 
-    .form-row>div:last-child {
-        margin-bottom: 0;
+    .flex {
+        flex-direction: row;
+        /* Ensure side by side */
+    }
+
+    .flex .form-section {
+        width: 48%;
+        /* Keep side by side */
+    }
+
+    .form-section {
+        margin-bottom: 10px;
+        /* Reduced space for smaller screens */
     }
 }

@@ -2,82 +2,150 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Employee Creation Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Employee Profile</title>
     <link rel="stylesheet" href="CSS/CreateEmployee.css">
 </head>
 <body>
 
-    <div class="employee-form-container">
-        <h2>Employee Creation Form</h2>
-        <form id="employeeCreationForm">
-            <label for="name" class="employee-form-label">Name:</label>
-            <input type="text" id="name" name="name" class="employee-form-input" required>
+<form class="employee-profile-form">
+    <h2>Create Employee Profile</h2>
 
-            <label for="email" class="employee-form-label">Email:</label>
-            <input type="email" id="email" name="email" class="employee-form-input" required>
-
-            <label for="phone" class="employee-form-label">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" class="employee-form-input" required>
-
-            <div class="form-row">
-                <div> 
-                    <label for="gender" class="employee-form-label">Gender:</label>
-                    <select id="gender" name="gender" class="employee-form-select" required>
-                        <option value="">Select...</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="dob" class="employee-form-label">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob" class="employee-form-date" required>
-                </div>
-            </div>
-
-            <label for="employeeType" class="employee-form-label">Employee Type:</label>
-            <select id="employeeType" name="employeeType" class="employee-form-select" required>
-                <option value="">Select...</option>
-                <option value="director">Director</option>
-                <option value="manager">Manager</option>
-                <option value="employee">Employee</option>
-            </select>
-
-           
-            <div id="designerSpecialization" class="employee-form-hidden">
-                <label for="assignTo" class="employee-form-label">Assign To:</label>
-                <select id="assignTo" name="assignTo" class="employee-form-select">
-                    <option value="">Select Managing Director</option>
-                    <option value="project1">Managing Director 1</option>
-                    <option value="project2">Managing Director 2</option>
-                </select>
-            </div>
-
-            
-            <div id="managerAssignment" class="employee-form-hidden">
-                <label for="assignedDirector" class="employee-form-label">Assigned Director:</label>
-                <select id="assignedDirector" name="assignedDirector" class="employee-form-select">
-                    <option value="">Select Director...</option>
-                    <option value="director1">Director 1</option>
-                    <option value="director2">Director 2</option>
-                </select>
-            </div>
-
-            
-            <div id="employeeAssignment" class="employee-form-hidden">
-                <label for="assignedManager" class="employee-form-label">Assigned Manager:</label>
-                <select id="assignedManager" name="assignedManager" class="employee-form-select">
-                    <option value="">Select Manager...</option>
-                    <option value="manager1">Manager 1</option>
-                    <option value="manager2">Manager 2</option>
-                    <option value="manager1">Manager 3</option>
-
-                </select>
-            </div>
-
-            <button type="submit" class="employee-form-button">Submit</button>
-        </form>
+    <div class="form-section">
+        <label for="employeeId">Employee ID<span>*</span></label>
+        <input type="text" id="employeeId" class="form-input" required>
     </div>
+
+    <div class="form-section">
+        <label for="fullName">Full Name<span>*</span></label>
+        <input type="text" id="fullName" class="form-input" required>
+    </div>
+
+    <div class="flex">
+        <div class="form-section">
+            <label for="gender">Gender<span>*</span></label>
+            <select id="gender" class="form-select" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-Binary</option>
+            </select>
+        </div>
+
+        <div class="form-section">
+            <label for="dob">Date of Birth<span>*</span></label>
+            <input type="date" id="dob" class="form-input" required>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="form-section">
+            <label for="phone">Phone Number<span>*</span></label>
+            <input type="tel" id="phone" class="form-input" required>
+        </div>
+
+        <div class="form-section">
+            <label for="emergencyContact">Second Number<span>*</span></label>
+            <input type="tel" id="emergencyContact" class="form-input" required>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <label for="email">Email<span>*</span></label>
+        <input type="email" id="email" class="form-input" required>
+    </div>
+
+    <div class="flex">
+        <div class="form-section">
+            <label for="dateOfHire">Date of Hire<span>*</span></label>
+            <input type="date" id="dateOfHire" class="form-input" required>
+        </div>
+
+        <div class="form-section">
+            <label for="employmentType">Role Type<span>*</span></label>
+            <select id="employmentType" class="form-select" required>
+                <option value="">Select</option>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="contract">Contract</option>
+                <option value="intern">Intern</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <label for="employeeType">Employee Type<span>*</span></label>
+        <select id="employeeType" class="form-select" required onchange="showAssignedSection()">
+            <option value="">Select</option>
+            <option value="director">Director</option>
+            <option value="manager">Manager</option>
+            <option value="employee">Employee</option>
+        </select>
+    </div>
+
+    <div id="assignedSection" class="form-section hidden">
+        <label for="assignedTo">Assigned To<span>*</span></label>
+        <select id="assignedTo" class="form-select" required>
+            <option value="">Select</option>
+        </select>
+    </div>
+
+    <div id="departmentSection" class="form-section hidden">
+        <label for="department">Department<span>*</span></label>
+        <select id="department" class="form-select" required>
+            <option value="">Select</option>
+            <option value="sales">Sales Manager</option>
+            <option value="operations">Operation Manager</option>
+            <option value="finance">Financial Manager</option>
+            <option value="hr">HR</option>
+            <option value="rnd">R&D</option>
+        </select>
+    </div>
+
+    <div id="employeeDepartmentSection" class="form-section hidden">
+        <label for="employeeDepartment">Department<span>*</span></label>
+        <select id="employeeDepartment" class="form-select" required>
+            <option value="">Select</option>
+            <option value="sales">Sales</option>
+            <option value="operations">Operations</option>
+            <option value="rnd">R&D</option>
+        </select>
+    </div>
+
+    <div class="form-section">
+        <label for="address">Permanent Address<span>*</span></label>
+        <input type="text" id="address" class="form-input" required>
+    </div>
+
+    <div class="flex">
+        <div class="form-section">
+            <label for="postcode">Postcode<span>*</span></label>
+            <input type="text" id="postcode" class="form-input" required>
+        </div>
+
+        <div class="form-section">
+            <label for="city">City<span>*</span></label>
+            <input type="text" id="city" class="form-input" required>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="form-section">
+            <label for="state">State<span>*</span></label>
+            <input type="text" id="state" class="form-input" required>
+        </div>
+
+        <div class="form-section">
+            <label for="country">Country<span>*</span></label>
+            <select id="country" class="form-select" required>
+                <option value="">Select</option>
+                <!-- Countries will be populated here -->
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="form-button">Submit</button>
+</form>
 <script src="JS/CreateEmployee.js"></script>
 </body>
 </html>
-
