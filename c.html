@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varna EMS</title>
+    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #F4F6F8; /* Soft Light Gray */
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1E2A78; /* Dark Blue */
+            color: #FFFFFF; /* White */
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #2C3E50; /* Darker Blue */
+            color: #ECF0F1; /* Light Gray */
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            color: #BDC3C7; /* Light Gray */
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #2980B9; /* Bright Blue */
+            color: #FFFFFF; /* White */
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #34495E; /* Even Darker Blue */
+            padding: 0;
+            position: relative;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            color: #FFFFFF; /* White */
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #1ABC9C; /* Teal */
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+
+        .profile-count-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .profile-card {
+            background-color: #FFFFFF; /* White */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-card .profile-count {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #2C3E50; /* Darker Blue */
+        }
+
+        .profile-card .profile-type {
+            font-size: 1.2em;
+            color: #E67E22; /* Orange */
+            padding: 5px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .profile-card .profile-type:hover {
+            transform: scale(1.05);
+        }
+
+        .top-right-icons {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-right-icons svg {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            fill: #BDC3C7; /* Light Gray */
+            transition: fill 0.3s, transform 0.3s;
+        }
+
+        .top-right-icons svg:hover {
+            fill: #E67E22; /* Orange */
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .hamburger-menu {
+                display: flex;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Varna EMS</div>
+        <nav class="nav"></nav>
+    </header>
+
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="IMG/homes_logo_varna.png" alt="Logo">
+        </div>
+        <a href="#" onclick="toggleDropdown('profilesDropdown')">Profiles</a>
+        <div id="profilesDropdown" class="dropdown-content">
+            <a href="#">Create Profile</a>
+            <a href="#">View Employees</a>
+        </div>
+        <a href="#" onclick="toggleDropdown('leadsDropdown')">Leads</a>
+        <div id="leadsDropdown" class="dropdown-content">
+            <a href="#">Create Lead</a>
+            <a href="#">View Leads</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="profile-count-section">
+            <div class="profile-card">
+                <div class="profile-count">5</div>
+                <div class="profile-type">Directors</div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-count">10</div>
+                <div class="profile-type">Managers</div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-count">50</div>
+                <div class="profile-type">Employees</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-right-icons">
+        <a href="https://your-link-here.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.7S14.8 416 24 416l400 0c9.2 0 17.4-5.1 21.5-13.3s2.9-18.4-2.9-25.7l-14.9-18.7C399.5 322.9 384 278.8 384 233.4L384 208c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zM367.8 352H80.2C103.2 311.4 112 265.6 112 218.6V208c0-61.9 50.1-112 112-112s112 50.1 112 112v10.6c0 47.1 8.8 92.8 31.8 133.4zM144 448c0 35.3 28.7 64 64 64s64-28.7 64-64l-128 0z" />
+            </svg>
+        </a>
+        <a href="https://your-link-here.com" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm0 64c-70.7 0-224 35.8-224 107.3C0 461 50.1 512 112 512H336c61.9 0 112-51 112-114.7c0-71.5-153.3-107.3-224-107.3z" />
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
