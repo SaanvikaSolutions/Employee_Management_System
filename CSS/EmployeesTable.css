@@ -5,7 +5,7 @@ body {
     background-color: #f4f4f4;
 }
 
-.container {
+.EmployeeTable-container {
     max-width: 900px;
     margin: auto;
     background: white;
@@ -14,13 +14,13 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.EmployeeTable-title {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-.search-bar {
+.EmployeeTable-search-bar {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
@@ -28,43 +28,41 @@ body {
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
-    /* Ensure padding doesn't affect width */
 }
 
-.table-container {
+.EmployeeTable-table-container {
     width: 100%;
     overflow-x: auto;
-    /* Enable horizontal scroll for the table */
     margin-bottom: 20px;
 }
 
-.employees-table {
+.EmployeeTable-employees-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.employees-table th,
-.employees-table td {
+.EmployeeTable-employees-table th,
+.EmployeeTable-employees-table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
 }
 
-.employees-table th {
+.EmployeeTable-employees-table th {
     background-color: #4CAF50;
     color: white;
     font-weight: bold;
 }
 
-.employees-table tr:nth-child(even) {
+.EmployeeTable-employees-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.employees-table tr:hover {
+.EmployeeTable-employees-table tr:hover {
     background-color: #e0e0e0;
 }
 
-.view-button {
+.EmployeeTable-view-button {
     background-color: #008CBA;
     color: white;
     border: none;
@@ -74,30 +72,28 @@ body {
     font-size: 14px;
 }
 
-.view-button:hover {
+.EmployeeTable-view-button:hover {
     background-color: #005f73;
 }
 
 /* Responsive Table */
 @media (max-width: 768px) {
-    .employees-table {
+    .EmployeeTable-employees-table {
         font-size: 14px;
-        /* Adjust font size for smaller screens */
     }
 
-    .search-bar {
+    .EmployeeTable-search-bar {
         font-size: 14px;
         padding: 10px;
     }
 }
 
 @media (max-width: 400px) {
-    .employees-table {
+    .EmployeeTable-employees-table {
         font-size: 13px;
-        /* Further reduce font size for very small screens */
     }
 
-    .view-button {
+    .EmployeeTable-view-button {
         font-size: 12px;
         padding: 5px 10px;
     }

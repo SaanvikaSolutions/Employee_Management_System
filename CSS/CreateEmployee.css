@@ -3,13 +3,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f3f4f6;
-    /* Light gray background */
 }
 
-.employee-profile-form {
+.createEmployee-employee-profile-form {
     background: #ffffff;
     padding: 20px;
-    /* Reduced padding */
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     max-width: 600px;
@@ -17,78 +15,67 @@ body {
     transition: box-shadow 0.3s;
 }
 
-.employee-profile-form:hover {
+.createEmployee-employee-profile-form:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.form-section {
+.createEmployee-form-section {
     margin-bottom: 15px;
-    /* Reduced margin */
 }
 
 label {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    /* Adjusted margin */
     color: #000000;
-    /* Set color to black */
 }
 
-.form-input,
-.form-select {
+.createEmployee-form-input,
+.createEmployee-form-select {
     width: 100%;
     padding: 7px;
-    /* Reduced padding */
     border: 1px solid #ced4da;
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 14px;
-    /* Reduced font size */
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.form-input:focus,
-.form-select:focus {
+.createEmployee-form-input:focus,
+.createEmployee-form-select:focus {
     border-color: #007bff;
-    /* Blue border on focus */
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
     outline: none;
 }
 
-.form-button {
+.createEmployee-form-button {
     padding: 10px;
-    /* Reduced padding */
     background-color: #007bff;
-    /* Blue background */
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
     font-size: 16px;
-    /* Reduced font size */
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.form-button:hover {
+.createEmployee-form-button:hover {
     background-color: #0056b3;
-    /* Darker blue */
     transform: translateY(-2px);
 }
 
-.form-button:active {
+.createEmployee-form-button:active {
     background-color: #003d80;
-    /* Even darker blue on click */
 }
 
-.flex {
+.createEmployee-flex {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.flex .form-section {
+.createEmployee-flex .createEmployee-form-section {
     width: 48%;
 }
 
@@ -99,46 +86,43 @@ label {
 h2 {
     text-align: center;
     margin-bottom: 15px;
-    /* Adjusted margin */
     font-size: 20px;
     font-weight: bold;
     color: #343a40;
 }
 
-.form-section span {
+.createEmployee-form-section span {
     color: red;
 }
 
-/* Media Query for Responsive Design */
 @media (max-width: 600px) {
-    .flex {
+    .createEmployee-flex {
         flex-direction: column;
     }
 
-    .flex .form-section {
+    .createEmployee-flex .createEmployee-form-section {
         width: 100%;
     }
 }
 
-/* Media Query for screens below 400px */
-@media (max-width: 400px) {
-    .employee-profile-form {
+@media (max-width: 600px) {
+    .createEmployee-employee-profile-form {
         padding: 20px;
-        /* Adjusted padding */
     }
 
-    .flex {
+    .createEmployee-flex {
         flex-direction: row;
-        /* Ensure side by side */
     }
 
-    .flex .form-section {
+    .createEmployee-flex .createEmployee-form-section {
         width: 48%;
-        /* Keep side by side */
     }
 
-    .form-section {
+    .createEmployee-form-section {
         margin-bottom: 10px;
-        /* Reduced space for smaller screens */
+    }
+
+    .createEmployee-form-input, .createEmployee-form-select {
+        padding: 5px;
     }
 }

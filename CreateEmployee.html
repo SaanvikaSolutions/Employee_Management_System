@@ -8,23 +8,23 @@
 </head>
 <body>
 
-<form class="employee-profile-form">
+<form class="createEmployee-employee-profile-form">
     <h2>Create Employee Profile</h2>
 
-    <div class="form-section">
+    <div class="createEmployee-form-section">
         <label for="employeeId">Employee ID<span>*</span></label>
-        <input type="text" id="employeeId" class="form-input" required>
+        <input type="text" id="employeeId" class="createEmployee-form-input" required>
     </div>
 
-    <div class="form-section">
+    <div class="createEmployee-form-section">
         <label for="fullName">Full Name<span>*</span></label>
-        <input type="text" id="fullName" class="form-input" required>
+        <input type="text" id="fullName" class="createEmployee-form-input" required>
     </div>
 
-    <div class="flex">
-        <div class="form-section">
+    <div class="createEmployee-flex">
+        <div class="createEmployee-form-section">
             <label for="gender">Gender<span>*</span></label>
-            <select id="gender" class="form-select" required>
+            <select id="gender" class="createEmployee-form-select" required>
                 <option value="">Select</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -32,38 +32,38 @@
             </select>
         </div>
 
-        <div class="form-section">
+        <div class="createEmployee-form-section">
             <label for="dob">Date of Birth<span>*</span></label>
-            <input type="date" id="dob" class="form-input" required>
+            <input type="date" id="dob" class="createEmployee-form-input" required>
         </div>
     </div>
 
-    <div class="flex">
-        <div class="form-section">
+    <div class="createEmployee-flex">
+        <div class="createEmployee-form-section">
             <label for="phone">Phone Number<span>*</span></label>
-            <input type="tel" id="phone" class="form-input" required>
+            <input type="tel" id="phone" class="createEmployee-form-input" required>
         </div>
 
-        <div class="form-section">
+        <div class="createEmployee-form-section">
             <label for="emergencyContact">Second Number<span>*</span></label>
-            <input type="tel" id="emergencyContact" class="form-input" required>
+            <input type="tel" id="emergencyContact" class="createEmployee-form-input" required>
         </div>
     </div>
 
-    <div class="form-section">
+    <div class="createEmployee-form-section">
         <label for="email">Email<span>*</span></label>
-        <input type="email" id="email" class="form-input" required>
+        <input type="email" id="email" class="createEmployee-form-input" required>
     </div>
 
-    <div class="flex">
-        <div class="form-section">
+    <div class="createEmployee-flex">
+        <div class="createEmployee-form-section">
             <label for="dateOfHire">Date of Hire<span>*</span></label>
-            <input type="date" id="dateOfHire" class="form-input" required>
+            <input type="date" id="dateOfHire" class="createEmployee-form-input" required>
         </div>
 
-        <div class="form-section">
+        <div class="createEmployee-form-section">
             <label for="employmentType">Role Type<span>*</span></label>
-            <select id="employmentType" class="form-select" required>
+            <select id="employmentType" class="createEmployee-form-select" required>
                 <option value="">Select</option>
                 <option value="full-time">Full-Time</option>
                 <option value="part-time">Part-Time</option>
@@ -73,9 +73,9 @@
         </div>
     </div>
 
-    <div class="form-section">
+    <div class="createEmployee-form-section">
         <label for="employeeType">Employee Type<span>*</span></label>
-        <select id="employeeType" class="form-select" required onchange="showAssignedSection()">
+        <select id="employeeType" class="createEmployee-form-select" required onchange="showAssignedSection()">
             <option value="">Select</option>
             <option value="director">Director</option>
             <option value="manager">Manager</option>
@@ -83,16 +83,16 @@
         </select>
     </div>
 
-    <div id="assignedSection" class="form-section hidden">
+    <div id="assignedSection" class="createEmployee-form-section hidden">
         <label for="assignedTo">Assigned To<span>*</span></label>
-        <select id="assignedTo" class="form-select" required>
+        <select id="assignedTo" class="createEmployee-form-select" required>
             <option value="">Select</option>
         </select>
     </div>
 
-    <div id="departmentSection" class="form-section hidden">
+    <div id="departmentSection" class="createEmployee-form-section hidden">
         <label for="department">Department<span>*</span></label>
-        <select id="department" class="form-select" required>
+        <select id="department" class="createEmployee-form-select" required>
             <option value="">Select</option>
             <option value="sales">Sales Manager</option>
             <option value="operations">Operation Manager</option>
@@ -102,9 +102,9 @@
         </select>
     </div>
 
-    <div id="employeeDepartmentSection" class="form-section hidden">
+    <div id="employeeDepartmentSection" class="createEmployee-form-section hidden">
         <label for="employeeDepartment">Department<span>*</span></label>
-        <select id="employeeDepartment" class="form-select" required>
+        <select id="employeeDepartment" class="createEmployee-form-select" required>
             <option value="">Select</option>
             <option value="sales">Sales</option>
             <option value="operations">Operations</option>
@@ -112,39 +112,39 @@
         </select>
     </div>
 
-    <div class="form-section">
+    <div class="createEmployee-form-section">
         <label for="address">Permanent Address<span>*</span></label>
-        <input type="text" id="address" class="form-input" required>
+        <input type="text" id="address" class="createEmployee-form-input" required>
     </div>
 
-    <div class="flex">
-        <div class="form-section">
+    <div class="createEmployee-flex">
+        <div class="createEmployee-form-section">
             <label for="postcode">Postcode<span>*</span></label>
-            <input type="text" id="postcode" class="form-input" required>
+            <input type="text" id="postcode" class="createEmployee-form-input" required>
         </div>
 
-        <div class="form-section">
+        <div class="createEmployee-form-section">
             <label for="city">City<span>*</span></label>
-            <input type="text" id="city" class="form-input" required>
+            <input type="text" id="city" class="createEmployee-form-input" required>
         </div>
     </div>
 
-    <div class="flex">
-        <div class="form-section">
+    <div class="createEmployee-flex">
+        <div class="createEmployee-form-section">
             <label for="state">State<span>*</span></label>
-            <input type="text" id="state" class="form-input" required>
+            <input type="text" id="state" class="createEmployee-form-input" required>
         </div>
 
-        <div class="form-section">
+        <div class="createEmployee-form-section">
             <label for="country">Country<span>*</span></label>
-            <select id="country" class="form-select" required>
+            <select id="country" class="createEmployee-form-select" required>
                 <option value="">Select</option>
                 <!-- Countries will be populated here -->
             </select>
         </div>
     </div>
 
-    <button type="submit" class="form-button">Submit</button>
+    <button type="submit" class="createEmployee-form-button">Submit</button>
 </form>
 <script src="JS/CreateEmployee.js"></script>
 </body>

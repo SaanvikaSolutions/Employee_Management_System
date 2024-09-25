@@ -1,5 +1,3 @@
-
-
 function showAssignedSection() {
     const employeeType = document.getElementById('employeeType').value;
     const assignedSection = document.getElementById('assignedSection');
@@ -50,7 +48,7 @@ const countries = [
 const countrySelect = document.getElementById('country');
 countries.forEach(country => {
     const option = document.createElement('option');
-    option.value = country.toLowerCase().replace(/\s+/g, '-'); // Format value
+    option.value = country.toLowerCase().replace(/\s+/g, '-'); 
     option.textContent = country;
     countrySelect.appendChild(option);
 });

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .ViewEmployee-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ViewEmployee-back-button {
+            margin-bottom: 20px;
+            color: #000;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .ViewEmployee-back-button i {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
+        .ViewEmployee-employee-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .ViewEmployee-employee-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .ViewEmployee-employee-info {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .ViewEmployee-employee-info h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .ViewEmployee-employee-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .ViewEmployee-employee-id {
+            text-align: right;
+            color: #666;
+        }
+
+        .ViewEmployee-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .ViewEmployee-details-grid div {
+            font-size: 16px;
+        }
+
+        .ViewEmployee-details-grid div span {
+            display: block;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .ViewEmployee-icon-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .ViewEmployee-icon-info i {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #666;
+        }
+
+        .ViewEmployee-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ViewEmployee-delete-button, .ViewEmployee-close-button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .ViewEmployee-delete-button {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .ViewEmployee-delete-button:hover {
+            background-color: #cc0000;
+        }
+
+        .ViewEmployee-close-button {
+            background-color: #4d4dff;
+            color: white;
+        }
+
+        .ViewEmployee-close-button:hover {
+            background-color: #0000cc;
+        }
+
+        @media (max-width: 768px) {
+            .ViewEmployee-details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ViewEmployee-employee-header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .ViewEmployee-employee-info {
+                text-align: center;
+                padding-left: 0;
+            }
+
+            .ViewEmployee-employee-id {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .ViewEmployee-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .ViewEmployee-delete-button, .ViewEmployee-close-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ViewEmployee-container">
+    <a href="#" class="ViewEmployee-back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+
+    <div class="ViewEmployee-employee-header">
+        <img src="https://via.placeholder.com/100" alt="John Wick">
+        <div class="ViewEmployee-employee-info">
+            <h2>John Wick</h2>
+            <p>Designer</p>
+        </div>
+        <div class="ViewEmployee-employee-id">
+            <p>Employee ID: SD448445</p>
+        </div>
+    </div>
+
+    <div class="ViewEmployee-details-grid">
+        <div>
+            <span>Department</span>
+            Digital marketing
+        </div>
+        <div>
+            <span>Date of Joining</span>
+            May 01, 2020
+        </div>
+        <div>
+            <span>Roll Type</span>
+            Full Time
+        </div>
+        <div>
+            <span>Assigned</span>
+            Manager
+        </div>
+    </div>
+
+    <div class="ViewEmployee-details-grid">
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-regular fa-envelope"></i>
+            <span>Email</span>
+            admin@gmail.com
+        </div>
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Date of Birth</span>
+            April 15, 1995
+        </div>
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-solid fa-phone"></i>
+            <span>Phone</span>
+            (+91) 89358635638
+        </div>
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-solid fa-phone"></i>
+            <span>Emergency Phone No</span>
+            (+91) 89358635638
+        </div>
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-regular fa-user"></i>
+            <span>Gender</span>
+            Male
+        </div>
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Post Code</span>
+            49845
+        </div>
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>State</span>
+            Telangana
+        </div>
+        <div class="ViewEmployee-icon-info">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Country</span>
+            India
+        </div>
+        <div class="ViewEmployee-icon-info" style="grid-column: span 2;">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Permanent Address</span>
+            Flat 121, Kavuri Hills, Madhapur, Hyderabad, Telangana, 530001
+        </div>
+    </div>
+
+    <div class="ViewEmployee-buttons">
+        <button class="ViewEmployee-delete-button">Delete</button>
+        <button class="ViewEmployee-close-button">Close</button>
+    </div>
+</div>
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
