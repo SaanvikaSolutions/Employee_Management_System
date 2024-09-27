@@ -52,7 +52,7 @@ body.Dashboard.dark {
     width: 25%; 
     padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: border-color 0.3s;
 }
 
