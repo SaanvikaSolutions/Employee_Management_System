@@ -4,77 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varna EMS</title>
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 
-<body>
-    <header class="header">
-        <div class="logo">Varna EMS</div>
-        <nav class="nav">
-        </nav>
+<body class="Dashboard light">
+    <header class="Dashboard-topbar light">
+        <div class="Dashboard-hamburger-menu" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="Dashboard-logo">EMS</div>
+        <div class="Dashboard-search-container">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="Dashboard-right-icons">
+            <div class="Dashboard-circle Dashboard-notification-icon">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+            <div class="Dashboard-circle Dashboard-user-profile">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="Dashboard-circle" onclick="toggleTheme()" style="cursor: pointer;">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </div>
+        </div>
     </header>
 
-    <div class="hamburger-menu" onclick="toggleSidebar()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div class="Dashboard-dashboard">
+        <nav id="sidebar" class="Dashboard-sidebar light">
+            <ul>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('profile-dropdown')">
+                        <i class="fa-regular fa-user Dashboard-icon-small"></i> Profile
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="profile-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">Create Profile</a></li>
+                        <li><a href="#">View Profile</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('leads-dropdown')">
+                        <i class="fa-regular fa-address-card Dashboard-icon-small"></i> Leads
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="leads-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">Create Lead</a></li>
+                        <li><a href="#">View Lead</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('costs-dropdown')">
+                        <i class="fa-solid fa-calculator Dashboard-icon-small"></i> Cost Estimation
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="costs-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">Cost</a></li>
+                        <li><a href="#">Costs</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('tickets-dropdown')">
+                        <i class="fa-solid fa-ticket Dashboard-icon-small"></i> Tickets
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="tickets-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">View Tickets</a></li>
+                        <li><a href="#">Assign Tickets</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('expenses-dropdown')">
+                        <i class="fa-solid fa-wallet Dashboard-icon-small"></i> Expenses
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="expenses-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">View Expenses</a></li>
+                        <li><a href="#">Create Expenses</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="Dashboard-logout-button">Logout</button>
+        </nav>
 
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <img src="IMG/homes logo varna.png" alt="Logo">
-        </div>
-        <a href="#" onclick="toggleDropdown('profilesDropdown')">Profiles</a>
-        <div id="profilesDropdown" class="dropdown-content">
-            <a href="#">Create Profile</a>
-            <a href="#">View Employees</a>
-        </div>
-        <a href="#" onclick="toggleDropdown('leadsDropdown')">Leads</a>
-        <div id="leadsDropdown" class="dropdown-content">
-            <a href="#">Create Lead</a>
-            <a href="#">View Leads</a>
-        </div>
-    </div>
+        <main class="Dashboard-main-content">
+            <div class="Dashboard-content">
+                <!-- Content goes here -->
+                <div class="Dashboard-profile-card-section">
 
-    <div class="main-content">
-        <div class="profile-count-section">
-            <div class="profile-card">
-                <div class="profile-count">5</div>
-                <div class="profile-type">Directors</div>
+                    <a href="#" class="Dashboard-profile-card">
+                        <img src="IMG/Employee.png" alt="Director Icon">
+                        <div class="Dashboard-count">2</div>
+                        <div class="Dashboard-role">Directors</div>
+                    </a>
+
+                    <a href="#" class="Dashboard-profile-card">
+                        <img src="IMG/Employee.png" alt="Director Icon">
+                        <div class="Dashboard-count">2</div>
+                        <div class="Dashboard-role">Managers</div>
+                    </a>
+
+                    <a href="#" class="Dashboard-profile-card">
+                        <img src="IMG/Employee.png" alt="Director Icon">
+                        <div class="Dashboard-count">30</div>
+                        <div class="Dashboard-role">Employees</div>
+                    </a>
+                </div>
+                <!-- Content ends here -->
             </div>
-            <div class="profile-card">
-                <div class="profile-count">10</div>
-                <div class="profile-type">Managers</div>
-            </div>
-            <div class="profile-card">
-                <div class="profile-count">50</div>
-                <div class="profile-type">Employees</div>
-            </div>
-            <!-- <div class="profile-card">
-                <div class="profile-count">50</div>
-                <div class="profile-type" onclick="alert('Employees button clicked!')">Employees</div>
-            </div> -->
-        </div>
-    </div>
-
-    <div class="top-right-icons">
-
-        <a href="https://your-link-here.com" target="_blank" style="text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path
-                    d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.7S14.8 416 24 416l400 0c9.2 0 17.4-5.1 21.5-13.3s2.9-18.4-2.9-25.7l-14.9-18.7C399.5 322.9 384 278.8 384 233.4L384 208c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zM367.8 352H80.2C103.2 311.4 112 265.6 112 218.6V208c0-61.9 50.1-112 112-112s112 50.1 112 112v10.6c0 47.1 8.8 92.8 31.8 133.4zM144 448c0 35.3 28.7 64 64 64s64-28.7 64-64l-128 0z" />
-            </svg>
-        </a>
-        <a href="https://your-link-here.com" target="_blank" style="text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path
-                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm0 64c-70.7 0-224 35.8-224 107.3C0 461 50.1 512 112 512H336c61.9 0 112-51 112-114.7c0-71.5-153.3-107.3-224-107.3z" />
-            </svg>
-        </a>
-
+        </main>
     </div>
     <script src="JS/Dashboard.js"></script>
+
 </body>
 
 </html>

@@ -1,242 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varna EMS</title>
-    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #EAE7DC; /* Light Beige */
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #3C6E71; /* Dark Teal */
-            color: #FFFFFF;
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .header .logo {
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        .sidebar {
-            width: 250px;
-            background-color: #284B63; /* Dark Blue-Gray */
-            color: #FFFFFF;
+        body, html {
+            font-family: Arial, sans-serif;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            padding: 20px;
-            position: fixed;
-            height: 100%;
-            top: 0;
-            left: 0;
-            transition: transform 0.3s ease-in-out;
-            z-index: 1000;
-        }
-
-        .sidebar a {
-            color: #FFDDC1; /* Soft Peach */
-            font-weight: bold;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .sidebar a:hover {
-            background-color: #A4D65E; /* Soft Green */
-            color: #284B63; /* Dark Blue-Gray */
+        body.Dashboard.light {
+            background-color: #f4f4f4;
+            color: #333;
         }
 
-        .dropdown-content {
-            display: none;
-            background-color: #FFDDC1; /* Soft Peach */
-            padding: 0;
-            position: relative;
-            border-radius: 5px;
-            margin-top: 5px;
+        body.Dashboard.dark {
+            background-color: #333;
+            color: #f4f4f4;
         }
 
-        .dropdown-content a {
-            display: block;
-            color: #284B63; /* Dark Blue-Gray */
-            padding: 10px 15px;
-            text-decoration: none;
+        .Dashboard-topbar {
+            height: 50px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
         }
 
-        .dropdown-content a:hover {
-            background-color: #A4D65E; /* Soft Green */
-            color: #FFFFFF; /* White */
+        .Dashboard-topbar.dark {
+            background-color: #444;
         }
 
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-            transition: margin-left 0.3s;
+        .Dashboard-logo {
+            font-weight: bold;
+            margin-left: 50px;
         }
 
-        .profile-count-section {
+        .Dashboard-search-container {
+            flex: 1;
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
         }
 
-        .profile-card {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 200px;
-        }
-
-        .profile-card:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .profile-card .profile-count {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #3C6E71; /* Dark Teal */
-        }
-
-        .profile-card .profile-type {
-            font-size: 1.2em;
-            color: #5C3A1E; /* Dark Brown */
+        .Dashboard-search-container input {
+            width: 25%; 
             padding: 5px;
-            font-weight: bold;
-            transition: transform 0.2s;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
         }
 
-        .profile-card .profile-type:hover {
-            transform: scale(1.05);
+        .Dashboard-search-container input.dark {
+            border-color: #ffffff;
+            background-color: #ffffff;
+            color: #f4f4f4;
         }
 
-        .top-right-icons {
-            position: absolute;
-            top: 15px;
-            right: 20px;
+        @media screen and (max-width: 1024px) {
+            .Dashboard-search-container input {
+                width: 40%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .Dashboard-search-container {
+                width: 60%;
+            }
+            
+            .Dashboard-search-container input {
+                width: 50%;
+                border-radius: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .Dashboard-search-container {
+                justify-content: flex-start;
+            }
+            
+            .Dashboard-search-container input {
+                width: 80%;
+            }
+        }
+
+        .Dashboard-right-icons {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        .top-right-icons svg {
-            width: 24px;
-            height: 24px;
+        .Dashboard-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #d8a97d;
+            position: relative;
+        }
+
+        .Dashboard-hamburger-menu {
+            display: none;
             cursor: pointer;
-            fill: #FFDDC1; /* Soft Peach */
-            transition: fill 0.3s, transform 0.3s;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute;
+            left: 20px;
         }
 
-        .top-right-icons svg:hover {
-            fill: #A4D65E; /* Soft Green */
-            transform: scale(1.1);
+        .Dashboard-hamburger-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
         }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
+        .Dashboard-dashboard {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            height: calc(100vh - 50px);
+        }
+
+        .Dashboard-sidebar {
+            width: 250px;
+            background-color: #d8a97d;
+            padding: 20px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        .Dashboard-sidebar.light {
+            background-color: #d8a97d;
+        }
+
+        .Dashboard-sidebar.dark {
+            background-color: #444;
+        }
+
+        .Dashboard-sidebar ul {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .Dashboard-sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .Dashboard-sidebar ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            position: relative;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+
+        .Dashboard-sidebar ul li a.dark {
+            color: #f4f4f4;
+        }
+
+        .Dashboard-icon-small {
+            font-size: 20px; 
+            margin-right: 10px; 
+        }
+
+        .Dashboard-submenu {
+            display: none;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .Dashboard-dropdown a {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .Dashboard-dropdown a:hover {
+            background-color: #ffffff;
+        }
+
+        .Dashboard-arrow {
+            margin-left: auto;
+            display: inline-block;
+            width: 14px; 
+            height: 14px;
+            border-right: 2.5px solid black;
+            border-bottom: 2.5px solid black;
+            transform: rotate(315deg); 
+            transition: transform 0.3s ease;
+        }
+
+        .Dashboard-dropdown.active .Dashboard-arrow {
+            transform: rotate(135deg);
+        }
+
+        .Dashboard-main-content {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .Dashboard-logout-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px; 
+            margin-bottom: 30px;
+        }
+
+        .Dashboard-sidebar.active {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .Dashboard-sidebar {
+                width: 200px;
+            }
+            .Dashboard-search-container {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .Dashboard-sidebar {
+                display: none;
             }
 
-            .hamburger-menu {
+            .Dashboard-sidebar.active {
+                display: flex;
+                position: absolute;
+                width: 200px;
+                z-index: 100;
+                height: 100%;
+                background-color: #d8a97d;
+            }
+
+            .Dashboard-hamburger-menu {
                 display: flex;
             }
 
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
-
-            .sidebar.active {
-                transform: translateX(0);
+            .Dashboard-main-content {
+                padding: 10px;
             }
         }
+
+        @media screen and (max-width: 480px) {
+            .Dashboard-sidebar {
+                width: 150px;
+            }
+
+            .Dashboard-right-icons {
+                gap: 10px;
+            }
+
+            .Dashboard-logo {
+                font-size: 14px;
+                margin-left: 25px;
+            }
+
+            .Dashboard-hamburger-menu div {
+                width: 20px;
+                height: 2px;
+            }
+
+        }
+
+        /* profile design css start */
+        .Dashboard-profile-card-section {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            height: 100%;
+        }
+
+        .Dashboard-profile-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            height: 150px;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Dashboard-profile-card img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .Dashboard-profile-card .Dashboard-count {
+            font-size: 24px;
+            color: #1a53ff;
+            font-weight: bold;
+        }
+
+        .Dashboard-profile-card .Dashboard-role {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Media query for responsiveness */
+        @media (max-width: 768px) {
+            .Dashboard-profile-card-section {
+                flex-direction: column;
+            }
+
+            .Dashboard-profile-card {
+                margin-bottom: 20px;
+            }
+        }
+
+        .Dashboard-profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none; 
+            color: inherit; 
+            border: 1px solid transparent; 
+            padding: 10px; 
+            transition: background 0.3s; 
+        }
+
+        .Dashboard-profile-card:hover {
+            background-color: rgba(0, 0, 0, 0.1); 
+            border-color: rgba(0, 0, 0, 0.2); 
+        }
+        /* profile design css end */
     </style>
 </head>
-
-<body>
-    <header class="header">
-        <div class="logo">Varna EMS</div>
-        <nav class="nav"></nav>
+<body class="Dashboard light">
+    <header class="Dashboard-topbar light">
+        <div class="Dashboard-hamburger-menu" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="Dashboard-logo">EMS</div>
+        <div class="Dashboard-search-container">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="Dashboard-right-icons">
+            <div class="Dashboard-circle Dashboard-notification-icon">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+            <div class="Dashboard-circle Dashboard-user-profile">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="Dashboard-circle" onclick="toggleTheme()" style="cursor: pointer;">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </div>
+        </div>
     </header>
 
-    <div class="hamburger-menu" onclick="toggleSidebar()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div class="Dashboard-dashboard">
+        <nav id="sidebar" class="Dashboard-sidebar light">
+            <ul>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('profile-dropdown')">
+                        <i class="fa-regular fa-user Dashboard-icon-small"></i> Profile
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="profile-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">Create Profile</a></li>
+                        <li><a href="#">View Profile</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('leads-dropdown')">
+                        <i class="fa-regular fa-address-card Dashboard-icon-small"></i> Leads
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="leads-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">Create Lead</a></li>
+                        <li><a href="#">View Lead</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('costs-dropdown')">
+                        <i class="fa-solid fa-calculator Dashboard-icon-small"></i> Cost Estimation
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="costs-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">Cost</a></li>
+                        <li><a href="#">Costs</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('tickets-dropdown')">
+                        <i class="fa-solid fa-ticket Dashboard-icon-small"></i> Tickets
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="tickets-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">View Tickets</a></li>
+                        <li><a href="#">Assign Tickets</a></li>
+                    </ul>
+                </li>
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('expenses-dropdown')">
+                        <i class="fa-solid fa-wallet Dashboard-icon-small"></i> Expenses
+                        <div class="Dashboard-arrow"></div>
+                    </a>
+                    <ul id="expenses-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">View Expenses</a></li>
+                        <li><a href="#">Create Expenses</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="Dashboard-logout-button">Logout</button>
+        </nav>
 
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <img src="IMG/homes logo varna.png" alt="Logo">
-        </div>
-        <a href="#" onclick="toggleDropdown('profilesDropdown')">Profiles</a>
-        <div id="profilesDropdown" class="dropdown-content">
-            <a href="#">Create Profile</a>
-            <a href="#">View Employees</a>
-        </div>
-        <a href="#" onclick="toggleDropdown('leadsDropdown')">Leads</a>
-        <div id="leadsDropdown" class="dropdown-content">
-            <a href="#">Create Lead</a>
-            <a href="#">View Leads</a>
-        </div>
-    </div>
+        <main class="Dashboard-main-content">
+            <div class="Dashboard-content">
+                <!-- Content goes here -->
+                <div class="Dashboard-profile-card-section">
 
-    <div class="main-content">
-        <div class="profile-count-section">
-            <div class="profile-card">
-                <div class="profile-count">5</div>
-                <div class="profile-type">Directors</div>
-            </div>
-            <div class="profile-card">
-                <div class="profile-count">10</div>
-                <div class="profile-type">Managers</div>
-            </div>
-            <div class="profile-card">
-                <div class="profile-count">50</div>
-                <div class="profile-type">Employees</div>
-            </div>
-        </div>
-    </div>
+                    <a href="#" class="Dashboard-profile-card">
+                        <img src="worker (4).png" alt="Director Icon">
+                        <div class="Dashboard-count">2</div>
+                        <div class="Dashboard-role">Directors</div>
+                    </a>
 
-    <div class="top-right-icons">
-        <a href="https://your-link-here.com" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.7S14.8 416 24 416l400 0c9.2 0 17.4-5.1 21.5-13.3s2.9-18.4-2.9-25.7l-14.9-18.7C399.5 322.9 384 278.8 384 233.4L384 208c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zM367.8 352H80.2C103.2 311.4 112 265.6 112 218.6V208c0-61.9 50.1-112 112-112s112 50.1 112 112v10.6c0 47.1 8.8 92.8 31.8 133.4zM144 448c0 35.3 28.7 64 64 64s64-28.7 64-64l-128 0z" />
-            </svg>
-        </a>
-        <a href="https://your-link-here.com" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm0 64c-70.7 0-224 35.8-224 107.3C0 461 50.1 512 112 512H336c61.9 0 112-51 112-114.7c0-71.5-153.3-107.3-224-107.3z" />
-            </svg>
-        </a>
+                    <a href="#" class="Dashboard-profile-card">
+                        <img src="worker (4).png" alt="Director Icon">
+                        <div class="Dashboard-count">2</div>
+                        <div class="Dashboard-role">Managers</div>
+                    </a>
+
+                    <a href="#" class="Dashboard-profile-card">
+                        <img src="worker (4).png" alt="Director Icon">
+                        <div class="Dashboard-count">2</div>
+                        <div class="Dashboard-role">Employees</div>
+                    </a>
+                </div>
+                <!-- Content ends here -->
+            </div>
+        </main>
     </div>
 
     <script>
         function toggleDropdown(dropdownId) {
             const dropdown = document.getElementById(dropdownId);
+            const parentLi = dropdown.parentNode;
+            const arrow = parentLi.querySelector('.Dashboard-arrow');
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            parentLi.classList.toggle('active');
         }
 
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
         }
+
+        function toggleTheme() {
+            const body = document.body;
+            const topbar = document.querySelector('.Dashboard-topbar');
+            const sidebar = document.querySelector('.Dashboard-sidebar');
+            const searchInput = document.querySelector('.Dashboard-search-container input');
+            const themeIcon = document.getElementById('theme-icon');
+
+            body.classList.toggle('dark');
+            topbar.classList.toggle('dark');
+            sidebar.classList.toggle('dark');
+            searchInput.classList.toggle('dark');
+
+            // Change icon based on theme
+            themeIcon.classList.toggle('fa-sun');
+            themeIcon.classList.toggle('fa-moon');
+        }
     </script>
 </body>
-
 </html>
