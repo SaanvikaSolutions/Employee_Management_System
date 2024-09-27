@@ -321,7 +321,11 @@ body.Dashboard.dark {
     font-size: 24px;
     color: #1a53ff;
     font-weight: bold;
+    background-color: #86c8ff;
+    border-radius: 10px;
+    width: 60px;
 }
+
 
 .Dashboard-profile-card .Dashboard-role {
     font-size: 16px;
