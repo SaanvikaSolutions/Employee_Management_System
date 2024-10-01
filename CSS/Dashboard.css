@@ -330,6 +330,7 @@ body.Dashboard.dark {
 .Dashboard-profile-card .Dashboard-role {
     font-size: 16px;
     color: #333;
+    margin-top: 10px;
 }
 
 /* Media query for responsiveness */

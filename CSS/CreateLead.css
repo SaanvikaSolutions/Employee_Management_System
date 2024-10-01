@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d0e7ff; 
+}
+
+.Create-Lead-lead-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+.Create-Lead-lead-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #343a40;
+}
+
+.Create-Lead-form-section {
+    margin-bottom: 20px;
+}
+
+.Create-Lead-form-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #495057; 
+}
+
+.Create-Lead-form-input,
+.Create-Lead-form-select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da; 
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.Create-Lead-form-input:focus,
+.Create-Lead-form-select:focus {
+    border-color: #007bff; 
+    outline: none;
+}
+
+.Create-Lead-form-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.Create-Lead-form-button:hover {
+    background-color: #0056b3;
+}
+
+.Create-Lead-form-Dropdown {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.Create-Lead-form-Dropdown .Create-Lead-form-section {
+    width: 48%;
+}
+
+@media (max-width: 600px) {
+    .Create-Lead-form-Dropdown .Create-Lead-form-section {
+        width: 48%;
+    }
+}
+
+@media (max-width: 500px) {
+    .Create-Lead-form-Dropdown .Create-Lead-form-section {
+        width: 100%; 
+        margin-bottom: 15px; 
+    }
+}
+
+@media (max-width: 400px) {
+    .Create-Lead-form-section label {
+        font-size: 16px; 
+    }
+
+    .Create-Lead-form-input,
+    .Create-Lead-form-select,
+    textarea {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .Create-Lead-form-button {
+        padding: 10px; 
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 300px) {
+    .Create-Lead-lead-form {
+        padding: 20px; 
+    }
+
+    .Create-Lead-lead-form h2 {
+        font-size: 22px; 
+    }
+}
+
+.Create-Lead-form-section span {
+    color: #dc3545; 
+}

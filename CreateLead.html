@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Lead Form</title>
+    <link rel="stylesheet" href="CSS/CreateLead.css">
+</head>
+
+<body>
+
+    <form class="Create-Lead-lead-form">
+        <h2>Create Lead</h2>
+
+        <div class="Create-Lead-form-Dropdown">
+            <div class="Create-Lead-form-section">
+                <label for="employeeId">Emp ID<span>*</span></label>
+                <input type="text" id="employeeId" class="Create-Lead-form-input" required>
+            </div>
+
+            <div class="Create-Lead-form-section">
+                <label for="leadName">Lead's Name<span>*</span></label>
+                <input type="text" id="leadName" class="Create-Lead-form-input" required>
+            </div>
+        </div>
+
+        <div class="Create-Lead-form-Dropdown">
+            <div class="Create-Lead-form-section">
+                <label for="mobileNumber">Mobile<span>*</span></label>
+                <input type="tel" id="mobileNumber" class="Create-Lead-form-input" required>
+            </div>
+
+            <div class="Create-Lead-form-section">
+                <label for="email">Email<span>*</span></label>
+                <input type="email" id="email" class="Create-Lead-form-input" required>
+            </div>
+        </div>
+
+        <div class="Create-Lead-form-Dropdown">
+            <div class="Create-Lead-form-section">
+                <label for="dateOfLead">Created On<span>*</span></label>
+                <input type="date" id="dateOfLead" class="Create-Lead-form-input" required>
+            </div>
+
+            <div class="Create-Lead-form-section">
+                <label for="leadType">Lead Type<span>*</span></label>
+                <select id="leadType" class="Create-Lead-form-select" required>
+                    <option value="">Select</option>
+                    <option value="interior">Interior</option>
+                    <option value="homes">Homes</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="Create-Lead-form-Dropdown">
+            <div class="Create-Lead-form-section">
+                <label for="state">State<span>*</span></label>
+                <select id="state" class="Create-Lead-form-select" required onchange="populateCities()">
+                    <option value="">Select</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                </select>
+            </div>
+
+            <div class="Create-Lead-form-section">
+                <label for="city">City<span>*</span></label>
+                <select id="city" class="Create-Lead-form-select" required>
+                    <option value="">Select</option>
+                    <!-- Options will be populated based on selected state -->
+                </select>
+            </div>
+        </div>
+
+        <div class="Create-Lead-form-Dropdown">
+            <div class="Create-Lead-form-section">
+                <label for="pincode">Pincode<span>*</span></label>
+                <input type="text" id="pincode" class="Create-Lead-form-input" required>
+            </div>
+
+            <div class="Create-Lead-form-section">
+                <label for="projectType">Project Type<span>*</span></label>
+                <select id="projectType" class="Create-Lead-form-select" required>
+                    <option value="">Select</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="Create-Lead-form-Dropdown">
+            <div class="Create-Lead-form-section">
+                <label for="status">Status<span>*</span></label>
+                <select id="status" class="Create-Lead-form-select" required>
+                    <option value="">Select</option>
+                    <option value="new">New</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="interested">Interested</option>
+                    <option value="not_interested">Not Interested</option>
+                    <option value="closed">Closed</option>
+                </select>
+            </div>
+
+            <div class="Create-Lead-form-section">
+                <label for="meetingDate">Meeting Date<span>*</span></label>
+                <input type="date" id="meetingDate" class="Create-Lead-form-input" required>
+            </div>
+        </div>
+        <div class="Create-Lead-form-section"></div>
+        <label for="address">Address<span></span></label>
+        <textarea id="address" class="Create-Lead-form-input" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="Create-Lead-form-button">Submit</button>
+    </form>
+    <script src="JS/CreateLead.js"></script>
+</body>
+
+</html>

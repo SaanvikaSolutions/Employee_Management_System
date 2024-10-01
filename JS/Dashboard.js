@@ -11,6 +11,8 @@ function toggleSidebar() {
     sidebar.classList.toggle('active');
 }
 
+
+
 function toggleTheme() {
     const body = document.body;
     const topbar = document.querySelector('.Dashboard-topbar');
