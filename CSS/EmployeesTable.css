@@ -61,8 +61,8 @@ body {
 .EmployeeTable-employees-table tr:hover {
     background-color: #e0e0e0;
 }
-
 .EmployeeTable-view-button {
+    display: inline-block; /* Make the link behave like a button */
     background-color: #008CBA;
     color: white;
     border: none;
@@ -70,7 +70,10 @@ body {
     border-radius: 3px;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center the text */
 }
+
 
 .EmployeeTable-view-button:hover {
     background-color: #005f73;
