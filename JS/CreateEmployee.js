@@ -4,38 +4,44 @@ function showAssignedSection() {
     const assignedToSelect = document.getElementById('assignedTo');
     const departmentSection = document.getElementById('departmentSection');
     const employeeDepartmentSection = document.getElementById('employeeDepartmentSection');
+    const genderSection = document.getElementById('gender');  // Gender will always be shown
 
-    assignedToSelect.innerHTML = ''; // Clear existing options
-    departmentSection.classList.add('hidden'); // Hide department section
-    employeeDepartmentSection.classList.add('hidden'); // Hide employee department section
+    // Clear the current dropdown options in the 'Assigned To' section
+    assignedToSelect.innerHTML = '<option value="">Select Assigned To</option>'; 
+    departmentSection.classList.add('hidden'); // Hide department section by default
+    employeeDepartmentSection.classList.add('hidden'); // Hide employee department section by default
+    genderSection.classList.remove('hidden'); // Ensure gender section is visible
 
-    if (employeeType === 'director') {
+    if (employeeType === 'director' || employeeType === 'manager' || employeeType === 'employee') {
         assignedSection.classList.remove('hidden');
-        assignedToSelect.innerHTML = `
-                <option value="managingDirector1">Managing Director 1</option>
-                <option value="managingDirector2">Managing Director 2</option>
-                <option value="managingDirector3">Managing Director 3</option>
-            `;
-    } else if (employeeType === 'manager') {
-        assignedSection.classList.remove('hidden');
-        assignedToSelect.innerHTML = `
-                <option value="director1">Director 1</option>
-                <option value="director2">Director 2</option>
-                <option value="director3">Director 3</option>
-            `;
-        departmentSection.classList.remove('hidden'); // Show department section for managers
-    } else if (employeeType === 'employee') {
-        assignedSection.classList.remove('hidden');
-        assignedToSelect.innerHTML = `
-                <option value="manager1">Manager 1</option>
-                <option value="manager2">Manager 2</option>
-                <option value="manager3">Manager 3</option>
-            `;
-        employeeDepartmentSection.classList.remove('hidden'); // Show employee department section
+
+        // Make an AJAX request to fetch the options based on employee type
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `CreateEmployee.php?employeeType=${employeeType}`, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Populate the dropdown with the response from the server
+                assignedToSelect.innerHTML = xhr.responseText;
+               
+
+
+            }
+        };
+        xhr.send();
+
+        // Logic for specific employee types
+        if (employeeType === 'manager') {
+            departmentSection.classList.remove('hidden'); // Show department section for managers
+        } else if (employeeType === 'employee') {
+            employeeDepartmentSection.classList.remove('hidden'); // Show employee department section for employees
+        }
+        
+        // Removed the condition that hides the gender section for director/manager roles
     } else {
         assignedSection.classList.add('hidden');
     }
 }
+
 
 // Populate country dropdown
 const countries = [
