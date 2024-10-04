@@ -69,9 +69,8 @@
 
         .check-icon {
             font-size: 24px; /* Increase size */
-            color: #ae2727; /* Set a red color */
+            color: #27ae60; /* Set a green color */
             margin-right: 8px; /* Space between icon and text */
-            cursor: pointer; /* Change cursor to pointer */
         }
 
         .due-date {
@@ -162,14 +161,14 @@
 <body>
 
     <div class="container">
+        <!-- Upcoming Activity Section -->
         <h2>Upcoming Activity</h2>
-
         <div class="task-card">
             <div class="task-header" onclick="toggleTask(this)">
                 <h3>
                     <i class="fas fa-angle-right icon-right"></i>
                     <i class="fas fa-caret-down icon-down"></i>
-                    Lead Created by Venkatesh
+                    Lead Created by Suraj Yadav
                 </h3>
                 <span class="due-date">Due: Today 12:00 AM</span>
             </div>
@@ -187,44 +186,9 @@
                         <option>Low</option>
                     </select>
                     <select>
-                        <option>Pavan (Director)</option>
-                        <option>Vamshe (Sales Manager)</option>
-                        <option>Vamshe (Operation Manager)</option>
-                    </select>
-                </div>
-                <div class="buttons">
-                    <button class="cancel-btn">Cancel</button>
-                    <button class="assign-btn">Assign</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="task-card">
-            <div class="task-header" onclick="toggleTask(this)">
-                <h3>
-                    <i class="fas fa-angle-right icon-right"></i>
-                    <i class="fas fa-caret-down icon-down"></i>
-                    Lead Created by Suresh
-                </h3>
-                <span class="due-date">Due: Today 12:00 AM</span>
-            </div>
-            <div class="task-body">
-                <p>Prepare quote for Suresh: He is interested in our new product. Just address our product prices. He will buy at least one product in our company, make sure to contact and discuss.</p>
-                <div class="task-options">
-                    <select>
-                        <option>No reminder</option>
-                        <option>1 Day Before</option>
-                        <option>2 Days Before</option>
-                    </select>
-                    <select>
-                        <option>High</option>
-                        <option>Medium</option>
-                        <option>Low</option>
-                    </select>
-                    <select>
-                        <option>Pavan (Director)</option>
-                        <option>Vamshe (Sales Manager)</option>
-                        <option>Vamshe (Operation Manager)</option>
+                        <option>K Mukesh (Sales Man)</option>
+                        <option>John Doe (Manager)</option>
+                        <option>Jane Smith (Executive)</option>
                     </select>
                 </div>
                 <div class="buttons">
@@ -238,10 +202,10 @@
         <div class="activity-history">
             <h2>Activity History</h2>
             <div class="task-card">
-                <div class="task-header">
+                <div class="task-header" onclick="toggleTask(this)">
                     <h3>
-                        <i class="check-icon fa-solid fa-circle-check" onclick="toggleHistoryTask(this)"></i>
-                        Lead Created by Venkatesh
+                        <i class="check-icon fa-solid fa-circle-check"></i>
+                        Lead Created by Suraj Yadav
                     </h3>
                     <span class="due-date">Due: Today 12:00 AM</span>
                 </div>
@@ -269,19 +233,6 @@
                 iconRight.style.display = 'inline';
                 iconDown.style.display = 'none';
             }
-        }
-
-        // Function to toggle activity history task body when check icon is clicked
-        function toggleHistoryTask(icon) {
-            const taskBody = icon.closest('.task-card').querySelector('.task-body');
-            taskBody.classList.toggle('expandable');
-
-            // Close other task bodies
-            document.querySelectorAll('.task-card .task-body').forEach(body => {
-                if (body !== taskBody) {
-                    body.classList.remove('expandable');
-                }
-            });
         }
     </script>
 
