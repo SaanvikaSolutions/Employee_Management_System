@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -73,9 +72,22 @@
             margin-right: 8px; /* Space between icon and text */
         }
 
-        .due-date {
+        .task-type {
+            font-size: 14px; /* Set font size */
+            color: #7f8c8d; /* Set color */
+        }
+
+        .type {
+            color: #333; /* Example color */
+        }
+
+        .AssignedTo {
             font-size: 14px;
             color: #7f8c8d;
+        }
+
+        .assigned-name {
+            font-weight: bold; /* Example style */
         }
 
         .task-body {
@@ -93,15 +105,26 @@
             display: flex;
             gap: 16px;
             margin-top: 20px;
+            flex-wrap: wrap; /* Allow wrapping of options */
         }
 
-        .task-options select, .task-options input {
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            width: 150px;
-            background-color: #f4f5f7;
-            color: #333;
+        .task-options select {
+            flex: 1; /* Allow each select to take equal space */
+            min-width: 150px; /* Set a minimum width */
+            padding: 10px; /* Add padding */
+            border-radius: 8px; /* Round corners */
+            border: 1px solid #e0e0e0; /* Border color */
+            background-color: #f9f9f9; /* Light background */
+            transition: border-color 0.3s; /* Smooth transition for border color */
+        }
+
+        .task-options select:hover {
+            border-color: #3498db; /* Change border color on hover */
+        }
+
+        .task-options select:focus {
+            outline: none; /* Remove default outline */
+            border-color: #2980b9; /* Change border color on focus */
         }
 
         .buttons {
@@ -156,27 +179,53 @@
             margin-right: 10px;
             color: #1abc9c;
         }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 600px) {
+            .task-options {
+                flex-direction: column; /* Stack vertically on smaller screens */
+                gap: 10px; /* Reduce gap */
+            }
+
+            .task-options select {
+                width: 100%; /* Make selects full width */
+            }
+
+            .task-type {
+                font-size: 12px; /* Decrease font size for smaller screens */
+            }
+
+            h2 {
+                font-size: 20px; /* Adjust heading size */
+            }
+
+            .task-header h3 {
+                font-size: 16px; /* Adjust task header font size */
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Upcoming Activity Section -->
         <h2>Upcoming Activity</h2>
         <div class="task-card">
             <div class="task-header" onclick="toggleTask(this)">
                 <h3>
                     <i class="fas fa-angle-right icon-right"></i>
                     <i class="fas fa-caret-down icon-down"></i>
-                    Lead Created by Suraj Yadav
+                    <p> Created by <span>Suraj Yadav</span></p>
                 </h3>
+                <!-- <span class="task-type">
+                    Type: <span class="type">Interior</span>
+                </span> -->
                 <span class="due-date">Due: Today 12:00 AM</span>
             </div>
             <div class="task-body">
-                <p>Prepare quote for Suresh: He is interested in our new product. Just address our product prices. He will buy at least one product in our company, make sure to contact and discuss.</p>
+                <p>Prepare quote for Venkatesh. He is interested in our new product. Just address our product prices. He will buy at least one product in our company, make sure to contact and discuss.</p>
                 <div class="task-options">
                     <select>
-                        <option>No reminder</option>
+                        <option>Lead Ty</option>
                         <option>1 Day Before</option>
                         <option>2 Days Before</option>
                     </select>
@@ -192,21 +241,23 @@
                     </select>
                 </div>
                 <div class="buttons">
-                    <button class="cancel-btn">Cancel</button>
+                    <button class="cancel-btn">View</button>
                     <button class="assign-btn">Assign</button>
                 </div>
             </div>
         </div>
 
-        <!-- Activity History Section -->
         <div class="activity-history">
             <h2>Activity History</h2>
             <div class="task-card">
                 <div class="task-header" onclick="toggleTask(this)">
                     <h3>
                         <i class="check-icon fa-solid fa-circle-check"></i>
-                        Lead Created by Suraj Yadav
+                        <p>Created by <span>Venkatesh</span></p>
                     </h3>
+                    <span class="AssignedTo">
+                        Assigned to: <span class="assigned-name">Suresh</span>
+                    </span>
                     <span class="due-date">Due: Today 12:00 AM</span>
                 </div>
                 <div class="task-body expandable">

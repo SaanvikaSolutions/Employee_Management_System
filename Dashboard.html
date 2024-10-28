@@ -7,6 +7,7 @@
     <title>Employee Management System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/Dashboard.css">
+
 </head>
 
 <body class="Dashboard light">
@@ -38,19 +39,20 @@
             <ul>
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('profile-dropdown')">
-                        <i class="fa-regular fa-user Dashboard-icon-small"></i> Profile
-                        <div class="Dashboard-arrow"></div>
+                        <i class="fa-solid fa-users Dashboard-icon-small"></i> Profile
+                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
+                    
                     <ul id="profile-dropdown" class="Dashboard-submenu">
                         <li><a href="#">Create Profile</a></li>
                         <li><a href="#">View Profile</a></li>
                     </ul>
                 </li>
-
+ 
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('leads-dropdown')">
                         <i class="fa-regular fa-address-card Dashboard-icon-small"></i> Leads
-                        <div class="Dashboard-arrow"></div>
+                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="leads-dropdown" class="Dashboard-submenu">
                         <li><a href="#">Create Lead</a></li>
@@ -61,7 +63,7 @@
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('costs-dropdown')">
                         <i class="fa-solid fa-calculator Dashboard-icon-small"></i> Cost Estimation
-                        <div class="Dashboard-arrow"></div>
+                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="costs-dropdown" class="Dashboard-submenu">
                         <li><a href="#">Cost</a></li>
@@ -72,7 +74,7 @@
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('tickets-dropdown')">
                         <i class="fa-solid fa-ticket Dashboard-icon-small"></i> Tickets
-                        <div class="Dashboard-arrow"></div>
+                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="tickets-dropdown" class="Dashboard-submenu">
                         <li><a href="#">View Tickets</a></li>
@@ -83,7 +85,7 @@
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('expenses-dropdown')">
                         <i class="fa-solid fa-wallet Dashboard-icon-small"></i> Expenses
-                        <div class="Dashboard-arrow"></div>
+                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="expenses-dropdown" class="Dashboard-submenu">
                         <li><a href="#">View Expenses</a></li>
@@ -93,23 +95,21 @@
 
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('WorkFlow-dropdown')">
-                        <i class="fa-solid fa-briefcase Dashboard-icon-small"></i>Workflow
-                        <div class="Dashboard-arrow"></div>
+                        <i class="fa-solid fa-sitemap Dashboard-icon-small"></i>Workflow
+                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="WorkFlow-dropdown" class="Dashboard-submenu">
                         <li><a href="#">Flow</a></li>
                         <li><a href="#">Flows</a></li>
                     </ul>
                 </li>
-                
-               
             </ul>
             <button class="Dashboard-logout-button">Logout</button>
         </nav>
-
+<!-- 
         <main class="Dashboard-main-content">
             <div class="Dashboard-content">
-                <!-- Content goes here -->
+               
                 <div class="Dashboard-profile-card-section">
 
                     <a href="#" class="Dashboard-profile-card">
@@ -130,12 +130,11 @@
                         <div class="Dashboard-role">Employees</div>
                     </a>
                 </div>
-                <!-- Content ends here -->
+                
             </div>
-        </main>
+        </main> -->
     </div>
-    <script src="JS/Dashboard.js"></script>
-
 </body>
+<script src="JS/Dashboard.js"></script>
 
 </html>

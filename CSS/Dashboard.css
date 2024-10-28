@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -13,18 +14,18 @@ body, html {
 }
 
 body.Dashboard.light {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f4f4f4; /* Light background */
+    color: #202124; /* Dark text color */
 }
 
 body.Dashboard.dark {
-    background-color: #333;
-    color: #f4f4f4;
+    background-color: #202124; /* Dark background */
+    color: #f4f4f4; /* Light text color */
 }
 
 .Dashboard-topbar {
     height: 50px;
-    background-color: white;
+    background-color: #ffffff; /* White background */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +35,7 @@ body.Dashboard.dark {
 }
 
 .Dashboard-topbar.dark {
-    background-color: #444;
+    background-color: #444; /* Dark top bar for dark mode */
 }
 
 .Dashboard-logo {
@@ -58,8 +59,8 @@ body.Dashboard.dark {
 
 .Dashboard-search-container input.dark {
     border-color: #ffffff;
-    background-color: #ffffff;
-    color: #f4f4f4;
+    background-color: #ffffff; /* Light background in dark mode */
+    color: #202124; /* Dark text in dark mode */
 }
 
 @media screen and (max-width: 1024px) {
@@ -102,7 +103,7 @@ body.Dashboard.dark {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: #d8a97d;
+    background-color: #d8d8d8; /* Light gray for icons */
     position: relative;
 }
 
@@ -118,7 +119,7 @@ body.Dashboard.dark {
 .Dashboard-hamburger-menu div {
     width: 25px;
     height: 3px;
-    background-color: black;
+    background-color: black; /* Hamburger icon color */
 }
 
 .Dashboard-dashboard {
@@ -130,7 +131,7 @@ body.Dashboard.dark {
 
 .Dashboard-sidebar {
     width: 250px;
-    background-color: #d8a97d;
+    background-color: #ffffff; /* White sidebar */
     padding: 20px;
     flex-shrink: 0;
     display: flex;
@@ -140,11 +141,11 @@ body.Dashboard.dark {
 }
 
 .Dashboard-sidebar.light {
-    background-color: #d8a97d;
+    background-color: #ffffff; /* White sidebar */
 }
 
 .Dashboard-sidebar.dark {
-    background-color: #444;
+    background-color: #444; /* Dark sidebar for dark mode */
 }
 
 .Dashboard-sidebar ul {
@@ -160,17 +161,31 @@ body.Dashboard.dark {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #333;
+    color: #202124; /* Dark text for links */
     padding: 10px;
     position: relative;
     margin-left: 25px;
     transition: color 0.3s;
+    box-shadow: 7px 2px 8px #636363ed;
 }
 
+
+/* --------------------------------------------------------------------------------------- */
 .Dashboard-sidebar ul li a.dark {
-    color: #f4f4f4;
+color: #000000; /* Light text color for links in dark mode */
+background-color: #ffffff; /* Darker background for links in dark mode */
+border-radius: 5px; /* Add some rounding for aesthetics */
+padding: 10px; /* Optional: Add padding for better click area */
+transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
+.Dashboard-sidebar ul li a.dark:hover {
+background-color: #e8e8e8; /* Slightly lighter background on hover */
+color: #FF5722; /* White text color on hover */
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
 .Dashboard-icon-small {
     font-size: 20px; 
     margin-right: 10px; 
@@ -182,42 +197,55 @@ body.Dashboard.dark {
     margin-left: 10px;
 }
 
+
+
+
+
+
 .Dashboard-dropdown a {
-    background-color: #f4f4f4;
+    background-color: #dbdbdb00; /* Light background for dropdowns */
     padding: 10px;
     border-radius: 10px;
-    color: #333;
+    color: #202124; /* Dark text */
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .Dashboard-dropdown a:hover {
-    background-color: #ffffff;
+    background-color:  #e8e8e8; /* Light gray on hover */
 }
+/* .Dashboard-dropdown a:hover {
+    background-color: #a8c7fa; 
+} */
 
 .Dashboard-arrow {
     margin-left: auto;
-    display: inline-block;
-    width: 14px; 
-    height: 14px;
-    border-right: 2.5px solid black;
-    border-bottom: 2.5px solid black;
-    transform: rotate(315deg); 
-    transition: transform 0.3s ease;
+display: inline-block;
+width: 14px; 
+height: 14px;
+border-right: 2.5px solid black; /* Default arrow color */
+border-bottom: 2.5px solid black; /* Default arrow color */
+transform: rotate(315deg); 
+transition: transform 0.3s ease, border-color 0.3s; /* Add transition for border color */
 }
 
 .Dashboard-dropdown.active .Dashboard-arrow {
     transform: rotate(135deg);
 }
 
+.Dashboard-dropdown.active .Dashboard-arrow {
+transform: rotate(135deg); /* Arrow rotates when active */
+border-color: #FF5722; /* Change arrow color to #FF5722 when active */
+}
+
 .Dashboard-main-content {
     flex: 1;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light background for main content */
     padding: 20px;
 }
 
 .Dashboard-logout-button {
-    background-color: #e74c3c;
+    background-color: #ff3434; /* Gmail red */
     color: white;
     border: none;
     padding: 10px;
@@ -227,6 +255,11 @@ body.Dashboard.dark {
     margin-top: 20px; 
     margin-bottom: 30px;
     font-size: 20px;
+}
+
+.Dashboard-logout-button:hover {
+background-color: #a70909; /* Darker red on hover */
+transform: scale(1.05); /* Slightly increase size */
 }
 
 .Dashboard-sidebar.active {
@@ -253,7 +286,7 @@ body.Dashboard.dark {
         width: 200px;
         z-index: 100;
         height: 100%;
-        background-color: #d8a97d;
+        background-color: #ffffff; /* White sidebar */
     }
 
     .Dashboard-hamburger-menu {
@@ -283,21 +316,20 @@ body.Dashboard.dark {
         width: 20px;
         height: 2px;
     }
-
 }
 
-/* profile design css start */
+/* Profile design CSS start */
 .Dashboard-profile-card-section {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light background */
     height: 100%;
 }
 
 .Dashboard-profile-card {
-    background-color: white;
+    background-color: white; /* White card background */
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 180px;
@@ -319,17 +351,16 @@ body.Dashboard.dark {
 
 .Dashboard-profile-card .Dashboard-count {
     font-size: 24px;
-    color: #1a53ff;
+    color: #1a73e8; /* Gmail blue */
     font-weight: bold;
-    background-color: #86c8ff;
+    background-color: #e8f0fe; /* Light blue background */
     border-radius: 10px;
     width: 60px;
 }
 
-
 .Dashboard-profile-card .Dashboard-role {
     font-size: 16px;
-    color: #333;
+    color: #333; /* Dark text for role */
     margin-top: 10px;
 }
 
@@ -356,7 +387,50 @@ body.Dashboard.dark {
 }
 
 .Dashboard-profile-card:hover {
-    background-color: rgba(0, 0, 0, 0.1); 
-    border-color: rgba(0, 0, 0, 0.2); 
+    background-color: rgba(0, 0, 0, 0.05); /* Slightly darker on hover */
+    border-color: rgba(0, 0, 0, 0.1); 
 }
-/* profile design css end */
+/* Profile design CSS end */
+
+
+
+.Dashboard-dropdown.active a {
+background-color: #ffffff; /* Light gray background for the active dropdown */
+color: #007bff; /* Change text color to match theme */
+}
+
+.Dashboard-sidebar ul li a {
+display: flex;
+align-items: center;
+text-decoration: none;
+color: #202124; /* Dark text for links */
+position: relative;
+margin-left: 25px;
+transition: color 0.3s;
+box-shadow: none; /* Remove box shadow */
+padding: 0; /* Remove padding */
+border-bottom: 1px solid #ccc; /* Add 1px border at the bottom */
+}
+
+
+
+
+.Dashboard-sidebar ul li a {
+display: flex;
+align-items: center;
+text-decoration: none;
+color: #333; /* Updated color */
+padding: 12px 15px; /* Updated padding */
+position: relative;
+transition: color 0.3s, padding-left 0.3s; /* Added transition */
+border-bottom: 2px solid #e1ddddad; /* Updated border */
+border-radius: 10px; /* Added border-radius */
+}
+
+.Dashboard-sidebar ul li a.selected {
+box-shadow: 0 0 10px rgba(0, 123, 255, 0.8); /* Glow effect */
+background-color:rgb(255 255 255 / 10%); /* Light background for selected */
+color: #007bff; /* Text color for selected */
+}
+
+
