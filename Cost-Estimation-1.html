@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property and Room Selection</title>
+    <link rel="stylesheet" href="CSS/Cost-Estimation-1.css">
+</head>
+
+<body>
+    <div class="cost-estimation-property-selection-container">
+        <h2 class="cost-estimation-h2">Step 2: Select your Property Type</h2>
+        <div class="cost-estimation-property-options">
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')"
+                aria-label="Select Flat">
+                <img src="img/house.png" alt="Flat">
+                <span>Flat</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')"
+                aria-label="Select Villa">
+                <img src="img/modern-house.png" alt="Villa">
+                <span>Villa</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')"
+                aria-label="Select Apartment">
+                <img src="img/apartment (1).png" alt="Apartment">
+                <span>Apartment</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')"
+                aria-label="Select Individual House">
+                <img src="img/house.png" alt="Individual House">
+                <span>Individual House</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'office')"
+                aria-label="Select Office">
+                <img src="img/workplace.png" alt="Office">
+                <span>Office</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cost-estimation-project-type-container">
+        <h3 class="cost-estimation-h3">Select Project Type</h3>
+        <div class="cost-estimation-project-options">
+            <div class="cost-estimation-project-option" onclick="showDynamicOptions('Interior', this)"
+                aria-label="Select Interior">
+                <img src="img/staircase.png" alt="Interior">
+                <span>Interior</span>
+            </div>
+            <div class="cost-estimation-project-option" onclick="showDynamicOptions('Construction', this)"
+                aria-label="Select Construction">
+                <img src="img/hook.png" alt="Construction">
+                <span>Construction</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cost-estimation-options-container" id="dynamic-options-container">
+        <!-- Dynamic options will be inserted here -->
+    </div>
+
+    <div class="room-selection-container" id="room-selection-container">
+        <h3>Select Rooms</h3>
+        <div class="room-options" id="room-options">
+            <!-- Room options will be populated here -->
+        </div>
+        <!-- <button class="continue-button" onclick="continueSelection()">Continue</button> -->
+        <a href="Cost-Estimation-2.html" class="continue-button">Continue</a>
+
+    </div>
+</body>
+<script src="JS/Cost-Estimation-1.js"></script>
+
+</html>

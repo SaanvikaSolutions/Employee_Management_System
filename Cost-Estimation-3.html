@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Selection</title>
+    <link rel="stylesheet" href="CSS/Cost-Estimation-3.css">
+</head>
+
+<body>
+
+    <div class="Final-room-selection-container">
+        <div class="Final-room-selection-heading">Choose Your Room Design</div>
+        <div class="Final-room-options">
+            <div class="Final-room-option" onclick="toggleSelection(this, 'kitchen')">
+                <img src="img/kitchen.png" alt="Kitchen">
+                <span>Kitchen</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'livingRoom')">
+                <img src="img/living-room.png" alt="Living Room">
+                <span>Living Room</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'bedroom')">
+                <img src="img/bedroom.png" alt="Bedroom">
+                <span>Bedroom</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'bathroom')">
+                <img src="img/bathroom.png" alt="Bathroom">
+                <span>Bathroom</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'studyRoom')">
+                <img src="img/study-room.png" alt="Study Room">
+                <span>Study Room</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'homeTheater')">
+                <img src="img/home-theater.png" alt="Home Theater">
+                <span>Home Theater</span>
+            </div>
+        </div>
+
+        <!-- Final Room Size Options -->
+        <div id="Final-roomSizeOptions" class="Final-room-size-container">
+            <div class="Final-room-size-heading">Room Size Options</div>
+            <div class="Final-room-size-buttons">
+                <div class="Final-room-size-button" onclick="selectRoomSize(this, 'Basic')">
+                    <img src="img/icon-basic.png" alt="Basic" class="Final-room-size-icon">
+                    Basic
+                </div>
+                <div class="Final-room-size-button" onclick="selectRoomSize(this, 'Premium')">
+                    <img src="img/icon-premium.png" alt="Premium" class="Final-room-size-icon">
+                    Premium
+                </div>
+                <div class="Final-room-size-button" onclick="selectRoomSize(this, 'Luxury')">
+                    <img src="img/icon-luxury.png" alt="Luxury" class="Final-room-size-icon">
+                    Luxury
+                </div>
+            </div>
+        </div>
+
+        <div class="Final-additional-options" id="Final-additionalOptions">
+            <div class="Final-EMS-additional-options" id="Final-additionalContent"></div>
+        </div>
+
+        <div class="Final-buttons-container">
+            <button class="Final-customize-button">Customize Your Design</button>
+            <button class="Final-generate-quotation-button" onclick="generateQuotation()">Generate Quotation</button>
+        </div>
+    </div>
+</body>
+<script src="JS/Cost-Estimation-3.js"></script>
+
+</html>
