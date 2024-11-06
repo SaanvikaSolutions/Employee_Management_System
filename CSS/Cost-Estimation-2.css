@@ -1,292 +1,285 @@
-
-    /* Container Styling */
-    .EMS-room-selection-container {
-        width: 80%;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Heading Styling */
-    h2 {
-        font-size: 24px;
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    /* Room Selection Grid */
-    .EMS-room-options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    /* Room Option Styling */
-    .EMS-room-option {
-        display: flex;
-        align-items: center;
-        background-color: #ffffff;
-        padding: 10px;
-        border-radius: 6px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
-        color: #333;
-        transition: background-color 0.3s, box-shadow 0.3s;
-        cursor: pointer;
-    }
-
-    .EMS-room-option.selected {
-        box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
-    }
-
-    .EMS-room-option img {
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
-    }
-
-    /* Additional Options Section Styling */
-    .additional-options {
-        display: none;
-        /* Initially hidden */
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .EMS-additional-options {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .EMS-additional-option {
-        display: flex;
-        align-items: center;
-        background-color: #ffffff;
-        padding: 10px;
-        border-radius: 6px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        font-size: 14px;
-        color: #333;
-        cursor: pointer;
-        transition: background-color 0.3s, box-shadow 0.3s;
-    }
-
-    .EMS-additional-option.selected {
-        background-color: #007bff;
-        color: white;
-        box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
-        border: 1px solid #ffffff;
-    }
-
-    .EMS-additional-option img {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-    /* Room Size Button Styling */
-    .room-size-container {
-        display: none;
-        /* Initially hidden */
-        margin-top: 20px;
-        width: 100%;
-        background-color: #ffffff;
-        padding: 15px;
-        border-radius: 6px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .room-size-container h3 {
-        margin-bottom: 15px;
-        font-size: 20px;
-        color: #333;
-        text-align: center;
-    }
-
-    .room-size-buttons {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .room-size-button {
-        padding: 10px;
-        background-color: #e0e0e0;
-        color: #333;
-        border: 2px solid #ccc;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-        transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-        font-size: 14px;
-    }
-
-    .room-size-button:hover {
-        background-color: #d1d1d1;
-    }
-
-    .room-size-button.selected {
-        background-color: #007bff;
-        color: white;
-        border-color: #0056b3;
-    }
-
-    /* Button Styling */
-    .EMS-customize-button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        font-size: 14px;
-        font-weight: 600;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin-top: 20px;
-        /* Add space above the button */
-    }
-
-    .EMS-customize-button:hover {
-        background-color: #0056b3;
-    }
-
-    /* Add styles for the width & height input form */
-    #dimensionCalculator {
-        display: none;
-        /* Initially hidden */
-        width: 100%;
-        margin-top: 20px;
-        padding: 15px;
-        background-color: #fff;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-
-    #dimensionCalculator input {
-        padding: 8px;
-        margin-top: 5px;
-        width: 100%;
-        max-width: 200px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    #dimensionCalculator label {
-        font-size: 14px;
-        color: #333;
-        display: inline-block;
-        margin-top: 10px;
-    }
-
-    /* Align width and height side by side */
-    #dimensionCalculator .inputs-container {
-        display: flex;
-        /* justify-content: space-between; */
-        justify-content: center;
-        gap: 10px;
-    }
-
-    #dimensionCalculator .inputs-container input {
-        width: 48%;
-        /* Make inputs take 48% of the width, leaving some gap */
-    }
-
-    #dimensionCalculator .total-area-box {
-        margin-top: 15px;
-        padding: 10px;
-        background-color: #f0f8ff;
-        border-radius: 6px;
-        border: 1px solid #007bff;
-        font-size: 16px;
-        font-weight: bold;
-        color: #007bff;
-    }
-
-
-    
-
-    /* Mobile-specific adjustments */
-    @media (max-width: 437px) {
-
-        .EMS-room-options,
-        .EMS-additional-options {
-            grid-template-columns: 1fr;
-            /* Single column layout */
+        /* Container Styling */
+        .EMS-room-selection-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .EMS-room-option,
-        .EMS-additional-option {
-            padding: 15px;
-            /* Increase padding for better touch targets */
+        /* Heading Styling */
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
         }
 
-        .EMS-room-option img,
-        .EMS-additional-option img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .EMS-customize-button {
+        /* Room Selection Grid */
+        .EMS-room-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
             width: 100%;
-            /* Full-width button */
-            padding: 12px;
-            /* Increase padding for better touch targets */
-            font-size: 16px;
-            /* Larger text for better readability */
+            margin-bottom: 20px;
         }
-    }
+
+        /* Room Option Styling */
+        .EMS-room-option {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .EMS-room-option.selected {
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .EMS-room-option img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        /* Additional Options Section Styling */
+        .additional-options {
+            display: none;
+            /* Initially hidden */
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .EMS-additional-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .EMS-additional-option {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .EMS-additional-option.selected {
+            background-color: #f5f5f5;
+            color: #000000;
+            border-color: #ffffff;
+            box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
+            border: 1px solid #ffffff;
+        }
+
+        .EMS-additional-option img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Room Size Button Styling */
+        .room-size-container {
+            display: none;
+            /* Initially hidden */
+            margin-top: 20px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .room-size-container h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .room-size-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .room-size-button {
+            padding: 10px;
+            background-color: #e0e0e0;
+            color: #333;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+            font-size: 14px;
+        }
+
+        .room-size-button:hover {
+            background-color: #d1d1d1;
+        }
+
+        .room-size-button.selected {
+            background-color: #f5f5f5;
+            color: #000000;
+            border-color: #ffffff;
+            box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
+            border: 1px solid #ffffff;
+        }
+        
+
+        /* Button Styling */
+        .EMS-customize-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            /* Add space above the button */
+        }
+
+        .EMS-customize-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add styles for the width & height input form */
+        #dimensionCalculator {
+            display: none;
+            /* Initially hidden */
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #dimensionCalculator input {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #dimensionCalculator label {
+            font-size: 14px;
+            color: #333;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Align width and height side by side */
+        #dimensionCalculator .inputs-container {
+            display: flex;
+            /* justify-content: space-between; */
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #dimensionCalculator .inputs-container input {
+            width: 48%;
+            /* Make inputs take 48% of the width, leaving some gap */
+        }
+
+        #dimensionCalculator .total-area-box {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 6px;
+            border: 1px solid #007bff;
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+        }
 
 
-    .room-size-container {
-margin: 20px 0;
+        
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 437px) {
+
+            .EMS-room-options,
+            .EMS-additional-options {
+                grid-template-columns: 1fr;
+                /* Single column layout */
+            }
+
+            .EMS-room-option,
+            .EMS-additional-option {
+                padding: 15px;
+                /* Increase padding for better touch targets */
+            }
+
+            .EMS-room-option img,
+            .EMS-additional-option img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .EMS-customize-button {
+                width: 100%;
+                /* Full-width button */
+                padding: 12px;
+                /* Increase padding for better touch targets */
+                font-size: 16px;
+                /* Larger text for better readability */
+            }
+        }
+
+
+        .room-size-container {
+    margin: 20px 0;
 }
 
 .room-size-buttons {
-display: flex;
-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .room-size-button {
-display: flex;
-align-items: center;
-padding: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s;
-width: 30%; /* Adjust width based on your layout */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 30%; /* Adjust width based on your layout */
 }
 
 .room-size-button:hover {
-background-color: #f0f0f0; /* Light background on hover */
+    background-color: #f0f0f0; /* Light background on hover */
 }
 
 .room-size-icon {
-margin-right: 8px; /* Space between icon and text */
-width: 24px; /* Adjust icon size */
-height: 24px; /* Adjust icon size */
+    margin-right: 8px; /* Space between icon and text */
+    width: 24px; /* Adjust icon size */
+    height: 24px; /* Adjust icon size */
 }
-
-
-
-
-/* ----------------------------- */
-
-.EMS-continue-link {
-    text-decoration: none;
-}
-
 
 /* Container for both buttons */
 .button-container {
@@ -329,4 +322,42 @@ height: 24px; /* Adjust icon size */
 
 .EMS-continue-button:hover {
     background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+/* Container style for the button */
+.ems-button-container {
+    text-align: center;  /* Center the button within the container */
+}
+
+/* Back button style */
+.ems-back-btn {
+    padding: 10px 20px;  /* Padding around the text */
+    font-size: 16px;  /* Font size */
+    background-color: #e0e0e0;  /* Light grey background */
+    border: 1px solid #ccc;  /* Subtle border */
+    color: #333;  /* Text color */
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;  /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, border 0.3s ease;  /* Smooth transition */
+}
+
+/* Hover effect */
+.ems-back-btn:hover {
+    background-color: #d0d0d0;  /* Slightly darker grey on hover */
+    border-color: #bbb;  /* Darker border color on hover */
+}
+
+.ems-back-button-container {
+    text-align: left; /* Align button to the left */
+    width: 100%; /* Ensure it takes the full width */
+    padding-left: 20px; /* Optional: Add some left padding to create space from the edge */
+    margin-bottom: 20px; /* Optional: Add some space below the button */
+}
+
+.ems-back-link {
+    text-decoration: none;  /* Remove underline */
+    display: inline-block;  /* Ensure the button remains inline */
 }

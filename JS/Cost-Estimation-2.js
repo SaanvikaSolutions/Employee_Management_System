@@ -2,7 +2,7 @@
 const additionalOptionsData = {
  'fullDesign': [
      { text: "• Complete Interior & Exterior Package", img: "img/design-consultation.png" },
-     { text: "• 3D Visualizations and Design Proposals", img: "img/material-selections.png" },
+     { text: "• 3D Visualizations and Design Proposals", img: "img/planproposal.png" },
      { text: "• Space Planning and Zoning", img: "img/furniture-layout.png" },
      { text: "• Structural Modifications", img: "img/design-consultation.png" },
      { text: "• Color and Material Coordination", img: "img/material-selections.png" },
@@ -64,20 +64,20 @@ const additionalOptionsData = {
      { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/painting-services.png" }
  ],
  'onlyInterior': [
-     { text: "• Basic Interior Finishing", img: "img/room-layout.png" },
-     { text: "• Custom Interior Layout", img: "img/lighting-design.png" },
-     { text: "• Wall and Partition Painting", img: "img/color-schemes.png" },
-     { text: "• Customized Lighting Design", img: "img/furniture-selection.png" },
-     { text: "• Furniture Arrangement Guidance", img: "img/accessories.png" },
-     { text: "• Space Optimization Solutions", img: "img/window-treatments.png" }
+     { text: " Basic Interior Finishing", img: "img/basic interior finishing.png" },
+     { text: " Custom Interior Layout", img: "img/Custom Interior Layout.png" },
+     { text: "Wall and Partition Painting", img: "img/Customized Lighting Design.png" },
+     { text: " Customized Lighting Design", img: "img/Lighting Design.png" },
+     { text: " Furniture Arrangement Guidance", img: "img/Furniture Arrangement Guidance.png" },
+     { text: " Space Optimization Solutions", img: "img/Space Optimization.png" }
  ],
  'onlyExterior': [
-     { text: "• Exterior Paint (Weatherproof Options)", img: "img/exterior-paint.png" },
-     { text: "• Wall Cladding (Stone, Tile, Brick Veneer)", img: "img/wall-cladding.png" },
-     { text: "• Landscaping (Lawn, Garden Design)", img: "img/landscaping.png" },
-     { text: "• Driveway and Pathway Layout", img: "img/driveway-layout.png" },
-     { text: "• Outdoor Lighting Fixtures", img: "img/outdoor-lighting.png" },
-     { text: "• Fencing and Gate Design", img: "img/fencing.png" }
+     { text: " Exterior Paint (Weatherproof Options)", img: "img/Exterior Paint (Weatherproof Options).png" },
+     { text: " Wall Cladding (Stone, Tile, Brick Veneer)", img: "img/Wall Cladding.png" },
+     { text: " Landscaping (Lawn, Garden Design)", img: "img/Landscaping.png" },
+     { text: " Driveway and Pathway Layout", img: "img/driveway.png" },
+     { text: " Outdoor Lighting Fixtures", img: "img/wall-lamp.png" },
+     { text: " Fencing and Gate Design", img: "img/gate.png" }
  ]
 };
 
