@@ -1,7 +1,8 @@
 <?php
+include_once('./Dashboard.php');
 include('./backend/includes/dbconnect.php')
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +12,7 @@ include('./backend/includes/dbconnect.php')
     <link rel="stylesheet" href="CSS/CreateLead.css">
 </head>
 
-<body>
+<body> -->
 
     <form class="Create-Lead-lead-form" Action="" method="POST">
         <h2>Create Lead</h2>

@@ -199,10 +199,6 @@ color: #FF5722; /* White text color on hover */
 }
 
 
-
-
-
-
 .Dashboard-dropdown a {
     background-color: #dbdbdb00; /* Light background for dropdowns */
     padding: 10px;
@@ -413,9 +409,6 @@ box-shadow: none; /* Remove box shadow */
 padding: 0; /* Remove padding */
 border-bottom: 1px solid #ccc; /* Add 1px border at the bottom */
 }
-
-
-
 
 .Dashboard-sidebar ul li a {
 display: flex;
