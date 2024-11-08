@@ -1,3 +1,9 @@
+.Total-cost-estimation-{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .cost-estimation-property-selection-container,
 .cost-estimation-area-customization-container,
 .cost-estimation-project-type-container,
@@ -236,13 +242,31 @@ h2 {
 }
 
 /* Room Selection Grid */
-.EMS-room-options {
+/* .EMS-room-options {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     width: 100%;
     margin-bottom: 20px;
+} */
+
+
+.EMS-room-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 20px;
 }
+
+.EMS-room-options > div {
+    flex: 1 1 calc(50% - 10px); /* Makes each item take up 50% of the width, minus the gap */
+    box-sizing: border-box;
+}
+
+
+
+/* ------------------------- */
 
 /* Room Option Styling */
 .EMS-room-option {
@@ -256,6 +280,7 @@ h2 {
     color: #333;
     transition: background-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .EMS-room-option.selected {
