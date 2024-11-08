@@ -1,4 +1,5 @@
 <?php
+include_once('./Dashboard.php');
 include('./backend/includes/dbconnect.php')
 ?>
 <!DOCTYPE html>

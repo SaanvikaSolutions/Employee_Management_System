@@ -1,149 +1,147 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f9fc;
+    color: #333;
+    margin: 0;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            /* background: linear-gradient(135deg, #e0f7fa, #80deea); */
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #333;
-        }
+/* Create a wrapper for centering */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
 
-        .View-Employee-container {
-            width: 90%;
-            max-width: 900px;
-            background-color: #ffffff;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-        }
+.View-Employee-container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
 
-        .View-Employee-container:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            transform: translateY(-5px);
-        }
+.View-Employee-container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
 
-        .View-Employee-employee-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            text-align: center;
-            flex-direction: column;
-        }
+.View-Employee-employee-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+    flex-direction: column;
+}
 
-        .View-Employee-employee-header i {
-            font-size: 80px;
-            color: #00796b;
-            margin-bottom: 10px;
-            background-color: #e0f2f1;
-            padding: 20px;
-            border-radius: 50%;
-            transition: background-color 0.4s ease;
-        }
+.View-Employee-employee-header i {
+    font-size: 80px;
+    color: #00796b;
+    margin-bottom: 10px;
+    background-color: #e0f2f1;
+    padding: 20px;
+    border-radius: 50%;
+    transition: background-color 0.4s ease;
+}
 
-        .View-Employee-employee-header:hover i {
-            background-color: #b2dfdb;
-        }
+.View-Employee-employee-header:hover i {
+    background-color: #b2dfdb;
+}
 
-        .View-Employee-employee-header .name {
-            font-size: 32px;
-            font-weight: 600;
-            color: #004d40;
-        }
+.View-Employee-employee-header .name {
+    font-size: 32px;
+    font-weight: 600;
+    color: #004d40;
+}
 
-        .View-Employee-Designation-name {
-            font-size: 20px;
-            color: #00796b;
-            margin-top: 5px;
-        }
+.View-Employee-Designation-name {
+    font-size: 20px;
+    color: #00796b;
+    margin-top: 5px;
+}
 
-        .View-Employee-employee-details {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
+.View-Employee-employee-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
 
-        .View-Employee-detail {
-            display: flex;
-            flex-direction: column;
-        }
+.View-Employee-detail {
+    display: flex;
+    flex-direction: column;
+}
 
-        .View-Employee-detail label {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 6px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-        }
+.View-Employee-detail label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
 
-        .View-Employee-detail input {
-            border: none;
-            padding: 14px 18px;
-            background-color: #f7f9fc;
-            border-radius: 10px;
-            font-size: 16px;
-            color: #333;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-/* 
-        .View-Employee-detail input.full-width {
-            grid-column: span 3; 
-            height: 60px;
-        } */
+.View-Employee-detail input {
+    border: none;
+    padding: 14px 18px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
 
-        .View-Employee-buttons {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 40px;
-        }
+.View-Employee-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
 
-        .View-Employee-buttons button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-left: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+.View-Employee-buttons button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-        .View-Employee-cancel-btn {
-            background-color: #ff5050;
-            color: #ffffff;
-            font-weight: 600;
-        }
+.View-Employee-cancel-btn {
+    background-color: #ff5050;
+    color: #ffffff;
+    font-weight: 600;
+}
 
-        .View-Employee-cancel-btn:hover {
-            background-color: #c0c0c0;
-            transform: translateY(-3px);
-        }
+.View-Employee-cancel-btn:hover {
+    background-color: #c0c0c0;
+    transform: translateY(-3px);
+}
 
-        .View-Employee-edit-btn {
-            background-color: #00796b;
-            color: #fff;
-            font-weight: 600;
-        }
+.View-Employee-edit-btn {
+    background-color: #00796b;
+    color: #fff;
+    font-weight: 600;
+}
 
-        .View-Employee-edit-btn:hover {
-            background-color: #004d40;
-            transform: translateY(-3px);
-        }
+.View-Employee-edit-btn:hover {
+    background-color: #004d40;
+    transform: translateY(-3px);
+}
 
-        @media (max-width: 768px) {
-            .View-Employee-employee-details {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+@media (max-width: 768px) {
+    .View-Employee-employee-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-        @media (max-width: 550px) {
-            .View-Employee-employee-details {
-                grid-template-columns: 1fr;
-            }
-        }
-   
+@media (max-width: 550px) {
+    .View-Employee-employee-details {
+        grid-template-columns: 1fr;
+    }
+}

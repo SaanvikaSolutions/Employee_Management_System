@@ -59,8 +59,14 @@ if (isset($_GET['employeeType'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Employee Profile</title>
     <link rel="stylesheet" href="CSS/CreateEmployee.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 <body>
+
+<?php
+include('./Dashboard.php');
+?>
+
 
 <form class="createEmployee-employee-profile-form" action ="" method = "POST" >
     <h2>Create Employee Profile</h2>
@@ -235,7 +241,7 @@ if (isset($_POST['submit'])) {
     $stmt->close();
 }
 ?>
-
 <script src="JS/CreateEmployee.js"></script>
+<script src="JS/Dashboard.js"></script>
 </body>
 </html>

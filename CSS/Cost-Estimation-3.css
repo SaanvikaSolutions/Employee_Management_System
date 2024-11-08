@@ -81,8 +81,8 @@
 }
 
 .Final-EMS-additional-option.selected {
-    background-color: #007bff;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
     border: 1px solid #ffffff;
 }
@@ -177,4 +177,37 @@
     box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
     border: 1px solid #ffffff;
     background-color: #f0f8ff;
+}
+
+
+
+
+/* ----------------- */
+
+.final-back-button-container {
+    text-align: left;  /* Align button to the left */
+    width: 100%;
+    padding-left: 20px;  /* Optional: Space from the left edge */
+    margin-bottom: 20px; /* Optional: Space below the button */
+}
+
+.final-back-link {
+    text-decoration: none;  /* Remove underline from the link */
+    display: inline-block;  /* Keep the button inline */
+}
+
+.final-back-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e0e0e0; /* Red color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.final-back-btn:hover {
+    background-color: #007bff66; 
+    /* background-color: #c82333;  */
 }
