@@ -2,7 +2,7 @@
 // Include the database connection file
 include ('./backend/includes/dbconnect.php');
 
-// Check if 'employeeType' is set in the request
+// Check if 'employeeType' is set in the request (for AJAX)
 if (isset($_GET['employeeType'])) {
     // Get the employeeType from the AJAX request
     $employeeType = $_GET['employeeType'];
@@ -10,41 +10,45 @@ if (isset($_GET['employeeType'])) {
     // Initialize a variable to hold the options
     $options = '';
 
-    // Fetch appropriate employee options based on employeeType
+    // Prepare appropriate employee options based on employeeType
+    $stmt = null;
     switch ($employeeType) {
         case 'ManagingDirector':
-            $query = "SELECT employee_id , name FROM employees WHERE employee_type = 'ManagingDirector'";
+            $stmt = $conn->prepare("SELECT employee_id , name FROM employees WHERE employee_type = ?");
+            $stmt->bind_param("s", $employeeType);
             break;
         case 'director':
-            $query = "SELECT employee_id , name FROM employees WHERE employee_type = 'Director'";
+            $employeeType = 'ManagingDirector';
+            $stmt = $conn->prepare("SELECT employee_id , name FROM employees WHERE employee_type = ?");
+            $stmt->bind_param("s", $employeeType);
             break;
         case 'manager':
-            $query = "SELECT employee_id , name FROM employees WHERE employee_type = 'Manager'";
+            $employeeType = 'Director';
+            $stmt = $conn->prepare("SELECT employee_id , name FROM employees WHERE employee_type = ?");
+            $stmt->bind_param("s", $employeeType);
             break;
         case 'employee':
-            $query = "SELECT employee_id , name FROM employees WHERE employee_type = 'Manager'";
+            $employeeType = 'Manager'; // Employees are assigned to managers
+            $stmt = $conn->prepare("SELECT employee_id , name FROM employees WHERE employee_type = ?");
+            $stmt->bind_param("s", $employeeType);
             break;
         default:
-            // If the employeeType doesn't match, return an empty options message
             echo '<option value="">Invalid employee type</option>';
             exit;
     }
 
-    // Execute the query and check for errors
-    if ($result = mysqli_query($conn, $query)) {
-        // Loop through the results and create options
-        while ($row = mysqli_fetch_assoc($result)) {
+    // Execute the query and fetch results
+    if ($stmt->execute()) {
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
             $options .= '<option value="'.$row['employee_id'].'">'.$row['name'].'</option>';
         }
-        // Output the options to be inserted into the dropdown
         echo $options;
     } else {
-        // If the query fails, output an error message
         echo '<option value="">Error retrieving options</option>';
     }
-} else {
-    // If 'employeeType' is not set, output an empty option
-    // echo '<option value="">No employee type provided</option>';
+    $stmt->close();
+    exit;
 }
 ?>
 
@@ -219,19 +223,18 @@ if (isset($_POST['submit'])) {
     $state = $_POST['state'];
     $country = $_POST['country'];
 
-    // Inserting into the database
-    $query = "INSERT INTO employees (employee_id, name, gender, dob, phone, alt_phone, email, hired_date, role_type, employee_type, assigned_to, department, address, city, postcode, state, country)
-              VALUES ('$emp_id', '$name', '$gender', '$dob', '$phno', '$altphno', '$email', '$hiredate', '$roletype', '$emptype', '$assignedto', '$department', '$address', '$city', '$postcode', '$state', '$country')";
+    // Prepared statement for inserting into the database
+    $stmt = $conn->prepare("INSERT INTO `employees`(`employee_id`, `name`, `gender`, `dob`, `phone`, `alt_phone`, `email`, `hired_date`, `role_type`, `employee_type`, `assigned_to`, `department`, `address`, `city`, `postcode`, `state`, `country`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssssssssssss", $emp_id, $name, $gender, $dob, $phno, $altphno, $email, $hiredate, $roletype, $emptype, $assignedto, $department, $address, $city, $postcode, $state, $country);
 
-    // Execute the query
-    if (mysqli_query($conn, $query)) {
+    if ($stmt->execute()) {
         echo "<script>alert('Employee profile created successfully!');</script>";
     } else {
-        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+        echo "<script>alert('Error: " . $stmt->error . "');</script>";
     }
+    $stmt->close();
 }
 ?>
-
 
 <script src="JS/CreateEmployee.js"></script>
 </body>
