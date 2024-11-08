@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,11 +7,12 @@
     <title>Employee Management System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/Dashboard.css">
+    <link rel="stylesheet" href="CSS/EmployeesTable.css">
 
 </head>
 
-<body class="Dashboard light">
-    <header class="Dashboard-topbar light">
+<body class="Dashboard light"> -->
+<header class="Dashboard-topbar light">
         <div class="Dashboard-hamburger-menu" onclick="toggleSidebar()">
             <div></div>
             <div></div>
@@ -96,7 +97,6 @@
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('WorkFlow-dropdown')">
                         <i class="fa-solid fa-sitemap Dashboard-icon-small"></i>Workflow
-                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="WorkFlow-dropdown" class="Dashboard-submenu">
                         <li><a href="#">Flow</a></li>
@@ -106,35 +106,7 @@
             </ul>
             <button class="Dashboard-logout-button">Logout</button>
         </nav>
-<!-- 
-        <main class="Dashboard-main-content">
-            <div class="Dashboard-content">
-               
-                <div class="Dashboard-profile-card-section">
 
-                    <a href="#" class="Dashboard-profile-card">
-                        <img src="IMG/Employee.png" alt="Director Icon">
-                        <div class="Dashboard-count">2</div>
-                        <div class="Dashboard-role">Directors</div>
-                    </a>
+        <!-- <div  class="master-table"> -->
 
-                    <a href="#" class="Dashboard-profile-card">
-                        <img src="IMG/Employee.png" alt="Director Icon">
-                        <div class="Dashboard-count">5</div>
-                        <div class="Dashboard-role">Managers</div>
-                    </a>
-
-                    <a href="#" class="Dashboard-profile-card">
-                        <img src="IMG/Employee.png" alt="Director Icon">
-                        <div class="Dashboard-count">30</div>
-                        <div class="Dashboard-role">Employees</div>
-                    </a>
-                </div>
-                
-            </div>
-        </main> -->
-    </div>
-</body>
-<script src="JS/Dashboard.js"></script>
-
-</html>
+ 

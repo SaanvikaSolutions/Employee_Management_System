@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property and Room Selection</title>
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        .cost-estimation-property-selection-container,
+        .cost-estimation-area-customization-container,
+        .cost-estimation-project-type-container,
+        .cost-estimation-options-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .cost-estimation-h2,
+        .cost-estimation-h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cost-estimation-project-options,
+        .cost-estimation-property-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cost-estimation-project-option,
+        .cost-estimation-property-option {
+            flex: 1 1 140px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .cost-estimation-project-option.selected,
+        .cost-estimation-property-option.selected,
+        .cost-estimation-option-button.selected {
+            box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
+            border: 1px solid #ffffff;
+        }
+
+        .cost-estimation-project-option:hover,
+        .cost-estimation-property-option:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .cost-estimation-project-option img,
+        .cost-estimation-property-option img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .cost-estimation-project-option span,
+        .cost-estimation-property-option span {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .cost-estimation-options-container {
+            display: none; /* Initially hidden */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cost-estimation-option-button {
+            padding: 10px 15px;
+            background-color: #2e3843;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cost-estimation-option-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        .room-selection-container {
+            display: none; /* Initially hidden */
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .room-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .room-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .room-option.selected {
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+            margin: 1px; /* 1px margin for selected boxes */
+        }
+
+        .room-option img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .plus-button,
+        .minus-button {
+            background-color: #5a6268;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 5px;
+        }
+
+        .plus-button:hover,
+        .minus-button:hover {
+            background-color: #495057;
+        }
+
+        .count {
+            margin-left: 10px;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .continue-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .continue-button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (min-width: 300px) and (max-width: 460px) {
+            .cost-estimation-h2,
+            .cost-estimation-h3 {
+                font-size: 16px;
+            }
+
+            .cost-estimation-project-option,
+            .cost-estimation-property-option {
+                flex: 1 1 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .room-options {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+            }
+
+            .room-option {
+                flex-direction: row; /* Align items in a row */
+                align-items: center; /* Center align items */
+            }
+
+            .room-option img {
+                margin-bottom: 0; /* No margin below image */
+            }
+        }
+
+        /* ------------------------  2nd code css------------------------------------------ */
+      /* Container Styling */
+      .EMS-room-selection-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Heading Styling */
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Room Selection Grid */
+        .EMS-room-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Room Option Styling */
+        .EMS-room-option {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .EMS-room-option.selected {
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .EMS-room-option img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+     
+        .additional-options {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .EMS-additional-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .EMS-additional-option {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .EMS-additional-option.selected {
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
+            border: 1px solid #ffffff;
+        }
+
+        .EMS-additional-option img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Room Size Button Styling */
+        .room-size-container {
+            display: none;
+            /* Initially hidden */
+            margin-top: 20px;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .room-size-container h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .room-size-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .room-size-button {
+            padding: 10px;
+            background-color: #e0e0e0;
+            color: #333;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+            font-size: 14px;
+        }
+
+        .room-size-button:hover {
+            background-color: #d1d1d1;
+        }
+
+        .room-size-button.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #0056b3;
+        }
+
+        /* Button Styling */
+        .EMS-customize-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            /* Add space above the button */
+        }
+
+        .EMS-customize-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add styles for the width & height input form */
+        #dimensionCalculator {
+            display: none;
+            /* Initially hidden */
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #dimensionCalculator input {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+            max-width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #dimensionCalculator label {
+            font-size: 14px;
+            color: #333;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Align width and height side by side */
+        #dimensionCalculator .inputs-container {
+            display: flex;
+            /* justify-content: space-between; */
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #dimensionCalculator .inputs-container input {
+            width: 48%;
+            /* Make inputs take 48% of the width, leaving some gap */
+        }
+
+        #dimensionCalculator .total-area-box {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 6px;
+            border: 1px solid #007bff;
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+
+        
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 437px) {
+
+            .EMS-room-options,
+            .EMS-additional-options {
+                grid-template-columns: 1fr;
+                /* Single column layout */
+            }
+
+            .EMS-room-option,
+            .EMS-additional-option {
+                padding: 15px;
+                /* Increase padding for better touch targets */
+            }
+
+            .EMS-room-option img,
+            .EMS-additional-option img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .EMS-customize-button {
+                width: 100%;
+                /* Full-width button */
+                padding: 12px;
+                /* Increase padding for better touch targets */
+                font-size: 16px;
+                /* Larger text for better readability */
+            }
+        }
+
+
+        .room-size-container {
+    margin: 20px 0;
+}
+
+.room-size-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.room-size-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 30%; /* Adjust width based on your layout */
+}
+
+.room-size-button:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+}
+
+.room-size-icon {
+    margin-right: 8px; /* Space between icon and text */
+    width: 24px; /* Adjust icon size */
+    height: 24px; /* Adjust icon size */
+}
+
+/* Container for both buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Space between the buttons */
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Customize Button Styling */
+.EMS-customize-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color for the Customize button */
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.EMS-customize-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Continue Button Styling */
+.EMS-continue-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue color for the Continue button */
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.EMS-continue-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+/* Container style for the button */
+.ems-button-container {
+    text-align: center;  /* Center the button within the container */
+}
+
+/* Back button style */
+.ems-back-btn {
+    padding: 10px 20px;  /* Padding around the text */
+    font-size: 16px;  /* Font size */
+    background-color: #e0e0e0;  /* Light grey background */
+    border: 1px solid #ccc;  /* Subtle border */
+    color: #333;  /* Text color */
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;  /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, border 0.3s ease;  /* Smooth transition */
+}
+
+/* Hover effect */
+.ems-back-btn:hover {
+    background-color: #d0d0d0;  /* Slightly darker grey on hover */
+    border-color: #bbb;  /* Darker border color on hover */
+}
+
+.ems-back-button-container {
+    text-align: left; /* Align button to the left */
+    width: 100%; /* Ensure it takes the full width */
+    padding-left: 20px; /* Optional: Add some left padding to create space from the edge */
+    margin-bottom: 20px; /* Optional: Add some space below the button */
+}
+
+
+
+
+        /* ------------------------  3rd nd code css------------------------------------------ */
+
+
+
+         /* Final Room Selection Container */
+         .Final-room-selection-container {
+
+         
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Final Heading Styling */
+        .Final-room-selection-heading {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Final Room Selection Grid */
+        .Final-room-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Final Room Option Styling */
+        .Final-room-option {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .Final-room-option.selected {
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .Final-room-option img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        /* Final Additional Options Section Styling */
+        .Final-additional-options {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .Final-EMS-additional-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .Final-EMS-additional-option {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .Final-EMS-additional-option.selected {
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
+            border: 1px solid #ffffff;
+        }
+
+        .Final-EMS-additional-option img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Final Room Size Options Styling */
+        .Final-room-size-container {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .Final-room-size-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .Final-room-size-button {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .Final-room-size-button img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* Final Customize Button Styling */
+        .Final-customize-button,
+        .Final-generate-quotation-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .Final-customize-button:hover,
+        .Final-generate-quotation-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 437px) {
+            .Final-room-options,
+            .Final-EMS-additional-options {
+                grid-template-columns: 1fr;
+            }
+
+            .Final-room-option,
+            .Final-EMS-additional-option {
+                padding: 15px;
+            }
+
+            .Final-room-option img,
+            .Final-EMS-additional-option img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .Final-customize-button,
+            .Final-generate-quotation-button {
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+
+        /* Room Size Buttons Styling for Selected State */
+        .Final-room-size-button.selected {
+            box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
+            border: 1px solid #ffffff;
+            background-color: #f0f8ff;
+        }
+
+        .final-back-button-container {
+    text-align: left;  /* Align button to the left */
+    width: 100%;
+    padding-left: 20px;  /* Optional: Space from the left edge */
+    margin-bottom: 20px; /* Optional: Space below the button */
+}
+
+.final-back-link {
+    text-decoration: none;  /* Remove underline from the link */
+    display: inline-block;  /* Keep the button inline */
+}
+
+.final-back-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dc3545; /* Red color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.final-back-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="cost-estimation-property-selection-container">
+        <h2 class="cost-estimation-h2">Step 2: Select your Property Type</h2>
+        <div class="cost-estimation-property-options">
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')" aria-label="Select Flat">
+                <img src="img/house.png" alt="Flat">
+                <span>Flat</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')" aria-label="Select Villa">
+                <img src="img/modern-house.png" alt="Villa">
+                <span>Villa</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')" aria-label="Select Apartment">
+                <img src="img/apartment (1).png" alt="Apartment">
+                <span>Apartment</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')" aria-label="Select Individual House">
+                <img src="img/house.png" alt="Individual House">
+                <span>Individual House</span>
+            </div>
+            <div class="cost-estimation-property-option" onclick="selectProperty(this, 'office')" aria-label="Select Office">
+                <img src="img/workplace.png" alt="Office">
+                <span>Office</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cost-estimation-project-type-container">
+        <h3 class="cost-estimation-h3">Select Project Type</h3>
+        <div class="cost-estimation-project-options">
+            <div class="cost-estimation-project-option" onclick="showDynamicOptions('Interior', this)" aria-label="Select Interior">
+                <img src="img/staircase.png" alt="Interior">
+                <span>Interior</span>
+            </div>
+            <div class="cost-estimation-project-option" onclick="showDynamicOptions('Construction', this)" aria-label="Select Construction">
+                <img src="img/hook.png" alt="Construction">
+                <span>Construction</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cost-estimation-options-container" id="dynamic-options-container">
+        <!-- Dynamic options will be inserted here -->
+    </div>
+
+    <div class="room-selection-container" id="room-selection-container">
+        <h3>Select Rooms</h3>
+        <div class="room-options" id="room-options">
+            <!-- Room options will be populated here -->
+        </div>
+        <!-- <button class="continue-button" onclick="continueSelection()">Continue</button> -->
+        <!-- <a href="2NDcontinution.html" class="continue-button">Continue</a> -->
+
+    </div>
+
+
+    <!-- --------------------   2nd code ------------------------------- -->
+
+    <div class="EMS-room-selection-container">
+
+
+        <!-- <div class="ems-back-button-container">
+            <button class="ems-back-btn">Back</button>
+        </div> -->
+
+
+
+        <h2>Choose Your Design Service</h2>
+        <div class="EMS-room-options">
+            <div class="EMS-room-options">
+                <div class="EMS-room-option" onclick="selectOption(this, 'onlyInterior')">
+                    <img src="img/interior-design.png" alt="Only Interior">
+                    <span>Only Interior</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'onlyExterior')">
+                    <img src="img/house (1).png" alt="Only Exterior">
+                    <span>Only Exterior</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'fullDesign')">
+                    <img src="img/plan.png" alt="Full Design">
+                    <span>Full Design</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'woodwork')">
+                    <img src="img/saw.png" alt="Woodwork">
+                    <span>Woodwork</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'ceiling')">
+                    <img src="img/ceiling.png" alt="Ceiling">
+                    <span>Ceiling</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'flooring')">
+                    <img src="img/tile.png" alt="Flooring">
+                    <span>Flooring</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'furniture')">
+                    <img src="img/sofa (1).png" alt="Furniture">
+                    <span>Furniture</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'decor')">
+                    <img src="img/modern.png" alt="Decor">
+                    <span>Decor</span>
+                </div>
+                <div class="EMS-room-option" onclick="selectOption(this, 'designPainting')">
+                    <img src="img/canvas.png" alt="Design Painting">
+                    <span>Design Painting</span>
+                </div>
+            </div>
+            
+            <!-- Add other room options as needed -->
+        </div>
+        <div class="additional-options" id="additionalOptions">
+            <div class="EMS-additional-options" id="additionalContent"></div>
+        </div>
+
+        <div id="roomSizeOptions" class="room-size-container">
+            <h3>Room Size Options</h3>
+            <div class="room-size-buttons">
+                <div class="room-size-button" onclick="selectRoomSize(this, 'Basic')">
+                    <img src="img/icon-basic.png" alt="Basic" class="room-size-icon">
+                    Basic
+                </div>
+                <div class="room-size-button" onclick="selectRoomSize(this, 'Premium')">
+                    <img src="img/icon-premium.png" alt="Premium" class="room-size-icon">
+                    Premium
+                </div>
+                <div class="room-size-button" onclick="selectRoomSize(this, 'Luxury')">
+                    <img src="img/icon-luxury.png" alt="Luxury" class="room-size-icon">
+                    Luxury
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <div id="dimensionCalculator">
+            <h3>Enter Dimensions</h3>
+            <div class="inputs-container">
+                <div>
+                    <label for="widthInput">Width (ft):</label>
+                    <input type="number" id="widthInput" placeholder="Enter width in feet" onchange="calculateArea()">
+                </div>
+                <div>
+                    <label for="heightInput">Height (ft):</label>
+                    <input type="number" id="heightInput" placeholder="Enter height in feet" onchange="calculateArea()">
+                </div>
+            </div>
+
+            <div class="total-area-box">
+                <strong>Total Area (sq. ft.):</strong> <span id="totalArea">0</span>
+            </div>
+        </div>
+
+        <!-- <div class="button-container">
+            <button class="EMS-customize-button">Customize Your Design</button>
+            <button class="EMS-continue-button">Continue</button>
+        </div> -->
+    </div>
+
+    <!-- --------------------   3rd code ------------------------------- -->
+
+
+    
+    <div class="Final-room-selection-container">
+
+        <!-- <div class="final-back-button-container">
+            <a href="Cost-Estimation-1.html" class="final-back-link">
+                <button class="final-back-btn">Back</button>
+            </a>
+        </div> -->
+        
+        <div class="Final-room-selection-heading">Choose Your Room Design</div>
+        <div class="Final-room-options">
+            <div class="Final-room-option" onclick="toggleSelection(this, 'kitchen')">
+                <img src="img/kitchen.png" alt="Kitchen">
+                <span>Kitchen</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'livingRoom')">
+                <img src="img/living-room.png" alt="Living Room">
+                <span>Living Room</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'bedroom')">
+                <img src="img/bedroom.png" alt="Bedroom">
+                <span>Bedroom</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'bathroom')">
+                <img src="img/bathroom.png" alt="Bathroom">
+                <span>Bathroom</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'studyRoom')">
+                <img src="img/study-room.png" alt="Study Room">
+                <span>Study Room</span>
+            </div>
+            <div class="Final-room-option" onclick="toggleSelection(this, 'homeTheater')">
+                <img src="img/home-theater.png" alt="Home Theater">
+                <span>Home Theater</span>
+            </div>
+        </div>
+
+        <!-- Final Room Size Options -->
+        <div id="Final-roomSizeOptions" class="Final-room-size-container">
+            <div class="Final-room-size-heading">Room Size Options</div>
+            <div class="Final-room-size-buttons">
+                <div class="Final-room-size-button" onclick="selectRoomSize(this, 'Basic')">
+                    <img src="img/icon-basic.png" alt="Basic" class="Final-room-size-icon">
+                    Basic
+                </div>
+                <div class="Final-room-size-button" onclick="selectRoomSize(this, 'Premium')">
+                    <img src="img/icon-premium.png" alt="Premium" class="Final-room-size-icon">
+                    Premium
+                </div>
+                <div class="Final-room-size-button" onclick="selectRoomSize(this, 'Luxury')">
+                    <img src="img/icon-luxury.png" alt="Luxury" class="Final-room-size-icon">
+                    Luxury
+                </div>
+            </div>
+        </div>
+
+        <div class="Final-additional-options" id="Final-additionalOptions">
+            <div class="Final-EMS-additional-options" id="Final-additionalContent"></div>
+        </div>
+
+        <div class="Final-buttons-container">
+            <button class="Final-customize-button">Customize Your Design</button>
+            <button class="Final-generate-quotation-button" onclick="generateQuotation()">Generate Quotation</button>
+        </div>
+    </div>
+
+
+    <script>
+        function selectProperty(element, propertyType) {
+            // Highlight the selected property
+            document.querySelectorAll('.cost-estimation-property-option').forEach(option => option.classList.remove('selected'));
+            element.classList.add('selected');
+
+            // Display default options when a residential property type is selected
+            if (propertyType === 'residential') {
+                showDefaultOptions();
+            } else if (propertyType === 'office') {
+                showOfficeOptions();
+            }
+        }
+
+        function showDefaultOptions() {
+            const defaultOptions = ['1BHK', '2BHK', '3BHK', '4BHK', '5BHK', '6BHK', '7BHK', '8BHK', '9BHK'];
+            const container = document.getElementById('dynamic-options-container');
+            container.style.display = 'flex';
+            container.innerHTML = '';
+
+            defaultOptions.forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'cost-estimation-option-button';
+                button.innerText = option;
+                button.onclick = () => {
+                    toggleSelection(button); // Highlight selection
+                    toggleRoomSelection(option); // Show the room selection container
+                };
+                container.appendChild(button);
+            });
+        }
+
+        function showOfficeOptions() {
+            const officeOptions = ['Small Office', 'Medium Office', 'Large Office', 'Customize'];
+            const container = document.getElementById('dynamic-options-container');
+            container.style.display = 'flex';
+            container.innerHTML = '';
+
+            officeOptions.forEach(option => {
+                const button = document.createElement('button');
+                button.className = 'cost-estimation-option-button';
+                button.innerText = option;
+                button.onclick = () => {
+                    toggleSelection(button); // Highlight selection
+                    toggleRoomSelection(option); // Show the room selection container
+                };
+                container.appendChild(button);
+            });
+        }
+
+        function toggleSelection(button) {
+            // Remove selected class from all buttons and add to the clicked one
+            document.querySelectorAll('.cost-estimation-option-button').forEach(opt => opt.classList.remove('selected'));
+            button.classList.add('selected');
+        }
+
+        function showDynamicOptions(projectType, element) {
+            const container = document.getElementById('dynamic-options-container');
+            container.style.display = 'flex';
+            container.innerHTML = '';
+
+            // Highlight selected project type
+            document.querySelectorAll('.cost-estimation-project-option').forEach(option => option.classList.remove('selected'));
+            element.classList.add('selected');
+
+            const selectedProperty = document.querySelector('.cost-estimation-property-option.selected');
+            const propertyType = selectedProperty ? selectedProperty.getAttribute('aria-label') : '';
+
+            // Check for combinations of property type and project type
+            if (projectType === 'Interior') {
+                if (propertyType.includes('Flat') || propertyType.includes('Villa') || propertyType.includes('Apartment') || propertyType.includes('Individual House') || propertyType.includes('Office')) {
+                    showDefaultOptions(); // Show BHK options
+                }
+            } else if (projectType === 'Construction') {
+                // If the selected property type is Office, show office options
+                if (propertyType.includes('Office')) {
+                    showOfficeOptions();
+                } else {
+                    showDefaultOptions(); // Show BHK options for other properties
+                }
+            }
+        }
+
+        function toggleRoomSelection(option) {
+            const roomOptionsContainer = document.getElementById('room-options');
+            roomOptionsContainer.innerHTML = ''; // Clear previous options
+            document.getElementById('room-selection-container').style.display = 'flex';
+
+            let roomData = [];
+            
+            if (option.includes('Office')) {
+                // Specific rooms for office selections
+                roomData = [
+                    { name: 'Conference Room', img: 'img/meeting-room.png' },
+                    { name: 'Reception', img: 'img/reception.png' },
+                    { name: 'Work Area', img: 'img/office.png' },
+                    { name: 'Manager cabin', img: 'img/workplace.png' },
+                    { name: 'Pantry', img: 'img/pantry (1).png' },
+                    { name: 'Restroom', img: 'img/reception.png' },
+                ];
+            } else if (option.includes('BHK')) {
+                // Specific rooms for BHK selections
+                roomData = [
+                    { name: 'Bedroom', img: 'img/bedroom.png' },
+                    { name: 'Living room', img: 'img/living-room.png' },
+                    { name: 'Kitchen', img: 'img/kitchen.png' },
+                    { name: 'Balcony', img: 'img/balcony.png' },
+                    { name: 'Bathroom', img: 'img/bathroom.png' },
+                    { name: 'Pooja Room', img: 'img/agni-pooja.png' },
+                    { name: 'Dining Room', img: 'img/dining-table.png' },
+                    { name: 'Home Theater', img: 'img/home-theater.png' },
+                    { name: 'Study Room', img: 'img/study.png' },
+                    { name: 'Utility Room', img: 'img/utility-room.png' },
+                    { name: 'Office', img: 'img/meeting-room-home.png' },
+                ];
+            }
+
+            roomData.forEach(room => {
+                const roomDiv = createRoomOption(room.name, room.img);
+                roomOptionsContainer.appendChild(roomDiv);
+            });
+        }
+
+        function createRoomOption(roomName, imageUrl) {
+            const roomOption = document.createElement('div');
+            roomOption.className = 'room-option';
+            roomOption.onclick = () => toggleRoom(roomOption);
+            roomOption.innerHTML = `
+                <img src="${imageUrl}" alt="${roomName}">
+                <span>${roomName}</span>
+                <div>
+                    <button class="minus-button" onclick="changeCount(event, this, -1)">-</button>
+                    <span class="count">0</span>
+                    <button class="plus-button" onclick="changeCount(event, this, 1)">+</button>
+                </div>
+            `;
+            return roomOption;
+        }
+
+        function toggleRoom(element) {
+            // Toggle room selection
+            element.classList.toggle('selected');
+        }
+
+        function changeCount(event, element, increment) {
+            // Prevent triggering toggleRoom when clicking on count buttons
+            event.stopPropagation();
+
+            // Update the count
+            const countSpan = element.parentNode.querySelector('.count');
+            let count = parseInt(countSpan.innerText);
+            count = Math.max(0, count + increment); // Prevent negative count
+            countSpan.innerText = count;
+        }
+
+        // function continueSelection() {
+        //     alert("Continuing to next step...");
+        // }
+
+        // ----------------------- 2nd code------------------
+
+
+   // Your data structure for additional options
+   const additionalOptionsData = {
+    'fullDesign': [
+        { text: "• Complete Interior & Exterior Package", img: "img/design-consultation.png" },
+        { text: "• 3D Visualizations and Design Proposals", img: "img/material-selections.png" },
+        { text: "• Space Planning and Zoning", img: "img/furniture-layout.png" },
+        { text: "• Structural Modifications", img: "img/design-consultation.png" },
+        { text: "• Color and Material Coordination", img: "img/material-selections.png" },
+        { text: "• Decorative Wall Features (3D Panels, Wallpapers)", img: "img/furniture-layout.png" }
+    ],
+    'woodwork': [
+        { text: "• Custom Wardrobes (Walk-in, Hinged, Sliding)", img: "img/custom-cabinetry.png" },
+        { text: "• Modular Kitchen Cabinets (Base, Wall-mounted)", img: "img/trim-molding.png" },
+        { text: "• TV Units (With/Without Storage)", img: "img/built-in-furniture.png" },
+        { text: "• Pooja Mandir Units", img: "img/wood-flooring.png" },
+        { text: "• Custom Shelving Units", img: "img/trim-molding.png" },
+        { text: "• Partitions and Dividers (Glass/Wood)", img: "img/built-in-furniture.png" },
+        { text: "• Bookshelves and Study Tables", img: "img/wood-flooring.png" },
+        { text: "• Decorative Wooden Wall Panels", img: "img/wood-flooring.png" }
+    ],
+    'ceiling': [
+        { text: "• Gypsum False Ceiling", img: "img/ceiling-design.png" },
+        { text: "• Wooden Panels with Designs", img: "img/crown-molding.png" },
+        { text: "• Pop Ceiling Designs", img: "img/lighting-integration.png" },
+        { text: "• Decorative Ceiling Elements (Beams, Molding)", img: "img/ceiling-design.png" }
+    ],
+    'flooring': [
+        { text: "• Tandoor Stone Flooring", img: "img/flooring-options.png" },
+        { text: "• Terracotta and Ceramic Tiles", img: "img/carpet.png" },
+        { text: "• Marble (Polished, Matte Finish)", img: "img/vinyl.png" },
+        { text: "• Granite (Black, Grey, White)", img: "img/flooring-options.png" },
+        { text: "• Wooden Flooring (Engineered/Hardwood)", img: "img/carpet.png" },
+        { text: "• Laminate and Vinyl Flooring", img: "img/vinyl.png" },
+        { text: "• Epoxy Coating for Custom Designs", img: "img/carpet.png" },
+        { text: "• Outdoor Deck Flooring (Composite Wood)", img: "img/vinyl.png" }
+    ],
+    'furniture': [
+        { text: "• Sofa Options: Sectional, Sleeper Sofa, Recliners, Leather/Fabric/Vinyl", img: "img/living-room-furniture.png" },
+        { text: "• Tables: Central Coffee Table, End Tables, Console Tables", img: "img/bedroom-furniture.png" },
+        { text: "• Dining Tables: Extendable, Glass Top, Marble Top", img: "img/office-furniture.png" },
+        { text: "• Chairs: Armchairs, Benches, Accent Chairs, Bar Stools", img: "img/bedroom-furniture.png" },
+        { text: "• Storage Furniture: Bookshelves, Chest of Drawers, Side Tables", img: "img/bedroom-furniture.png" },
+        { text: "• Cots/Beds: King, Queen, Bunk Beds, Daybeds", img: "img/bedroom-furniture.png" },
+        { text: "• Wardrobes: Built-In, Modular, with Mirrors, Pull-Out Storage", img: "img/bedroom-furniture.png" },
+        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/bedroom-furniture.png" }
+    ],
+    'decor': [
+        { text: "• Wall Art: Photo Frames, Metal Art Pieces, Wooden Art", img: "img/wall-art.png" },
+        { text: "• Home Accessories: Vases, Flower Pots, Statues, Candles", img: "img/lighting-fixtures.png" },
+        { text: "• Lighting Decor: Hanging Pendants, Table Lamps, Floor Lamps", img: "img/lighting-fixtures.png" },
+        { text: "• Soft Furnishings: Cushions, Throws, Curtains", img: "img/lighting-fixtures.png" },
+        { text: "• Rugs and Carpets: Area Rugs, Runners, Mats", img: "img/lighting-fixtures.png" },
+        { text: "• Decorative Mirrors: Framed, Wall-mounted, Vanity Mirrors", img: "img/lighting-fixtures.png" },
+        { text: "• Additional Options: Planters, Terrariums, Display Trays", img: "img/lighting-fixtures.png" },
+        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/indoor-plants.png" }
+    ],
+    'designPainting': [
+        { text: "• Matte, Gloss, Satin Finishes", img: "img/painting-services.png" },
+        { text: "• Accent Wall Patterns (Stencils, Geometric)", img: "img/design-consultation.png" },
+        { text: "• Custom Murals and Graffiti Walls", img: "img/painting-services.png" },
+        { text: "• Venetian Plaster (Textured Look)", img: "img/painting-services.png" },
+        { text: "• Faux Finish Painting (Marble, Stone Look)", img: "img/painting-services.png" },
+        { text: "• Chalkboard Paint for Walls", img: "img/painting-services.png" },
+        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/painting-services.png" }
+    ],
+    'onlyInterior': [
+        { text: "• Basic Interior Finishing", img: "img/room-layout.png" },
+        { text: "• Custom Interior Layout", img: "img/lighting-design.png" },
+        { text: "• Wall and Partition Painting", img: "img/color-schemes.png" },
+        { text: "• Customized Lighting Design", img: "img/furniture-selection.png" },
+        { text: "• Furniture Arrangement Guidance", img: "img/accessories.png" },
+        { text: "• Space Optimization Solutions", img: "img/window-treatments.png" }
+    ],
+    'onlyExterior': [
+        { text: "• Exterior Paint (Weatherproof Options)", img: "img/exterior-paint.png" },
+        { text: "• Wall Cladding (Stone, Tile, Brick Veneer)", img: "img/wall-cladding.png" },
+        { text: "• Landscaping (Lawn, Garden Design)", img: "img/landscaping.png" },
+        { text: "• Driveway and Pathway Layout", img: "img/driveway-layout.png" },
+        { text: "• Outdoor Lighting Fixtures", img: "img/outdoor-lighting.png" },
+        { text: "• Fencing and Gate Design", img: "img/fencing.png" }
+    ]
+};
+
+// Function to toggle selection for each type
+function selectOption(element, type) {
+    const optionsDiv = document.getElementById('additionalOptions');
+    const additionalContent = document.getElementById('additionalContent');
+    const roomSizeOptions = document.getElementById('roomSizeOptions');
+    const dimensionCalculator = document.getElementById('dimensionCalculator');
+
+    const isSelected = element.classList.toggle('selected');
+
+    // Check if additional options are available for the selected type
+    if (additionalOptionsData[type]) {
+        if (isSelected) {
+            // Populate additional options if they exist for the selected type
+            console.log(additionalOptionsData[type]);
+            additionalContent.innerHTML = additionalOptionsData[type]
+                .map(option => `
+                    <div class="EMS-additional-option" onclick="selectAdditionalOption(this)">
+                        <img src="${option.img}" alt="${option.text}">
+                        <span>${option.text}</span>
+                    </div>
+                `).join('');
+            optionsDiv.style.display = 'block';  // Show additional options section
+        } else {
+            additionalContent.innerHTML = '';  // Clear additional options
+            optionsDiv.style.display = 'none';  // Hide additional options section
+        }
+
+        // Always show room size options if any room selection is made
+        roomSizeOptions.style.display = 'block';
+        dimensionCalculator.style.display = 'block';  // Show dimension calculator as well
+    } else {
+        // If no additional options for this type, hide the additional options section
+        optionsDiv.style.display = 'none';
+        dimensionCalculator.style.display = 'none';  // Hide dimension calculator if no relevant selection
+    }
+}
+
+// Function to select an additional option
+function selectAdditionalOption(option) {
+    option.classList.toggle('selected');
+}
+function selectRoomSize(button, size) {
+    const roomSizeButtons = document.querySelectorAll('.room-size-button');
+    roomSizeButtons.forEach(btn => btn.classList.remove('selected'));
+    button.classList.add('selected');
+    console.log(`Selected room size: ${size}`);
+
+}
+ function calculateArea() {
+        const width = parseFloat(document.getElementById('widthInput').value);
+        const height = parseFloat(document.getElementById('heightInput').value);
+
+        if (!isNaN(width) && !isNaN(height)) {
+            const totalArea = width * height;
+            document.getElementById('totalArea').textContent = totalArea.toFixed(2);
+        } else {
+            document.getElementById('totalArea').textContent = '0';
+        }
+    }
+    window.onload = function() {
+        calculateArea();
+    };
+        // ----------------------- 3nd code------------------
+
+
+         // Data for additional options for each room type
+         const Final_additionalOptionsData = {
+            'kitchen': [
+                { text: "• Modular Kitchen Cabinets", img: "img/kitchen-cabinet.png" },
+                { text: "• Countertops (Granite, Quartz)", img: "img/countertop.png" },
+                { text: "• Backsplash Designs", img: "img/back-splash.png" },
+                { text: "• Appliances (Built-in Fridge, Oven)", img: "img/appliance.png" }
+            ],
+            'livingRoom': [
+                { text: "• Sofa and Seating Layouts", img: "img/sofa.png" },
+                { text: "• TV Unit and Storage", img: "img/tv-unit.png" },
+                { text: "• Lighting Options", img: "img/lighting.png" }
+            ],
+            'bedroom': [
+                { text: "• Bed and Mattress Options", img: "img/bed.png" },
+                { text: "• Wardrobe and Closet", img: "img/wardrobe.png" },
+                { text: "• Lighting Fixtures", img: "img/bedroom-lighting.png" }
+            ],
+            'bathroom': [
+                { text: "• Shower Area and Bathtubs", img: "img/shower.png" },
+                { text: "• Toilet and Vanity", img: "img/toilet.png" },
+                { text: "• Bathroom Fixtures", img: "img/bathroom-fixtures.png" }
+            ],
+            'studyRoom': [
+                { text: "• Desk and Chair Options", img: "img/study-desk.png" },
+                { text: "• Bookshelf Design", img: "img/bookshelf.png" },
+                { text: "• Lighting and Decor", img: "img/study-lighting.png" }
+            ],
+            'homeTheater': [
+                { text: "• Projector and Screen", img: "img/projector.png" },
+                { text: "• Seating Layout", img: "img/theater-seating.png" },
+                { text: "• Sound Systems", img: "img/sound-system.png" }
+            ]
+        };
+
+        // Toggles selection of the room
+        function toggleSelection(element, roomType) {
+            element.classList.toggle("selected");
+            const isRoomSelected = element.classList.contains("selected");
+
+            // Show additional options for the selected room
+            if (isRoomSelected) {
+                showAdditionalOptions(roomType);
+                if (roomType === 'studyRoom' || roomType === 'homeTheater') {
+                    document.getElementById("Final-roomSizeOptions").style.display = "block";
+                }
+            } else {
+                hideAdditionalOptions();
+                if (roomType === 'studyRoom' || roomType === 'homeTheater') {
+                    document.getElementById("Final-roomSizeOptions").style.display = "none";
+                }
+            }
+        }
+
+        // Show additional options for selected room
+        function showAdditionalOptions(roomType) {
+            const Final_additionalContent = document.getElementById('Final-additionalContent');
+            const optionsData = Final_additionalOptionsData[roomType];
+            let htmlContent = '';
+
+            if (optionsData) {
+                optionsData.forEach(item => {
+                    htmlContent += `  
+                        <div class="Final-EMS-additional-option" onclick="toggleOptionSelection(this)">
+                            <img src="${item.img}" alt="">
+                            <span>${item.text}</span>
+                        </div>`;
+                });
+                document.getElementById('Final-additionalOptions').style.display = 'block';
+                Final_additionalContent.innerHTML = htmlContent;
+            }
+        }
+
+        // Hide additional options if no room is selected
+        function hideAdditionalOptions() {
+            document.getElementById('Final-additionalOptions').style.display = 'none';
+        }
+
+        // Toggle selection for additional options
+        function toggleOptionSelection(option) {
+            option.classList.toggle("selected");
+        }
+
+        // Handle room size selection
+        function selectRoomSize(element, size) {
+            const buttons = document.querySelectorAll('.Final-room-size-button');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            element.classList.add('selected');
+            console.log(`Room size selected: ${size}`);
+
+            checkForQuotation();
+        }
+
+        // Check for completed selections to show generate quotation button
+        function checkForQuotation() {
+            const roomSelected = document.querySelectorAll('.Final-room-option.selected').length > 0;
+            const roomSizeSelected = document.querySelectorAll('.Final-room-size-button.selected').length > 0;
+
+            if (roomSelected && roomSizeSelected) {
+                document.querySelector('.Final-generate-quotation-button').style.display = 'block';
+            }
+        }
+
+        // Generate quotation function (for demonstration purposes)
+        function generateQuotation() {
+            alert("Quotation Generated! (This is just a demo)");
+        }
+    </script>
+</body>
+
+</html>
