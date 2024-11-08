@@ -7,10 +7,15 @@
     <title>Property and Room Selection</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="CSS/CostEstimation.css">
-
+<link rel="stylesheet" href="CSS/Dashboard.css">
 
 </head>
 <body>
+<?php
+include('./Dashboard.php');
+?>
+
+    <div class="Total-cost-estimation-">
 
     <div class="cost-estimation-property-selection-container">
         <h2 class="cost-estimation-h2">Step 2: Select your Property Type</h2>
@@ -232,10 +237,10 @@
             <button class="Final-generate-quotation-button" onclick="generateQuotation()">Generate Quotation</button>
         </div>
     </div>
-
+</div>
 
 </body>
 <script src="JS/CostEstimation.js"></script>
-
+<script src="JS/Dashboard.js"></script>
 
 </html>
