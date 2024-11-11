@@ -2,13 +2,14 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #d0e7ff; 
+    background-color: #ffffff; 
 }
 
 .Create-Lead-lead-form {
     background: #ffffff;
     padding: 40px;
     border-radius: 8px;
+    width: 100%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     max-width: 700px;
     margin: 50px auto;
@@ -50,19 +51,20 @@ textarea {
     outline: none;
 }
 
-.Create-Lead-form-button {
+.Create-Lead-form-buttonss {
     padding: 12px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
+    margin-top:5px;
     cursor: pointer;
     width: 100%;
     font-size: 16px;
     transition: background-color 0.3s;
 }
 
-.Create-Lead-form-button:hover {
+.Create-Lead-form-buttonss:hover {
     background-color: #0056b3;
 }
 
@@ -101,7 +103,7 @@ textarea {
         font-size: 12px;
     }
 
-    .Create-Lead-form-button {
+    .Create-Lead-form-buttonss {
         padding: 10px; 
         font-size: 14px; 
     }

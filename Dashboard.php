@@ -56,8 +56,8 @@
                         <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="leads-dropdown" class="Dashboard-submenu">
-                        <li><a href="#">Create Lead</a></li>
-                        <li><a href="#">View Lead</a></li>
+                        <li><a href="CreateLead.php">Create Lead</a></li>
+                        <li><a href="Viewleads.php">View Lead</a></li>
                     </ul>
                 </li>
 
