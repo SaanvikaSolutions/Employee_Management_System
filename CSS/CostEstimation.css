@@ -1,4 +1,4 @@
-.Total-cost-estimation-{
+.Total-cost-estimation- {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -235,8 +235,8 @@
     align-items: center;
 }
 
-/* Heading Styling */
-h2 {
+
+.EMS-room-selection-container h2 {
     font-size: 24px;
     margin-bottom: 15px;
     color: #333;
@@ -260,8 +260,8 @@ h2 {
     margin-bottom: 20px;
 }
 
-.EMS-room-options > div {
-    flex: 1 1 calc(50% - 10px); /* Makes each item take up 50% of the width, minus the gap */
+.EMS-room-options>div {
+    flex: 1 1 calc(50% - 10px);
     box-sizing: border-box;
 }
 
@@ -269,7 +269,6 @@ h2 {
 
 /* ------------------------- */
 
-/* Room Option Styling */
 .EMS-room-option {
     display: flex;
     align-items: center;
@@ -322,8 +321,8 @@ h2 {
 }
 
 .EMS-additional-option.selected {
-    background-color: #007bff;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
     border: 1px solid #ffffff;
 }
@@ -334,10 +333,9 @@ h2 {
     margin-right: 10px;
 }
 
-/* Room Size Button Styling */
+
 .room-size-container {
     display: none;
-    /* Initially hidden */
     margin-top: 20px;
     width: 100%;
     background-color: #ffffff;
@@ -377,12 +375,12 @@ h2 {
 }
 
 .room-size-button.selected {
-    background-color: #007bff;
-    color: white;
-    border-color: #0056b3;
+    background-color: #007bff66;
+    color: rgb(0, 0, 0);
+    border-color: #a8a9a9;
 }
 
-/* Button Styling */
+
 .EMS-customize-button {
     padding: 10px 20px;
     background-color: #007bff;
@@ -394,14 +392,14 @@ h2 {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 20px;
-    /* Add space above the button */
+   
 }
 
 .EMS-customize-button:hover {
     background-color: #0056b3;
 }
 
-/* Add styles for the width & height input form */
+
 #dimensionCalculator {
     display: none;
     /* Initially hidden */
@@ -429,17 +427,17 @@ h2 {
     margin-top: 10px;
 }
 
-/* Align width and height side by side */
+
 #dimensionCalculator .inputs-container {
     display: flex;
-    /* justify-content: space-between; */
+ 
     justify-content: center;
     gap: 10px;
 }
 
 #dimensionCalculator .inputs-container input {
     width: 48%;
-    /* Make inputs take 48% of the width, leaving some gap */
+    
 }
 
 #dimensionCalculator .total-area-box {
@@ -453,22 +451,18 @@ h2 {
     color: #007bff;
 }
 
-
-
-
-/* Mobile-specific adjustments */
 @media (max-width: 437px) {
 
     .EMS-room-options,
     .EMS-additional-options {
         grid-template-columns: 1fr;
-        /* Single column layout */
+      
     }
 
     .EMS-room-option,
     .EMS-additional-option {
         padding: 15px;
-        /* Increase padding for better touch targets */
+       
     }
 
     .EMS-room-option img,
@@ -479,11 +473,8 @@ h2 {
 
     .EMS-customize-button {
         width: 100%;
-        /* Full-width button */
         padding: 12px;
-        /* Increase padding for better touch targets */
         font-size: 16px;
-        /* Larger text for better readability */
     }
 }
 
@@ -523,21 +514,20 @@ h2 {
     /* Adjust icon size */
 }
 
-/* Container for both buttons */
+
 .button-container {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    /* Space between the buttons */
+
     margin-top: 20px;
     width: 100%;
 }
 
-/* Customize Button Styling */
 .EMS-customize-button {
     padding: 10px 20px;
     background-color: #007bff;
-    /* Blue color for the Customize button */
+
     color: white;
     font-size: 14px;
     font-weight: 600;
@@ -549,14 +539,12 @@ h2 {
 
 .EMS-customize-button:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
+
 }
 
-/* Continue Button Styling */
 .EMS-continue-button {
     padding: 10px 20px;
     background-color: #007bff;
-    /* Blue color for the Continue button */
     color: white;
     font-size: 14px;
     font-weight: 600;
@@ -568,55 +556,40 @@ h2 {
 
 .EMS-continue-button:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
 }
 
 
 
 
-/* Container style for the button */
 .ems-button-container {
     text-align: center;
-    /* Center the button within the container */
 }
 
-/* Back button style */
+
 .ems-back-btn {
     padding: 10px 20px;
-    /* Padding around the text */
     font-size: 16px;
-    /* Font size */
     background-color: #e0e0e0;
-    /* Light grey background */
     border: 1px solid #ccc;
-    /* Subtle border */
     color: #333;
-    /* Text color */
     border-radius: 5px;
-    /* Rounded corners */
     cursor: pointer;
-    /* Pointer cursor on hover */
     transition: background-color 0.3s ease, border 0.3s ease;
-    /* Smooth transition */
+
 }
 
-/* Hover effect */
+
 .ems-back-btn:hover {
     background-color: #d0d0d0;
-    /* Slightly darker grey on hover */
     border-color: #bbb;
-    /* Darker border color on hover */
 }
 
 .ems-back-button-container {
     text-align: left;
-    /* Align button to the left */
     width: 100%;
-    /* Ensure it takes the full width */
     padding-left: 20px;
-    /* Optional: Add some left padding to create space from the edge */
     margin-bottom: 20px;
-    /* Optional: Add some space below the button */
+
 }
 
 
@@ -626,7 +599,7 @@ h2 {
 
 
 
-/* Final Room Selection Container */
+
 .Final-room-selection-container {
 
 
@@ -642,14 +615,13 @@ h2 {
     align-items: center;
 }
 
-/* Final Heading Styling */
 .Final-room-selection-heading {
     font-size: 24px;
     margin-bottom: 15px;
     color: #333;
 }
 
-/* Final Room Selection Grid */
+
 .Final-room-options {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -658,7 +630,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Final Room Option Styling */
+
 .Final-room-option {
     display: flex;
     align-items: center;
@@ -682,7 +654,6 @@ h2 {
     margin-right: 10px;
 }
 
-/* Final Additional Options Section Styling */
 .Final-additional-options {
     display: none;
     margin-top: 20px;
@@ -722,7 +693,7 @@ h2 {
     margin-right: 10px;
 }
 
-/* Final Room Size Options Styling */
+
 .Final-room-size-container {
     display: none;
     margin-top: 20px;
@@ -755,7 +726,6 @@ h2 {
     margin-right: 10px;
 }
 
-/* Final Customize Button Styling */
 .Final-customize-button,
 .Final-generate-quotation-button {
     padding: 10px 20px;
@@ -775,7 +745,6 @@ h2 {
     background-color: #0056b3;
 }
 
-/* Mobile-specific adjustments */
 @media (max-width: 437px) {
 
     .Final-room-options,
@@ -802,7 +771,6 @@ h2 {
     }
 }
 
-/* Room Size Buttons Styling for Selected State */
 .Final-room-size-button.selected {
     box-shadow: 0 0 20px #007bff66, 0 0 40px #007bff66;
     border: 1px solid #ffffff;
@@ -811,26 +779,20 @@ h2 {
 
 .final-back-button-container {
     text-align: left;
-    /* Align button to the left */
     width: 100%;
     padding-left: 20px;
-    /* Optional: Space from the left edge */
     margin-bottom: 20px;
-    /* Optional: Space below the button */
 }
 
 .final-back-link {
     text-decoration: none;
-    /* Remove underline from the link */
     display: inline-block;
-    /* Keep the button inline */
 }
 
 .final-back-btn {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #dc3545;
-    /* Red color for the button */
     color: white;
     border: none;
     border-radius: 5px;
@@ -840,5 +802,4 @@ h2 {
 
 .final-back-btn:hover {
     background-color: #c82333;
-    /* Darker red on hover */
 }

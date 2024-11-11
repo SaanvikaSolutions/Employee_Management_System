@@ -14,8 +14,10 @@
 include('./Dashboard.php');
 ?>
     <div class="EMS-form-container">
+    <h2 class="form-heading">Fill Customer Details</h2>
         <form>
             <div class="EMS-form-row">
+                
                 <div class="EMS-form-group">
                     <label for="company-name" class="EMS-form-label">Company Name</label>
                     <input type="text" id="company-name" class="EMS-form-input" placeholder="Enter Your company name">

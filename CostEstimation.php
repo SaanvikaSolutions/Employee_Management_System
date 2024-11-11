@@ -126,7 +126,7 @@ include('./Dashboard.php');
         </div>
 
         <div id="roomSizeOptions" class="room-size-container">
-            <h3>Room Size Options</h3>
+            <h3>Material Type</h3>
             <div class="room-size-buttons">
                 <div class="room-size-button" onclick="selectRoomSize(this, 'Basic')">
                     <img src="img/icon-basic.png" alt="Basic" class="room-size-icon">

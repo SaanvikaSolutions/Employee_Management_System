@@ -1,12 +1,23 @@
 .EMS-form-container {
     width: 80%;
-    max-width: 700px;
+    /* max-width: 700px; */
     margin: 0 auto;
     padding: 30px;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     margin-top: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+
+.form-heading {
+    font-size: 24px;          
+    font-weight: bold;         
+    color: #333;                
+    margin-bottom: 20px;        
+    text-align: center;        
+    text-transform: uppercase; 
+    letter-spacing: 1px;       
 }
 
 .EMS-form-row {
@@ -18,7 +29,7 @@
 
 .EMS-form-group {
     flex: 1;
-    display: flex;
+    display: flex;  
     flex-direction: column;
 }
 

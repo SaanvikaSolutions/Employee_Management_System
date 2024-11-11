@@ -86,7 +86,6 @@
         </div>
     </div>
 
-    <script src="JS/Dashboard.js"></script>
 </body>
-
+<script src="JS/Dashboard.js"></script>
 </html>

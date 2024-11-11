@@ -38,7 +38,7 @@ include('./Dashboard.php');
                         <td>Developer</td>
                         <td>CEO</td>
                         <td>
-                            <button class="EmployeeTable-view-button" onclick="window.location.href='View-Employee.html'">View</button>
+                            <button class="EmployeeTable-view-button" onclick="window.location.href='View-Employee.php'">View</button>
                         </td>
                     </tr>
                     
@@ -49,7 +49,7 @@ include('./Dashboard.php');
                         <td>Venkatesh</td>
                         <td>Designer</td>
                         <td>CEO</td>
-                        <td> <button class="EmployeeTable-view-button" onclick="window.location.href='View-Employee.html'">View</button></td>
+                        <td> <button class="EmployeeTable-view-button" onclick="window.location.href='View-Employee.php'">View</button></td>
                     </tr>
                     <!-- Add more rows as needed -->
                 </tbody>
