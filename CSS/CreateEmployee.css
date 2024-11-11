@@ -13,7 +13,10 @@ body {
     max-width: 600px;
     margin: auto;
     transition: box-shadow 0.3s;
+    margin-top: 50px;
+    width: 100%;
 }
+
 
 .createEmployee-employee-profile-form:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);

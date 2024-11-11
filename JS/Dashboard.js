@@ -53,3 +53,21 @@ function toggleTheme() {
     const links = sidebar.querySelectorAll('a');
     links.forEach(link => link.classList.toggle('dark')); // Toggle dark class on sidebar links
 }
+
+
+// --------------------------------
+
+// JavaScript to add 'sticky' class to topbar and sidebar when scrolled past certain point
+window.addEventListener('scroll', function() {
+    var topbar = document.querySelector('.Dashboard-topbar');
+    var sidebar = document.querySelector('.Dashboard-sidebar');
+    
+    // If the page is scrolled past 50px, make the topbar and sidebar sticky
+    if (window.scrollY > 50) {
+        topbar.classList.add('sticky');
+        sidebar.classList.add('sticky');
+    } else {
+        topbar.classList.remove('sticky');
+        sidebar.classList.remove('sticky');
+    }
+});

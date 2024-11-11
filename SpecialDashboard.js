@@ -15,7 +15,7 @@ class SpecialHeader extends HTMLElement {
                 <i class="fa-regular fa-bell"></i>
             </div>
             <div class="Dashboard-circle Dashboard-user-profile">
-                <i class="fa-regular fa-user"></i>
+                <i class="fa-regular fa-user"></i> 
             </div>
             <div class="Dashboard-circle" onclick="toggleTheme()" style="cursor: pointer;">
                 <i class="fa-solid fa-moon" id="theme-icon"></i>
