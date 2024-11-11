@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Example</title>
     <link rel="stylesheet" href="CSS/Details.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css">
  
 </head>
 <body>
+
+    <?php
+include('./Dashboard.php');
+?>
     <div class="EMS-form-container">
         <form>
             <div class="EMS-form-row">
@@ -37,9 +42,14 @@
                 </div>
             </div>
             <div class="EMS-form-row">
-                <button type="submit" class="EMS-submit-btn">Submit</button>
-            </div>
-        </form>
+                <a href="CostEstimation.php">
+                    <button type="button" class="EMS-submit-btn">Submit</button>
+                </a>
+            </div> 
+            
+            
+        </form>  
     </div>
 </body>
+<script src="JS/Dashboard.js"></script>
 </html>

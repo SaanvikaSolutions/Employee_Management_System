@@ -46,7 +46,7 @@
                     
                     <ul id="profile-dropdown" class="Dashboard-submenu">
                         <li><a href="#">Create Profile</a></li>
-                        <li><a href="#">View Profile</a></li>
+                        <li><a href="CreateEmployee.php">View Profile</a></li>
                     </ul>
                 </li>
  
@@ -67,7 +67,7 @@
                         <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="costs-dropdown" class="Dashboard-submenu">
-                        <li><a href="#">Cost</a></li>
+                        <li><a href="CostEstimation.php">create Cost</a></li>
                         <li><a href="#">Costs</a></li>
                     </ul>
                 </li>

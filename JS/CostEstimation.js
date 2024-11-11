@@ -414,5 +414,5 @@ function checkForQuotation() {
 
 // Generate quotation function (for demonstration purposes)
 function generateQuotation() {
-    alert("Quotation Generated! (This is just a demo)");
+    alert("Quotation Generated! (Please wait)");
 }
