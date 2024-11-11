@@ -1,7 +1,3 @@
-<?php
-include_once('./Dashboard.php');
-include('./backend/includes/dbconnect.php')
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +6,13 @@ include('./backend/includes/dbconnect.php')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Lead Form</title>
     <link rel="stylesheet" href="CSS/CreateLead.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 
 <body>
+<?php
+include('./Dashboard.php');
+?>
 
     <form class="Create-Lead-lead-form" Action="" method="POST">
         <h2>Create Lead</h2>
@@ -144,11 +144,12 @@ include('./backend/includes/dbconnect.php')
         <div class="Create-Lead-form-section"></div>
         <label for="address">Address<span></span></label>
         <textarea id="address" class="Create-Lead-form-input" name="address" rows="4"></textarea>
+        <button type="submit" class="Create-Lead-form-buttonss" name="create_lead">Create Lead</button>
         </div>
 
-        <button type="submit" class="Create-Lead-form-button" name="create_lead">Create Lead</button>
+        <!-- <button type="submit" class="Create-Lead-form-buttonss" name="create_lead">Create Lead</button> -->
     </form>
-    <?php
+    <?php  
     if(isset($_POST['create_lead'])){
         $Emp_id = $_POST['emp_id'];
         $Lead_name = $_POST['lead_name'];
@@ -175,7 +176,9 @@ include('./backend/includes/dbconnect.php')
         }
     }
     ?>
-    <script src="JS/CreateLead.js"></script>
+    <!-- <script src="JS/CreateLead.js"></script> -->
 </body>
+<script src="JS/CreateLead.js"></script>
+<script src="JS/Dashboard.js"></script>
 
 </html>
