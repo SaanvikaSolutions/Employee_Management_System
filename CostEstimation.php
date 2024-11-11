@@ -18,7 +18,7 @@ include('./Dashboard.php');
     <div class="Total-cost-estimation-">
 
     <div class="cost-estimation-property-selection-container">
-        <h2 class="cost-estimation-h2">Step 2: Select your Property Type</h2>
+        <h2 class="cost-estimation-h2">Select your Property Type</h2>
         <div class="cost-estimation-property-options">
             <div class="cost-estimation-property-option" onclick="selectProperty(this, 'residential')" aria-label="Select Flat">
                 <img src="img/house.png" alt="Flat">

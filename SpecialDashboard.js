@@ -41,7 +41,7 @@ class SpecialNavbar extends HTMLElement {
                     </a>
                     
                     <ul id="profile-dropdown" class="Dashboard-submenu">
-                        <li><a href="#">Create Profile</a></li>
+                        <li><a href="CreateEmployee.php">Create Profile</a></li>
                         <li><a href="#">View Profile</a></li>
                     </ul>
                 </li>
