@@ -65,9 +65,19 @@ include('./Dashboard.php');
         <h3>Select Rooms</h3>
         <div class="room-options" id="room-options">
             <!-- Room options will be populated here -->
+
+            
         </div>
         <!-- <button class="continue-button" onclick="continueSelection()">Continue</button> -->
         <!-- <a href="2NDcontinution.html" class="continue-button">Continue</a> -->
+
+        <!-- Add this somewhere in your HTML where you want to show selected options -->
+        <div id="selected-options-container">
+    <h3>Selected Options:</h3>
+    <!-- This is where selected options will appear -->    
+</div>
+
+
 
     </div>
 
@@ -75,12 +85,9 @@ include('./Dashboard.php');
     <!-- --------------------   2nd code ------------------------------- -->
 
     <div class="EMS-room-selection-container">
-        <!-- <div class="ems-back-button-container">
-            <button class="ems-back-btn">Back</button>
-        </div> -->
         <h2>Choose Your Design Service</h2>
         <div class="EMS-room-options">
-            <div class="EMS-room-options">
+           
                 <div class="EMS-room-option" onclick="selectOption(this, 'onlyInterior')">
                     <img src="img/interior-design.png" alt="Only Interior">
                     <span>Only Interior</span>
@@ -117,7 +124,6 @@ include('./Dashboard.php');
                     <img src="img/canvas.png" alt="Design Painting">
                     <span>Design Painting</span>
                 </div>
-            </div>
             
             <!-- Add other room options as needed -->
         </div>
@@ -141,11 +147,16 @@ include('./Dashboard.php');
                     Luxury
                 </div>
             </div>
+
+
+
+          <div id="selectedItemsContainer">
+    <!-- Selected items will be displayed here -->
+</div>
+
         </div>
         
-        
-
-        <div id="dimensionCalculator">
+        <div id="dimensionCalculator">  
             <h3>Enter Dimensions</h3>
             <div class="inputs-container">
                 <div>
@@ -163,10 +174,7 @@ include('./Dashboard.php');
             </div>
         </div>
 
-        <!-- <div class="button-container">
-            <button class="EMS-customize-button">Customize Your Design</button>
-            <button class="EMS-continue-button">Continue</button>
-        </div> -->
+        
     </div>
 
     <!-- --------------------   3rd code ------------------------------- -->
@@ -237,7 +245,7 @@ include('./Dashboard.php');
             <button class="Final-generate-quotation-button" onclick="generateQuotation()">Generate Quotation</button>
         </div>
     </div>
-</div>
+</div> 
 
 </body>
 <script src="JS/CostEstimation.js"></script>

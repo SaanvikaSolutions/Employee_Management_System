@@ -220,6 +220,73 @@
     }
 }
 
+      /* ======================================= */
+
+      #selected-options-container {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff; /* Light white background */
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        width: 80%; /* Adjust width to suit your layout */
+        max-width: 800px; /* Set max width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #selected-options-container h3 {
+        font-size: 24px;
+        color: #333; /* Dark text color */
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center; /* Center the heading */
+    }
+    
+    .selected-option {
+        background-color: #e0f7fa;
+        padding: 15px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        font-size: 18px;
+        color: #00796b;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #00796b;
+        transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    }
+    
+    .selected-option:hover {
+        background-color: #b2dfdb;
+        transform: translateY(-3px); /* Slight lift effect on hover */
+    }
+    
+    .selected-option .remove-btn {
+        background-color: #ff5252;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .selected-option .remove-btn:hover {
+        background-color: #ff1744; /* Darker shade on hover */
+    }
+    
+    .selected-option .room-count {
+        font-weight: bold;
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    
+/* ====================================================== */
+
+
+
 /* ------------------------  2nd code css------------------------------------------ */
 
 .EMS-room-selection-container {
