@@ -66,9 +66,13 @@ include('./Dashboard.php');
         <div class="room-options" id="room-options">
             <!-- Room options will be populated here -->
         </div>
-        <!-- <button class="continue-button" onclick="continueSelection()">Continue</button> -->
-        <!-- <a href="2NDcontinution.html" class="continue-button">Continue</a> -->
 
+        
+       <!-- Add this somewhere in your HTML where you want to show selected options -->
+       <div id="selected-options-container">
+    <h3>Selected Options:</h3>
+    <!-- This is where selected options will appear -->    
+</div>
     </div>
 
 
