@@ -180,7 +180,7 @@ if (isset($_POST['submit'])) {
 
     // Execute query
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Employee profile created successfully!');</script>";
+        echo "<script>alert('Assigned Employee profile Created successfully!');</script>";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

@@ -380,83 +380,83 @@ function showDynamicOptions(projectType, element) {
 // Your data structure for additional options
 const additionalOptionsData = {
     'fullDesign': [
-        { text: "• Complete Interior & Exterior Package", img: "img/design-consultation.png" },
-        { text: "• 3D Visualizations and Design Proposals", img: "img/material-selections.png" },
-        { text: "• Space Planning and Zoning", img: "img/furniture-layout.png" },
-        { text: "• Structural Modifications", img: "img/design-consultation.png" },
-        { text: "• Color and Material Coordination", img: "img/material-selections.png" },
-        { text: "• Decorative Wall Features (3D Panels, Wallpapers)", img: "img/furniture-layout.png" }
+        { text: "• Complete Interior & Exterior Package", img: "img/living-room.png" },
+        { text: "• 3D Visualizations and Design Proposals", img: "img/living-room.png" },
+        { text: "• Space Planning and Zoning", img: "img/living-room.png" },
+        { text: "• Structural Modifications", img: "img/living-room.png" },
+        { text: "• Color and Material Coordination", img: "img/living-room.png" },
+        { text: "• Decorative Wall Features (3D Panels, Wallpapers)", img: "img/living-room.png" }
     ],
     'woodwork': [
-        { text: "• Custom Wardrobes (Walk-in, Hinged, Sliding)", img: "img/custom-cabinetry.png" },
-        { text: "• Modular Kitchen Cabinets (Base, Wall-mounted)", img: "img/trim-molding.png" },
-        { text: "• TV Units (With/Without Storage)", img: "img/built-in-furniture.png" },
-        { text: "• Pooja Mandir Units", img: "img/wood-flooring.png" },
-        { text: "• Custom Shelving Units", img: "img/trim-molding.png" },
-        { text: "• Partitions and Dividers (Glass/Wood)", img: "img/built-in-furniture.png" },
-        { text: "• Bookshelves and Study Tables", img: "img/wood-flooring.png" },
-        { text: "• Decorative Wooden Wall Panels", img: "img/wood-flooring.png" }
+        { text: "• Custom Wardrobes (Walk-in, Hinged, Sliding)", img: "img/sofa (1).png" },
+        { text: "• Modular Kitchen Cabinets (Base, Wall-mounted)", img: "img/sofa (1).png" },
+        { text: "• TV Units (With/Without Storage)", img: "img/sofa (1).png" },
+        { text: "• Pooja Mandir Units", img: "img/sofa (1).png" },
+        { text: "• Custom Shelving Units", img: "img/sofa (1).png" },
+        { text: "• Partitions and Dividers (Glass/Wood)", img: "img/sofa (1).png" },
+        { text: "• Bookshelves and Study Tables", img: "img/sofa (1).png" },
+        { text: "• Decorative Wooden Wall Panels", img: "img/sofa (1).png" }
     ],
     'ceiling': [
-        { text: "• Gypsum False Ceiling", img: "img/ceiling-design.png" },
-        { text: "• Wooden Panels with Designs", img: "img/crown-molding.png" },
-        { text: "• Pop Ceiling Designs", img: "img/lighting-integration.png" },
-        { text: "• Decorative Ceiling Elements (Beams, Molding)", img: "img/ceiling-design.png" }
+        { text: "• Gypsum False Ceiling", img: "img/sofa (1).png" },
+        { text: "• Wooden Panels with Designs", img: "img/sofa (1).png" },
+        { text: "• Pop Ceiling Designs", img: "img/sofa (1).png" },
+        { text: "• Decorative Ceiling Elements (Beams, Molding)", img: "img/sofa (1).png" }
     ],
     'flooring': [
-        { text: "• Tandoor Stone Flooring", img: "img/flooring-options.png" },
-        { text: "• Terracotta and Ceramic Tiles", img: "img/carpet.png" },
-        { text: "• Marble (Polished, Matte Finish)", img: "img/vinyl.png" },
-        { text: "• Granite (Black, Grey, White)", img: "img/flooring-options.png" },
-        { text: "• Wooden Flooring (Engineered/Hardwood)", img: "img/carpet.png" },
-        { text: "• Laminate and Vinyl Flooring", img: "img/vinyl.png" },
-        { text: "• Epoxy Coating for Custom Designs", img: "img/carpet.png" },
-        { text: "• Outdoor Deck Flooring (Composite Wood)", img: "img/vinyl.png" }
+        { text: "• Tandoor Stone Flooring", img: "img/sofa (1).png" },
+        { text: "• Terracotta and Ceramic Tiles", img: "img/sofa (1).png" },
+        { text: "• Marble (Polished, Matte Finish)", img: "img/sofa (1).png" },
+        { text: "• Granite (Black, Grey, White)", img: "img/sofa (1).png" },
+        { text: "• Wooden Flooring (Engineered/Hardwood)", img: "img/sofa (1).png" },
+        { text: "• Laminate and Vinyl Flooring", img: "img/sofa (1).png" },
+        { text: "• Epoxy Coating for Custom Designs", img: "img/sofa (1).png" },
+        { text: "• Outdoor Deck Flooring (Composite Wood)", img: "img/sofa (1).png" }
     ],
     'furniture': [
-        { text: "• Sofa Options: Sectional, Sleeper Sofa, Recliners, Leather/Fabric/Vinyl", img: "img/living-room-furniture.png" },
-        { text: "• Tables: Central Coffee Table, End Tables, Console Tables", img: "img/bedroom-furniture.png" },
-        { text: "• Dining Tables: Extendable, Glass Top, Marble Top", img: "img/office-furniture.png" },
-        { text: "• Chairs: Armchairs, Benches, Accent Chairs, Bar Stools", img: "img/bedroom-furniture.png" },
-        { text: "• Storage Furniture: Bookshelves, Chest of Drawers, Side Tables", img: "img/bedroom-furniture.png" },
-        { text: "• Cots/Beds: King, Queen, Bunk Beds, Daybeds", img: "img/bedroom-furniture.png" },
-        { text: "• Wardrobes: Built-In, Modular, with Mirrors, Pull-Out Storage", img: "img/bedroom-furniture.png" },
-        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/bedroom-furniture.png" }
+        { text: "• Sofa Options: Sectional, Sleeper Sofa, Recliners, Leather/Fabric/Vinyl", img: "img/modern-house.png" },
+        { text: "• Tables: Central Coffee Table, End Tables, Console Tables", img: "img/modern-house.png" },
+        { text: "• Dining Tables: Extendable, Glass Top, Marble Top", img: "img/modern-house.png" },
+        { text: "• Chairs: Armchairs, Benches, Accent Chairs, Bar Stools", img: "img/modern-house.png" },
+        { text: "• Storage Furniture: Bookshelves, Chest of Drawers, Side Tables", img: "img/modern-house.png" },
+        { text: "• Cots/Beds: King, Queen, Bunk Beds, Daybeds", img: "img/modern-house.png" },
+        { text: "• Wardrobes: Built-In, Modular, with Mirrors, Pull-Out Storage", img: "img/modern-house.png" },
+        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/modern-house.png" }
     ],
     'decor': [
-        { text: "• Wall Art: Photo Frames, Metal Art Pieces, Wooden Art", img: "img/wall-art.png" },
-        { text: "• Home Accessories: Vases, Flower Pots, Statues, Candles", img: "img/lighting-fixtures.png" },
-        { text: "• Lighting Decor: Hanging Pendants, Table Lamps, Floor Lamps", img: "img/lighting-fixtures.png" },
-        { text: "• Soft Furnishings: Cushions, Throws, Curtains", img: "img/lighting-fixtures.png" },
-        { text: "• Rugs and Carpets: Area Rugs, Runners, Mats", img: "img/lighting-fixtures.png" },
-        { text: "• Decorative Mirrors: Framed, Wall-mounted, Vanity Mirrors", img: "img/lighting-fixtures.png" },
-        { text: "• Additional Options: Planters, Terrariums, Display Trays", img: "img/lighting-fixtures.png" },
-        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/indoor-plants.png" }
+        { text: "• Wall Art: Photo Frames, Metal Art Pieces, Wooden Art", img: "img/pantry (1).png" },
+        { text: "• Home Accessories: Vases, Flower Pots, Statues, Candles", img: "img/pantry (1).png" },
+        { text: "• Lighting Decor: Hanging Pendants, Table Lamps, Floor Lamps", img: "img/pantry (1).png" },
+        { text: "• Soft Furnishings: Cushions, Throws, Curtains", img: "img/pantry (1).png" },
+        { text: "• Rugs and Carpets: Area Rugs, Runners, Mats", img: "img/pantry (1).png" },
+        { text: "• Decorative Mirrors: Framed, Wall-mounted, Vanity Mirrors", img: "img/pantry (1).png" },
+        { text: "• Additional Options: Planters, Terrariums, Display Trays", img: "img/pantry (1).png" },
+        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/pantry (1).png" }
     ],
     'designPainting': [
-        { text: "• Matte, Gloss, Satin Finishes", img: "img/painting-services.png" },
-        { text: "• Accent Wall Patterns (Stencils, Geometric)", img: "img/design-consultation.png" },
-        { text: "• Custom Murals and Graffiti Walls", img: "img/painting-services.png" },
-        { text: "• Venetian Plaster (Textured Look)", img: "img/painting-services.png" },
-        { text: "• Faux Finish Painting (Marble, Stone Look)", img: "img/painting-services.png" },
-        { text: "• Chalkboard Paint for Walls", img: "img/painting-services.png" },
-        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/painting-services.png" }
+        { text: "• Matte, Gloss, Satin Finishes", img: "img/pantry (1).png" },
+        { text: "• Accent Wall Patterns (Stencils, Geometric)", img: "img/pantry (1).png" },
+        { text: "• Custom Murals and Graffiti Walls", img: "img/pantry (1).png" },
+        { text: "• Venetian Plaster (Textured Look)", img: "img/pantry (1).png" },
+        { text: "• Faux Finish Painting (Marble, Stone Look)", img: "img/pantry (1).png" },
+        { text: "• Chalkboard Paint for Walls", img: "img/pantry (1).png" },
+        { text: "• Quality Levels: Basic, Premium, Luxury", img: "img/pantry (1).png" }
     ],
     'onlyInterior': [
-        { text: "• Basic Interior Finishing", img: "img/room-layout.png" },
-        { text: "• Custom Interior Layout", img: "img/lighting-design.png" },
-        { text: "• Wall and Partition Painting", img: "img/color-schemes.png" },
-        { text: "• Customized Lighting Design", img: "img/furniture-selection.png" },
-        { text: "• Furniture Arrangement Guidance", img: "img/accessories.png" },
-        { text: "• Space Optimization Solutions", img: "img/window-treatments.png" }
+        { text: "• Basic Interior Finishing", img: "img/pantry (1).png" },
+        { text: "• Custom Interior Layout", img: "img/pantry (1).png" },
+        { text: "• Wall and Partition Painting", img: "img/pantry (1).png" },
+        { text: "• Customized Lighting Design", img: "img/pantry (1).png" },
+        { text: "• Furniture Arrangement Guidance", img: "img/pantry (1).png" },
+        { text: "• Space Optimization Solutions", img: "img/pantry (1).png" }
     ],
     'onlyExterior': [
-        { text: "• Exterior Paint (Weatherproof Options)", img: "img/exterior-paint.png" },
-        { text: "• Wall Cladding (Stone, Tile, Brick Veneer)", img: "img/wall-cladding.png" },
-        { text: "• Landscaping (Lawn, Garden Design)", img: "img/landscaping.png" },
-        { text: "• Driveway and Pathway Layout", img: "img/driveway-layout.png" },
-        { text: "• Outdoor Lighting Fixtures", img: "img/outdoor-lighting.png" },
-        { text: "• Fencing and Gate Design", img: "img/fencing.png" }
+        { text: "• Exterior Paint (Weatherproof Options)", img: "img/pantry (1).png" },
+        { text: "• Wall Cladding (Stone, Tile, Brick Veneer)", img: "img/pantry (1).png" },
+        { text: "• Landscaping (Lawn, Garden Design)", img: "img/pantry (1).png" },
+        { text: "• Driveway and Pathway Layout", img: "img/pantry (1).png" },
+        { text: "• Outdoor Lighting Fixtures", img: "img/pantry (1).png" },
+        { text: "• Fencing and Gate Design", img: "img/pantry (1).png" }
     ]
 };
 
