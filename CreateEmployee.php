@@ -63,7 +63,7 @@ if (isset($_GET['employeeType'])) {
 </head>
 <body>
 
-<?php
+<?php 
 include('./Dashboard.php');
 ?>
 

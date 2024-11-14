@@ -1,11 +1,11 @@
 .EMSS-container {
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     margin-top: 30px;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); */
 }
 
 /* Targeting h2 with class "EMSS-heading" */

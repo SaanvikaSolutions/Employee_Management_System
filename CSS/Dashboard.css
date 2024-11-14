@@ -15,22 +15,19 @@ html {
 
 body.Dashboard.light {
     background-color: #f4f4f4;
-    /* Light background */
     color: #202124;
-    /* Dark text color */
+
 }
 
 body.Dashboard.dark {
     background-color: #202124;
-    /* Dark background */
     color: #f4f4f4;
-    /* Light text color */
+    
 }
 
 .Dashboard-topbar {
     height: 50px;
     background-color: #ffffff;
-    /* White background */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +39,6 @@ body.Dashboard.dark {
 
 .Dashboard-topbar.dark {
     background-color: #444;
-    /* Dark top bar for dark mode */
 }
 
 .Dashboard-logo {
@@ -67,9 +63,7 @@ body.Dashboard.dark {
 .Dashboard-search-container input.dark {
     border-color: #ffffff;
     background-color: #ffffff;
-    /* Light background in dark mode */
     color: #202124;
-    /* Dark text in dark mode */
 }
 
 @media screen and (max-width: 1024px) {
@@ -113,7 +107,6 @@ body.Dashboard.dark {
     height: 35px;
     border-radius: 50%;
     background-color: #d8d8d8;
-    /* Light gray for icons */
     position: relative;
 }
 
@@ -130,7 +123,7 @@ body.Dashboard.dark {
     width: 25px;
     height: 3px;
     background-color: black;
-    /* Hamburger icon color */
+   
 }
 
 .Dashboard-dashboard {
@@ -143,23 +136,21 @@ body.Dashboard.dark {
 .Dashboard-sidebar {
     width: 250px;
     background-color: #ffffff;
-    /* White sidebar */
     padding: 20px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .Dashboard-sidebar.light {
     background-color: #ffffff;
-    /* White sidebar */
 }
 
 .Dashboard-sidebar.dark {
     background-color: #444;
-    /* Dark sidebar for dark mode */
 }
 
 .Dashboard-sidebar ul {
@@ -176,7 +167,6 @@ body.Dashboard.dark {
     align-items: center;
     text-decoration: none;
     color: #202124;
-    /* Dark text for links */
     padding: 10px;
     position: relative;
     margin-left: 25px;
@@ -222,17 +212,14 @@ body.Dashboard.dark {
 
 .Dashboard-dropdown a {
     background-color: #dbdbdb00;
-    /* Light background for dropdowns */
     padding: 10px;
     border-radius: 10px;
     color: #202124;
-    /* Dark text */
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .Dashboard-dropdown a:hover {
-    /* background-color:  #e8e8e8;  */
     background-color: #ffffff52;
 }
 
@@ -246,12 +233,9 @@ body.Dashboard.dark {
     width: 14px;
     height: 14px;
     border-right: 2.5px solid black;
-    /* Default arrow color */
     border-bottom: 2.5px solid black;
-    /* Default arrow color */
     transform: rotate(315deg);
     transition: transform 0.3s ease, border-color 0.3s;
-    /* Add transition for border color */
 }
 
 .Dashboard-dropdown.active .Dashboard-arrow {
@@ -260,21 +244,17 @@ body.Dashboard.dark {
 
 .Dashboard-dropdown.active .Dashboard-arrow {
     transform: rotate(135deg);
-    /* Arrow rotates when active */
     border-color: #FF5722;
-    /* Change arrow color to #FF5722 when active */
 }
 
 .Dashboard-main-content {
     flex: 1;
     background-color: #f4f4f4;
-    /* Light background for main content */
     padding: 20px;
 }
 
 .Dashboard-logout-button {
     background-color: #000000;
-    /* Gmail red */
     color: white;
     border: none;
     padding: 10px;
@@ -288,9 +268,7 @@ body.Dashboard.dark {
 
 .Dashboard-logout-button:hover {
     background-color: #a70909;
-    /* Darker red on hover */
     transform: scale(1.05);
-    /* Slightly increase size */
 }
 
 .Dashboard-sidebar.active {
@@ -319,7 +297,7 @@ body.Dashboard.dark {
         z-index: 100;
         height: 100%;
         background-color: #ffffff;
-        /* White sidebar */
+       
     }
 
     .Dashboard-hamburger-menu {
@@ -351,20 +329,20 @@ body.Dashboard.dark {
     }
 }
 
-/* Profile design CSS start */
+      
+/*--------------------------- Profile design CSS start -----------------------------------*/
+
 .Dashboard-profile-card-section {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 20px;
     background-color: #f4f4f4;
-    /* Light background */
     height: 100%;
 }
 
 .Dashboard-profile-card {
     background-color: white;
-    /* White card background */
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 180px;
@@ -387,10 +365,8 @@ body.Dashboard.dark {
 .Dashboard-profile-card .Dashboard-count {
     font-size: 24px;
     color: #1a73e8;
-    /* Gmail blue */
     font-weight: bold;
     background-color: #e8f0fe;
-    /* Light blue background */
     border-radius: 10px;
     width: 60px;
 }
@@ -398,11 +374,9 @@ body.Dashboard.dark {
 .Dashboard-profile-card .Dashboard-role {
     font-size: 16px;
     color: #333;
-    /* Dark text for role */
     margin-top: 10px;
 }
 
-/* Media query for responsiveness */
 @media (max-width: 768px) {
     .Dashboard-profile-card-section {
         flex-direction: column;
@@ -426,19 +400,17 @@ body.Dashboard.dark {
 
 .Dashboard-profile-card:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    /* Slightly darker on hover */
     border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Profile design CSS end */
+/*------------------------------- Profile design CSS end -----------------------------------------*/
 
 
 
 .Dashboard-dropdown.active a {
     background-color: #ffffff;
-    /* Light gray background for the active dropdown */
     color: #007bff;
-    /* Change text color to match theme */
+  
 }
 
 .Dashboard-sidebar ul li a {
@@ -446,16 +418,12 @@ body.Dashboard.dark {
     align-items: center;
     text-decoration: none;
     color: #202124;
-    /* Dark text for links */
     position: relative;
     margin-left: 25px;
     transition: color 0.3s;
     box-shadow: none;
-    /* Remove box shadow */
     padding: 0;
-    /* Remove padding */
     border-bottom: 1px solid #ccc;
-    /* Add 1px border at the bottom */
 }
 
 .Dashboard-sidebar ul li a {
@@ -463,7 +431,6 @@ body.Dashboard.dark {
     align-items: center;
     text-decoration: none;
     color: #333;
-    /* Updated color */
     padding: 6px 0px;
     /* Updated padding */
     position: relative;
@@ -507,3 +474,8 @@ body.Dashboard.dark {
 }
 
 /* Existing CSS remains the same for other parts of the layout */
+
+.Final-buttons-container {
+
+    text-align: center
+}
