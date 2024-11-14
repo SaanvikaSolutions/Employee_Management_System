@@ -376,7 +376,9 @@ function showDynamicOptions(projectType, element) {
 }
 
 
-// ----------------------- 2nd code------------------// ----------------------- 2nd code------------------// Your data structure for additional options
+// ----------------------- 2nd code------------------
+
+// Your data structure for additional options
 const additionalOptionsData = {
     'fullDesign': [
         { text: "• Complete Interior & Exterior Package", img: "img/design-consultation.png" },
@@ -510,13 +512,11 @@ function selectAdditionalOption(option) {
 // Function to select room size
 function selectRoomSize(button, size) {
     const roomSizeButtons = document.querySelectorAll('.room-size-button');
-    roomSizeButtons.forEach(btn => btn.classList.remove('selected'));  // Remove 'selected' class from all buttons
-    button.classList.add('selected');  // Add 'selected' class to the clicked button
-    console.log(`You’ve selected the room size: ${size}`);  // Correct string interpolation using backticks
-
-    // Example additional functionality:
-    checkForQuotation();  // This can be any other function you want to call
+    roomSizeButtons.forEach(btn => btn.classList.remove('selected'));
+    button.classList.add('selected');
+    console.log(`You’ve chosen this room size: ${size}`);  // Different phrasing for the log
 }
+
 // Function to calculate area
 function calculateArea() {
     const width = parseFloat(document.getElementById('widthInput').value);
@@ -534,11 +534,12 @@ function calculateArea() {
 window.onload = function() {
     calculateArea();
 };
+
 // ----------------------- 3rd code------------------
 
 
  // Data for additional options for each room type
- const Final_additionalOptionsData = {
+ const Final_additionalOptionsData = {   
     'kitchen': [
         { text: "• Modular Kitchen Cabinets", img: "img/kitchen-cabinet.png" },
         { text: "• Countertops (Granite, Quartz)", img: "img/countertop.png" },
@@ -643,4 +644,82 @@ function checkForQuotation() {
 // Generate quotation function (for demonstration purposes)
 function generateQuotation() {
     alert("Quotation Generated! (Please wait)");
+}
+
+// =================================
+
+
+let x = [];
+
+// Toggle selection of room type
+function toggleSelection(element, roomType) {
+    element.classList.toggle("selected");  // Toggle the "selected" class on the clicked element
+    const isRoomSelected = element.classList.contains("selected");
+
+    // If room is selected, show additional options for that room
+    if (isRoomSelected) {
+        showAdditionalOptions(roomType);
+        if (roomType === 'studyRoom' || roomType === 'homeTheater') {
+            document.getElementById("Final-roomSizeOptions").style.display = "block";  // Show room size options
+        }
+    } else {
+        hideAdditionalOptions();
+        if (roomType === 'studyRoom' || roomType === 'homeTheater') {
+            document.getElementById("Final-roomSizeOptions").style.display = "none";  // Hide room size options if room is deselected
+        }
+    }
+}
+
+// Show additional options for selected room type
+function showAdditionalOptions(roomType) {
+    const Final_additionalContent = document.getElementById('Final-additionalContent');
+    const optionsData = Final_additionalOptionsData[roomType];  // Get options data for the selected room
+    let htmlContent = '';
+
+    if (optionsData) {
+        optionsData.forEach(item => {
+            htmlContent += `
+                <div class="Final-EMS-additional-option" onclick="toggleOptionSelection(this)">
+                    <img src="${item.img}" alt="">
+                    <span>${item.text}</span>
+                </div>`;
+        });
+        document.getElementById('Final-additionalOptions').style.display = 'block';  // Show the additional options section
+        Final_additionalContent.innerHTML = htmlContent;  // Populate the options
+    }
+}
+
+// Hide additional options if no room is selected
+function hideAdditionalOptions() {
+    document.getElementById('Final-additionalOptions').style.display = 'none';
+}
+
+// Toggle selection for additional options
+function toggleOptionSelection(option) {
+    option.classList.toggle("selected");  // Toggle the "selected" class on the clicked option
+}
+
+// Handle room size selection
+function selectRoomSize(element, size) {
+    const buttons = document.querySelectorAll('.Final-room-size-button');
+    buttons.forEach(btn => btn.classList.remove('selected'));  // Remove "selected" class from all size buttons
+    element.classList.add('selected');  // Add "selected" class to the clicked size button
+    console.log(`Room size selected: ${size}`);  // Log the selected size
+
+    checkForQuotation();  // Check if both room and size are selected to show the quotation button
+}
+
+// Check if both room and room size are selected to show the generate quotation button
+function checkForQuotation() {
+    const roomSelected = document.querySelectorAll('.Final-room-option.selected').length > 0;
+    const roomSizeSelected = document.querySelectorAll('.Final-room-size-button.selected').length > 0;
+
+    if (roomSelected && roomSizeSelected) {
+        document.querySelector('.Final-generate-quotation-button').style.display = 'block';  // Show the generate quotation button
+    }
+}
+
+// Generate quotation function (for demonstration purposes)
+function generateQuotation() {
+    alert("Quotation Generated! (Please wait)");  // Placeholder for generating the quotation
 }
