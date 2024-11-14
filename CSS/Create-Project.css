@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.EMS-createProject {
+    width: 100%;
+    /* max-width: 900px; */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.EMS-createProject-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #333;
+}
+
+.EMS-createProject-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.EMS-createProject-label {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.EMS-createProject-input,
+.EMS-createProject-select,
+.EMS-createProject-textarea,
+.EMS-createProject-date-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.EMS-createProject-textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.EMS-createProject-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.EMS-createProject-half {
+    flex: 1;
+    min-width: 220px;
+}
+
+.EMS-createProject-submit-btn {
+    padding: 12px 20px;
+    background-color: #293642;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.EMS-createProject-submit-btn:hover {
+    background-color: #358c4b;
+}
+
+
+@media (max-width: 768px) {
+    .EMS-createProject {
+        padding: 25px;
+    }
+
+    .EMS-createProject-header {
+        font-size: 1.8rem;
+    }
+
+    .EMS-createProject-form {
+        gap: 15px;
+    }
+
+    .EMS-createProject-row {
+        flex-direction: column;
+    }
+
+    .EMS-createProject-half {
+        min-width: 100%;
+    }
+}

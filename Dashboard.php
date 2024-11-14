@@ -103,6 +103,17 @@
                         <li><a href="#">Flows</a></li>
                     </ul>
                 </li>
+
+                <li class="Dashboard-dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('ManageProject-dropdown')">
+                    <i class="fa-solid fa-tasks Dashboard-icon-small"></i>
+                    Manage Project
+                    </a>
+                    <ul id="ManageProject-dropdown" class="Dashboard-submenu">
+                        <li><a href="Create-Project.php">Create Project</a></li>
+                        <li><a href="View-Project.php">View Project</a></li>
+                    </ul>
+                </li>
             </ul>
             <button class="Dashboard-logout-button">Logout</button>
         </nav>

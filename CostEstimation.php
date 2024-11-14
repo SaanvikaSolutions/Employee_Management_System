@@ -79,6 +79,13 @@ include('./Dashboard.php');
 
 
 
+
+        
+       <!-- Add this somewhere in your HTML where you want to show selected options -->
+       <div id="selected-options-container">
+    <h3>Selected Options:</h3>
+    <!-- This is where selected options will appear -->    
+</div>
     </div>
 
 
@@ -251,4 +258,4 @@ include('./Dashboard.php');
 <script src="JS/CostEstimation.js"></script>
 <script src="JS/Dashboard.js"></script>
 
-</html>
+</html> 
