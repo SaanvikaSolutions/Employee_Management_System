@@ -102,7 +102,7 @@ class SpecialNavbar extends HTMLElement {
 
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('ManageProject-dropdown')">
-                    <i class="fa-solid fa-tasks Dashboard-icon-small"></i>
+                        <i class="fa-solid fa-tasks Dashboard-icon-small"></i>
                     Manage Project
                     </a>
                     <ul id="ManageProject-dropdown" class="Dashboard-submenu">
