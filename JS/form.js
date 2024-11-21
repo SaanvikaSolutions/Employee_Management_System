@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alternateFields.style.display = "none";
             formContainer.classList.remove("alternate-fields-visible");
         }
-    });
+    });  
 
     // Toggle Property Type Selection
     const propertyButtons = document.querySelectorAll(".COSTE-property-btn");
@@ -35,193 +35,106 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ======================================
 
-let roomCounters = { Bedroom: 1, Hall: 1, Kitchen: 1, Balcony: 1 };
+let roomCounters = { Bedroom: 1, Kitchen: 1, 'Living Room': 1, 'Pooja Room': 1, 'Dining Room': 1 };
 
-function selectRoom(room) {
-    const optionsContainer = document.querySelector('.EMS-COST-options-container');
-    optionsContainer.innerHTML = ''; // Clear previous content
-
-    // Create room name display
-    const roomNameElement = document.createElement('div');
-    roomNameElement.className = 'EMS-COST-room-name-display';
-    roomNameElement.innerText = room;  // Display room name (e.g., "Bedroom")
-    optionsContainer.appendChild(roomNameElement);
-
-    // Create a table to hold the content for furniture, sqft, and quality columns
-    const table = document.createElement('table');
-    table.innerHTML = `
-            <thead>
-                <tr>
-                    <th>Furniture & Fixtures</th>
-                    <th>Sqft</th>
-                    <th>Quality Type</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        `;
-    const tbody = table.querySelector('tbody');
-
-    // Customize options for each room type
-    const options = {
-        'Bedroom': ['Wood work', 'Bed', 'Wall paneling', 'Paints', 'Study table', 'Dressing'],
-        'Hall': ['T.V.UNIT - Laminate & Side Design', 'T.V.UNIT - Glassdoors with profile', 'T.V.UNIT - Side Design', 'Lighting'],
-        'Kitchen': ['Cabinets', 'Countertop', 'Appliances', 'Sink'],
-        'Balcony': ['Plants', 'Seating', 'Flooring', 'Lighting']
-    };
-
-    // Add rows with corresponding data for each room
-    options[room].forEach(item => {
-        const row = document.createElement('tr');
-
-        const furnitureCell = document.createElement('td');
-        furnitureCell.innerHTML = `<label><img src="images/${item.toLowerCase().replace(/\s+/g, '-')}-icon.png" alt="${item} Icon"> ${item} <input type="checkbox"></label>`;
-        row.appendChild(furnitureCell);
-
-        const sqftCell = document.createElement('td');
-        sqftCell.innerHTML = ` 
-                <input type="number" class="EMS-COST-sqft-input" placeholder="W" oninput="calculateSqft(this)"> x
-                <input type="number" class="EMS-COST-sqft-input" placeholder="H" oninput="calculateSqft(this)"> =
-                <span class="EMS-COST-total-sqft-box">0</span>
-            `;
-        row.appendChild(sqftCell);
-
-        const qualityCell = document.createElement('td');
-        qualityCell.innerHTML = ` 
-                <select class="EMS-COST-dropdown">
-                    <option>Basic</option>
-                    <option>Premium</option>
-                    <option>Luxury</option>
-                </select>
-            `;
-        row.appendChild(qualityCell);
-
-        tbody.appendChild(row);
-    });
-
-    // Append the table to options container
-    optionsContainer.appendChild(table);
-
-    // Add the "Add Room" button below
-    const addRoomButton = document.createElement('button');
-    addRoomButton.classList.add('EMS-COST-add-room-btn');
-    addRoomButton.innerHTML = '<img src="images/plus-icon.png" alt="Add Room"> Add Room';
-    addRoomButton.onclick = function () {
-        addRoom(room);
-    };
-    optionsContainer.appendChild(addRoomButton);
-}
-
+// Function to add a room
 function addRoom(room) {
-    // Increment the room counter for the selected room type
-    const roomName = `${room}${roomCounters[room]}`;
+    const roomName = `${room} ${roomCounters[room]}`;
     roomCounters[room]++;
 
-    // Get the container that holds the room options (the main container for rooms)
     const containerWrapper = document.getElementById('containerWrapper');
-
-    // Create a new row for the new room options
     const newRow = document.createElement('div');
-    newRow.className = 'EMS-COST-container';  // Apply the new row's class
+    newRow.className = 'EMSS EMSS-COST-container';
 
-    // Create a new room selection column
     const roomSelectionColumn = document.createElement('div');
-    roomSelectionColumn.className = 'EMS-COST-room-selection';
+    roomSelectionColumn.className = 'EMSS EMSS-COST-room-selection';
     const roomTypeButton = document.createElement('button');
     roomTypeButton.innerHTML = `<span>${roomName}</span>`;
     roomSelectionColumn.appendChild(roomTypeButton);
-
-    // Add this room selection column to the new row
     newRow.appendChild(roomSelectionColumn);
 
-    // Create the options container for furniture, sqft, and quality columns
     const optionsContainer = document.createElement('div');
-    optionsContainer.className = 'EMS-COST-options-container';
+    optionsContainer.className = 'EMSS EMSS-COST-options-container';
 
-    // Create a new room name display
     const roomNameElement = document.createElement('div');
-    roomNameElement.className = 'EMS-COST-room-name-display';
-    roomNameElement.innerText = roomName;  // Display updated room name
+    roomNameElement.className = 'EMSS EMSS-COST-room-name-display';
+    roomNameElement.innerText = roomName;
     optionsContainer.appendChild(roomNameElement);
 
-    // Create a table to hold the content for furniture, sqft, and quality columns
     const table = document.createElement('table');
     table.innerHTML = `
-            <thead>
-                <tr>
-                    <th>Furniture & Fixtures</th>
-                    <th>Sqft</th>
-                    <th>Quality Type</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        `;
+        <thead>
+            <tr>
+                <th>Furniture & Fixtures</th>
+                <th>Sqft</th>
+                <th>Quality Type</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    `;
     const tbody = table.querySelector('tbody');
 
-    // Customize options for each room type
     const options = {
-        'Bedroom': ['Wood work', 'Bed', 'Wall paneling', 'Paints', 'Study table', 'Dressing'],
-        'Hall': ['Sofa', 'Center Table', 'Wall Paints', 'Lighting'],
-        'Kitchen': ['Cabinets', 'Countertop', 'Appliances', 'Sink'],
-        'Balcony': ['Plants', 'Seating', 'Flooring', 'Lighting']
+        'Bedroom': ['Wadrobe Laminate', 'Wadrobe Loft', 'Glass Shutter for Wardrobe', 'Draws 2 Nos', 'TV Unit small', 'Dressing Box with 1 draw & Mirror', 'Closet Mirror', 'Study Unit', 'King Bed', '2 Side Tables'],
+        'Kitchen': ['Bottom Cabinet - Chimney Side', 'Bottom Cabinet-Right Side', 'Bottom Cabinet -Fridge Side', 'Middle Cabinet-Right Side', 'Middle Cabinet -Fridge Side', 'Overhead Loft -Chimney Side', 'Overhead Loft -Right Side', 'Overhead Loft -Fridge Side', 'Corner Storage with Glass', 'Cutlery Basket', 'Thali Basket', 'Tandem Basket', 'Jolly Basket (Type 1)'],
+        'Living Room': ['T.V.UNIT -Laminate & Side Design', 'T.V.UNIT -Glassdoors with profile', 'T.V.UNIT -Side Design'],
+        'Pooja Room': ['Pooja unit near dining area -East Facing design with glass doors', 'Pooja Unit Storage (Drawers, Shelves)'],
+        'Dining Room': ['Design Mirror & Lights (2 lights 3000Rs)', 'Dining area storage as per design', 'Dining Table(Wooden)', 'Dining Table (Glass)', 'Extendable Dining Table', 'Crockery Unit With Glass Doors', 'Crockery Unit Open Shelving']
     };
 
-    // Add rows with corresponding data for each room
     options[room].forEach(item => {
         const row = document.createElement('tr');
 
         const furnitureCell = document.createElement('td');
-        furnitureCell.innerHTML = `<label><img src="images/${item.toLowerCase().replace(/\s+/g, '-')}-icon.png" alt="${item} Icon"> ${item} <input type="checkbox"></label>`;
+        furnitureCell.innerHTML = `<label><input type="checkbox"> ${item}</label>`;
         row.appendChild(furnitureCell);
 
         const sqftCell = document.createElement('td');
         sqftCell.innerHTML = ` 
-                <input type="number" class="EMS-COST-sqft-input" placeholder="W" oninput="calculateSqft(this)"> x
-                <input type="number" class="EMS-COST-sqft-input" placeholder="H" oninput="calculateSqft(this)"> =
-                <span class="EMS-COST-total-sqft-box">0</span>
-            `;
+            <input type="number" class="EMSS EMSS-COST-sqft-input" placeholder="W" oninput="calculateSqft(this)"> x
+            <input type="number" class="EMSS EMSS-COST-sqft-input" placeholder="H" oninput="calculateSqft(this)"> =
+            <span class="EMSS EMSS-COST-total-sqft-box">0</span>
+        `;
         row.appendChild(sqftCell);
 
         const qualityCell = document.createElement('td');
         qualityCell.innerHTML = ` 
-                <select class="EMS-COST-dropdown">
-                    <option>Basic</option>
-                    <option>Premium</option>
-                    <option>Luxury</option>
-                </select>
-            `;
+            <select class="EMSS EMSS-COST-dropdown">
+                <option>Basic</option>
+                <option>Premium</option>
+                <option>Luxury</option>
+            </select>
+        `;
         row.appendChild(qualityCell);
 
         tbody.appendChild(row);
     });
 
-    // Append the table to options container
     optionsContainer.appendChild(table);
 
-    // Add the "Add Room" button below
     const addRoomButton = document.createElement('button');
-    addRoomButton.classList.add('EMS-COST-add-room-btn');
-    addRoomButton.innerHTML = '<img src="images/plus-icon.png" alt="Add Room"> Add Room';
+    addRoomButton.classList.add('EMSS', 'EMSS-COST-add-room-btn');
+    addRoomButton.innerHTML = '<span>+</span> Add Room';
     addRoomButton.onclick = function () {
         addRoom(room);
     };
     optionsContainer.appendChild(addRoomButton);
 
-    // Add the options container to the new row
     newRow.appendChild(optionsContainer);
-
-    // Append the new row to the container wrapper
     containerWrapper.appendChild(newRow);
 }
 
-function calculateSqft(element) {
-    const parentDiv = element.parentNode;
-    const width = parentDiv.querySelector('input:nth-child(1)').value;
-    const height = parentDiv.querySelector('input:nth-child(2)').value;
-    const totalSqft = width && height ? width * height : 0;
-    parentDiv.querySelector('.EMS-COST-total-sqft-box').innerText = totalSqft;
+// Function to calculate sqft area
+function calculateSqft(input) {
+    const row = input.closest('tr');
+    const widthInput = row.querySelector('.EMSS .EMSS-COST-sqft-input:nth-child(1)'); // Width input
+    const heightInput = row.querySelector('.EMSS .EMSS-COST-sqft-input:nth-child(2)'); // Height input
+    const totalBox = row.querySelector('.EMSS .EMSS-COST-total-sqft-box');
+
+    const width = parseFloat(widthInput.value) || 0;
+    const height = parseFloat(heightInput.value) || 0;
+
+    // Calculate the total square footage
+    const totalSqft = width * height;
+    totalBox.textContent = totalSqft ? totalSqft : '0';
 }
-
-
-// ======================================
-
-

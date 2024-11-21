@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Details Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/form.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 <body>
+
+    <?php
+    include('./Dashboard.php');
+    ?>
+
     <div class="COSTE-form-container">
         <h2 class="COSTE-title">Client Details</h2>
-        <form id="client-form" class="COSTE-form">
+        <form id="client-form" class="COSTE-form">  
             <div class="COSTE-form-group">
                 <label for="company-name" class="COSTE-label">Company Name</label>
                 <input type="text" id="company-name" class="COSTE-input" placeholder="Enter company name" required>
@@ -82,44 +89,20 @@
                 </select>
             </div>
         </div>
-
         <!-- ===================   Add button ================== -->
-
-        <div class="EMS-COST-container-wrapper" id="containerWrapper">
-            <div class="EMS-COST-container">
-                <!-- Room Type Selection Column -->
-                <div class="EMS-COST-room-selection">
-                    <h2>Select Room Type</h2>
-                    <div class="EMS-COST-room-type">
-                        <button onclick="selectRoom('Bedroom')">
-                            <img src="img/bedroom.png" alt="Bedroom Icon">
-                            <span>Bedroom</span> <input type="checkbox">
-                        </button>
-                        <button onclick="selectRoom('Hall')">
-                            <img src="img/living room(hall).png" alt="Hall Icon">
-                            <span>Hall</span> <input type="checkbox">
-                        </button>
-                        <button onclick="selectRoom('Kitchen')">
-                            <img src="img/kitchen.png" alt="Kitchen Icon">
-                            <span>Kitchen</span> <input type="checkbox">
-                        </button>
-                        <button onclick="selectRoom('Balcony')">
-                            <img src="img/balcony.png" alt="Balcony Icon">
-                            <span>Balcony (optional)</span> <input type="checkbox">
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Options Container (Table will appear after selection) -->
-                <div class="EMS-COST-options-container">
-                    <div class="EMS-COST-default-placeholder">
-                        Please select a room type to see options.
-                    </div>
-                </div>
+        <div class="EMSS EMSS-COST-container">
+            <div id="containerWrapper">
+                <h1>Select Room Type</h1>
             </div>
+            <button onclick="addRoom('Bedroom')"> Bedroom</button>
+            <button onclick="addRoom('Kitchen')"> Kitchen</button>
+            <button onclick="addRoom('Living Room')"> Living Room</button>
+            <button onclick="addRoom('Pooja Room')"> Pooja Room</button>
+            <button onclick="addRoom('Dining Room')"> Dining Room</button>
         </div>
         <!-- ===================   Add button ================== -->
     </div>
 </body>
 <script src="JS/form.js"></script>
+<script src="JS/Dashboard.js"></script>
 </html>
