@@ -1,0 +1,377 @@
+body {
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+    padding: 0;
+    /* background-color: #f9f9f9; */
+}
+
+.COSTE-form-container {
+    /* max-width: 800px; */
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.COSTE-title {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Form Styles */
+.COSTE-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.COSTE-form-group {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.COSTE-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.COSTE-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.COSTE-form-check {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.COSTE-btn {
+    padding: 12px 25px;
+    background-color: #2b4a5f;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.COSTE-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.COSTE-btn:active {
+    transform: translateY(0);
+}
+
+/* When alternate fields are visible, reduce button size */
+.alternate-fields-visible .COSTE-btn {
+    width: auto;
+    /* Reset to auto width */
+    padding: 10px 20px;
+
+}
+
+
+.COSTE-property-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.COSTE-property-btn {
+    flex: 1 1 calc(33.33% - 10px);
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    cursor: pointer;
+    text-align: center;
+}
+
+.COSTE-property-btn:hover {
+    background: #eee;
+}
+
+.COSTE-property-btn.selected {
+    border: 1px solid #2b4a5f;
+    color: #fff;
+    background: #2b4a5f;
+}
+
+
+.COSTE-project-selection {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.COSTE-project-option {
+    flex: 1 1 calc(33.33% - 20px);
+    text-align: center;
+}
+
+.COSTE-project-btn {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+.COSTE-project-btn.selected {
+    border-color: #2b4a5f;
+    background: #2b4a5f;
+    color: #fff;
+}
+
+
+.COSTE-apartment-type {
+    margin-top: 20px;
+}
+
+.COSTE-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .COSTE-property-btn {
+        flex: 1 1 calc(50% - 10px);
+
+    }
+
+    .COSTE-form-group {
+        flex: 1 1 100%;
+
+    }
+
+    /* Project section layout for smaller screens */
+    .COSTE-project-selection {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .COSTE-project-option {
+        width: 100%;
+
+    }
+
+    /* Align apartment type below buttons on small screens */
+    .COSTE-apartment-type {
+        width: 100%;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .COSTE-property-btn {
+        flex: 1 1 100%;
+
+    }
+
+    .COSTE-btn {
+        width: 100%;
+
+    }
+
+    /* Project section layout for smaller screens */
+    .COSTE-project-selection {
+        flex-direction: column;
+        /* Stack the buttons vertically */
+        gap: 10px;
+        align-items: center;
+    }
+
+    .COSTE-apartment-type {
+        width: 100%;
+        /* Ensure apartment select is full-width */
+        margin-top: 20px;
+        /* Add margin to ensure space between buttons and select */
+    }
+}
+
+
+/* ======================================= */
+.EMSS-COST-container h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.EMSS-COST-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+#containerWrapper {
+    margin-bottom: 20px;
+}
+
+.EMSS-COST-container .EMSS-COST-room-selection {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.EMSS button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #384757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.EMSS button:hover {
+    background-color: #9badc0;
+}
+
+.EMSS .EMSS-COST-room-name-display {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.EMSS .EMSS-COST-options-container {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+.EMSS table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.EMSS th,
+.EMSS td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.EMSS th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.EMSS .EMSS-COST-furniture-column label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 70%;
+}
+
+.EMSS .EMSS-COST-sqft-input {
+    width: 50px;
+    text-align: center;
+}
+
+.EMSS .EMSS-COST-total-sqft-box {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+.EMSS .EMSS-COST-dropdown {
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+.EMSS .EMSS-COST-add-room-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 700px) {
+    .EMSS .EMSS-COST-container {
+        flex-direction: column;
+        /* Stack elements vertically */
+        padding: 10px;
+    }
+
+    .EMSS .EMSS-COST-room-selection {
+        width: 100%;
+        /* Ensure room selection button takes full width */
+        margin-bottom: 10px;
+    }
+
+    .EMSS button {
+        width: 100%;
+        /* Make buttons full width for better accessibility */
+        padding: 12px;
+    }
+
+    .EMSS .EMSS-COST-options-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .EMSS .EMSS-COST-room-name-display {
+        font-size: 1.2em;
+    }
+
+    .EMSS .EMSS-COST-add-room-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .EMSS .EMSS-COST-dropdown {
+        width: 100%;
+        /* Make dropdowns full width on smaller screens */
+        margin-bottom: 15px;
+    }
+
+    .EMSS .EMSS-COST-sqft-input {
+        width: 40%;
+        /* Adjust input field widths */
+        margin-right: 5px;
+    }
+
+    .EMSS .EMSS-COST-total-sqft-box {
+        width: 60%;
+        /* Adjust width for total sqft box */
+    }
+}
