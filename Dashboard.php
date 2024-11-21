@@ -67,7 +67,7 @@
                         <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="costs-dropdown" class="Dashboard-submenu">
-                        <li><a href="Details.php">create Cost</a></li>
+                        <li><a href="CostEstimation_Form.php">create Cost</a></li>
                         <li><a href="#">Costs</a></li>
                     </ul>
                 </li>
