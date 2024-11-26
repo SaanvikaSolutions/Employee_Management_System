@@ -63,7 +63,7 @@
                 
                 <div class="EMS-createProject-half">
                     <label for="project-team" class="EMS-createProject-label">Project Team Members</label>
-                    <select id="project-team" name="projectTeam[]" class="EMS-createProject-select" Multiple  required>
+                    <select id="project-team" name="projectTeam[]" class="EMS-createProject-select"   required>
                         <option value="" disabled selected>Select Team Member</option>
                         <!-- <option value="sai">Sai</option> -->
                         <?php
