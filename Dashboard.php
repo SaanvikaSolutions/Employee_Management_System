@@ -19,9 +19,9 @@
             <div></div>
         </div>
         <div class="Dashboard-logo">EMS</div>
-        <div class="Dashboard-search-container">
+        <!-- <div class="Dashboard-search-container">
             <input type="text" placeholder="Search...">
-        </div>
+        </div> -->
         <div class="Dashboard-right-icons">
             <div class="Dashboard-circle Dashboard-notification-icon">
                 <i class="fa-regular fa-bell"></i>
@@ -78,8 +78,8 @@
                         <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="tickets-dropdown" class="Dashboard-submenu">
-                        <li><a href="#">View Tickets</a></li>
-                        <li><a href="#">Assign Tickets</a></li>
+                        <li><a href="CreateTicket.php">CreateTicket</a></li>
+                        <li><a href="#">View Ticket</a></li>
                     </ul>
                 </li>
 
@@ -89,12 +89,13 @@
                         <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="expenses-dropdown" class="Dashboard-submenu">
-                        <li><a href="#">View Expenses</a></li>
-                        <li><a href="#">Create Expenses</a></li>
+                    <li><a href="CreateExpense.php">Create Expenses</a></li>
+                        <li><a href="ViewExpenses.php">View Expenses</a></li>
+                        <!-- <li><a href="CreateExpense.php">Create Expenses</a></li> -->
                     </ul>
                 </li>
 
-                <li class="Dashboard-dropdown">
+                <!-- <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('WorkFlow-dropdown')">
                         <i class="fa-solid fa-sitemap Dashboard-icon-small"></i>Workflow
                     </a>
@@ -102,7 +103,7 @@
                         <li><a href="#">Flow</a></li>
                         <li><a href="#">Flows</a></li>
                     </ul>
-                </li>
+                </li> -->
 
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('ManageProject-dropdown')">
@@ -119,5 +120,5 @@
         </nav>
 
         <!-- <div  class="master-table"> -->
-
+ 
  

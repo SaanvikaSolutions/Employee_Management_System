@@ -66,6 +66,26 @@
                             <i class="fa-solid fa-trash delete-button"></i>
                         </td>
                     </tr>
+
+
+                    <!-- ---------------------------------------------- -->
+                    <tr>
+                        <td>2</td>
+                        <td>Zepto</td>
+                        <td>Construction</td>
+                        <td>Venky</td>
+                        <td>Govind, Mani</td>
+                        <td>50,00,000</td>
+                        <td>2024-02-15</td>
+                        <td>2025-03-30</td>
+                        <td class="action-buttons">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash delete-button"></i>
+                        </td>
+                    </tr>    
+                    <!-- ---------------------------------------------- -->
                 </tbody>
             </table>
         </div>

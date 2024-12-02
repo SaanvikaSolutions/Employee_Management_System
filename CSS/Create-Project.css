@@ -106,3 +106,9 @@ body {
         min-width: 100%;
     }
 }
+
+@media (min-width: 601px) {
+    .EMS-createProject {
+      margin-left: 250px;
+    }
+}

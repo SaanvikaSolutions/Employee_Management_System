@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.View_ticket {
+    margin-top: 35px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+.View_ticketTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.View_ticketTitleSearchBar {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.View_ticketWrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* Styling for the project table */
+.View_ticketTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.View_ticketTable th,
+.View_ticketTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.View_ticketTable th {
+    background-color: #2b4a5f;
+    color: white;
+    font-weight: bold;
+}
+
+.View_ticketTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.View_ticketTable tr:hover {
+    background-color: #e0e0e0;
+}
+
+.action-buttons-view-ticket {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.action-buttons-view-ticket i,
+.action-buttons-view-ticket button {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.view-ticket-assign-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.view-ticket-assign-button:hover {
+    background-color: #45a049;
+}
+
+.view-ticket-view-button {
+    background-color: #3498db;
+    color: white;
+}
+
+.view-ticket-view-button:hover {
+    background-color: #2980b9;
+}
+
+.priority-high {
+    color: red;
+}
+
+.priority-medium {
+    color: blue;
+}
+
+.priority-low {
+    color: green;
+}
+
+@media (max-width: 768px) {
+    .View_ticketTable {
+        font-size: 14px;
+        min-width: 800px;
+    }
+
+    .View_ticketTitleSearchBar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .View_ticketTable th,
+    .View_ticketTable td {
+        padding: 10px;
+    }
+
+    .action-buttons-view-ticket {
+        gap: 8px;
+    }
+
+    .action-buttons-view-ticket i,
+    .action-buttons-view-ticket button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .View_ticketTable {
+        font-size: 13px;
+        min-width: 600px;
+    }
+
+    .View_ticketTitleSearchBar {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .action-buttons-view-ticket i,
+    .action-buttons-view-ticket button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .View_ticket {
+        width: 100%;
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 601px) {
+    .View_ticket {
+        margin-left: 250px;
+    }
+}

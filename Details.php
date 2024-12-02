@@ -56,3 +56,4 @@ include('./Dashboard.php');
 </body>
 <script src="JS/Dashboard.js"></script>
 </html>
+ 

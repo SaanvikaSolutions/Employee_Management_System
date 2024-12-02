@@ -20,6 +20,7 @@ body {
 
 .EmployeeTable-title {
     text-align: center;
+    margin-top: 45px;
     margin-bottom: 20px;
     color: #333;
 }
@@ -103,5 +104,12 @@ body {
     .EmployeeTable-view-button {
         font-size: 12px;
         padding: 5px 10px;
+    }
+}
+
+
+@media (min-width: 601px) {
+    .EmployeeTable-container {
+      margin-left: 250px;
     }
 }
