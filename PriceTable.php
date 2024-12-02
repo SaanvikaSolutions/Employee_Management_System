@@ -8,7 +8,8 @@
     <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet"  href="CSS/PriceTable.css">
-    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <link rel="stylesheet"  href="dashboars.html/1.css">
+    <!-- <link rel="stylesheet" href="CSS/Dashboard.css"> -->
 
 </head>
 
@@ -68,11 +69,376 @@
                     </tr>
 
                     <!-- ------------------------------------------------ -->
+                    <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>  <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr> <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr> <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr> <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr> <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr> <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr> <tr>
+                        <td>2</td>
+                        <td>Bedroom</td>
+                        <td>Wardrobe loft</td>
+                        <td>Wardrobe</td>
+                        <td>96</td>
+                        <td>Basic</td>
+                        <td>1800</td>
+                        <td class="action-buttons-EMS">
+                            <a href="https://your-link-here.com">
+                                <i class="fa-solid fa-pen-to-square Price-Table-Edit-button"></i>
+                            </a>
+                            <i class="fa-solid fa-trash Price-Table-delete-button"></i>
+                        </td>
+                    </tr>
+                    
+                    
+                    
+                    
+                    
+
         
                 </tbody>
             </table>
         </div>
     </div>
 </body>
-<script src="JS/Dashboard.js"></script>
+<script src="dashboars.html/1.js"></script>
+<script src="JS/PriceTable.js"></script>
+
+
+<!-- <script src="JS/Dashboard.js"></script> -->
 </html>

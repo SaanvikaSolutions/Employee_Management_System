@@ -1,0 +1,141 @@
+.CreateTicket h2 {
+    text-align: center;
+    color: #333;
+}
+
+.CreateTicket .form-container {
+    width: 80%;
+    /* max-width: 900px; */
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    margin-top: 70px;
+}
+
+.CreateTicket h3 {
+    color: #333;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.CreateTicket label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.CreateTicket .form-section {
+    margin-bottom: 30px;
+}
+
+.CreateTicket .form-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Flexbox for side-by-side layout */
+.CreateTicket .side-by-side {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.CreateTicket .side-by-side>div {
+    flex: 1;
+}
+
+.CreateTicket .full-width {
+    width: 100%;
+}
+
+.CreateTicket input[type="text"],
+.CreateTicket input[type="date"],
+.CreateTicket textarea,
+.CreateTicket select,
+.CreateTicket input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.CreateTicket textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.CreateTicket .submit-btn {
+    background-color: #294153;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.CreateTicket .submit-btn:hover {
+    background-color: #1a2134;
+}
+
+@media (max-width: 600px) {
+    .CreateTicket .form-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .CreateTicket .side-by-side {
+        flex-direction: column;
+    }
+
+    .CreateTicket .side-by-side>div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .CreateTicket .form-container {
+        width: 70%;
+        padding: 15px;
+    }
+
+    .CreateTicket .side-by-side {
+        flex-direction: column;
+    }
+
+    .CreateTicket .side-by-side>div {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .CreateTicket .form-container {
+        width: 75%;
+    }
+
+    .CreateTicket .side-by-side {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .CreateTicket .side-by-side>div {
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .CreateTicket .form-container {
+        width: 100%;
+        margin-left: -180px;
+        margin-right: 20px;
+    }
+}

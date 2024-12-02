@@ -49,14 +49,14 @@ label {
 
 .createEmployee-form-input:focus,
 .createEmployee-form-select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    border-color: #161f29;
+    box-shadow: 0 0 8px rgba(20, 31, 43, 0.4);
     outline: none;
 }
 
 .createEmployee-form-button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #131b24;
     color: white;
     border: none;
     border-radius: 8px;
@@ -67,12 +67,12 @@ label {
 }
 
 .createEmployee-form-button:hover {
-    background-color: #0056b3;
+    background-color: #161f28;
     transform: translateY(-2px);
 }
 
 .createEmployee-form-button:active {
-    background-color: #003d80;
+    background-color: #192634;
 }
 
 .createEmployee-flex {
@@ -133,5 +133,12 @@ label {
 
     .createEmployee-form-input, .createEmployee-form-select {
         padding: 5px;
+    }
+}
+
+
+@media (min-width: 601px) {
+    .createEmployee-employee-profile-form {
+      margin-left: 250px;
     }
 }

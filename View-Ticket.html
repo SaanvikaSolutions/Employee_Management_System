@@ -1,0 +1,268 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Ticket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .View_ticket {
+            margin-top: 35px;
+            width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-left: 20px;
+            margin-right: 30px;
+        }
+
+        .View_ticketTitle {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .View_ticketTitleSearchBar {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .View_ticketWrapper {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the project table */
+        .View_ticketTable {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        .View_ticketTable th,
+        .View_ticketTable td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .View_ticketTable th {
+            background-color: #2b4a5f;
+            color: white;
+            font-weight: bold;
+        }
+
+        .View_ticketTable tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .View_ticketTable tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .action-buttons-view-ticket {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .action-buttons-view-ticket i,
+        .action-buttons-view-ticket button {
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none;
+        }
+
+        .view-ticket-assign-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .view-ticket-assign-button:hover {
+            background-color: #45a049;
+        }
+
+        .view-ticket-view-button {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .view-ticket-view-button:hover {
+            background-color: #2980b9;
+        }
+
+        .priority-high {
+            color: red;
+        }
+
+        .priority-medium {
+            color: blue;
+        }
+
+        .priority-low {
+            color: green;
+        }
+
+        @media (max-width: 768px) {
+            .View_ticketTable {
+                font-size: 14px;
+                min-width: 800px;
+            }
+
+            .View_ticketTitleSearchBar {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .View_ticketTable th,
+            .View_ticketTable td {
+                padding: 10px;
+            }
+
+            .action-buttons-view-ticket {
+                gap: 8px;
+            }
+
+            .action-buttons-view-ticket i,
+            .action-buttons-view-ticket button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .View_ticketTable {
+                font-size: 13px;
+                min-width: 600px;
+            }
+
+            .View_ticketTitleSearchBar {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .action-buttons-view-ticket i,
+            .action-buttons-view-ticket button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .View_ticket {
+                width: 100%;
+                margin-left: 0px;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .View_ticket {
+                margin-left: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="View_ticket">
+        <h1 class="View_ticketTitle">View Ticket</h1>
+        <input type="text" id="searchBar" class="View_ticketTitleSearchBar"
+            placeholder="Search by Ticket ID, Client Name, Title, Project Name, or Priority">
+        <div class="View_ticketWrapper">
+            <table class="View_ticketTable">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Client Name</th>
+                        <th>Title</th>
+                        <th>Project Type</th>
+                        <th>Project Name</th>
+                        <th>Priority Level</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="ticketData">
+                    <tr>
+                        <td>1001</td>
+                        <td>ABC Corp</td>
+                        <td>Office Renovation</td>
+                        <td>Renovation</td>
+                        <td>Main Office</td>
+                        <td class="priority-medium">Medium</td>
+                        <td class="action-buttons-view-ticket">
+                            <button class="view-ticket-view-button">View Ticket</button>
+                            <button class="view-ticket-assign-button">Assign Ticket</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1002</td>
+                        <td>XYZ Ltd</td>
+                        <td>Building Construction</td>
+                        <td>New Construction</td>
+                        <td>Corporate Tower</td>
+                        <td class="priority-high">High</td>
+                        <td class="action-buttons-view-ticket">
+                            <button class="view-ticket-view-button">View Ticket</button>
+                            <button class="view-ticket-assign-button">Assign Ticket</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1003</td>
+                        <td>Tech Innovations</td>
+                        <td>Software Development</td>
+                        <td>IT</td>
+                        <td>Mobile App</td>
+                        <td class="priority-low">Low</td>
+                        <td class="action-buttons-view-ticket">
+                            <button class="view-ticket-view-button">View Ticket</button>
+                            <button class="view-ticket-assign-button">Assign Ticket</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchBar').addEventListener('keyup', function () {
+            const filter = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#ticketData tr');
+
+            rows.forEach(row => {
+                // Get the text content of each column (Ticket ID, Client Name, etc.)
+                const ticketId = row.cells[0].textContent.toLowerCase();
+                const clientName = row.cells[1].textContent.toLowerCase();
+                const title = row.cells[2].textContent.toLowerCase();
+                const projectType = row.cells[3].textContent.toLowerCase();
+                const projectName = row.cells[4].textContent.toLowerCase();
+                const priorityLevel = row.cells[5].textContent.toLowerCase();
+
+                // Check if any of the columns include the filter value
+                if (ticketId.includes(filter) ||
+                    clientName.includes(filter) ||
+                    title.includes(filter) ||
+                    projectType.includes(filter) ||
+                    projectName.includes(filter) ||
+                    priorityLevel.includes(filter)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

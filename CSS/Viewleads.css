@@ -5,15 +5,17 @@
     padding: 20px;
     margin-top: 30px;
     border-radius: 12px;
+    margin-left: 20px;
     /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); */
 }
 
-/* Targeting h2 with class "EMSS-heading" */
+
 .EMSS-heading {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
     color: #444;
+    margin-top: 30px;
 }
 
 .EMSS-task-card {
@@ -186,5 +188,10 @@
 
     .EMSS-task-header h3 {
         font-size: 16px; /* Adjust task header font size */
+    }
+}
+@media (min-width: 601px) {
+    .EMSS-container {
+      margin-left: 250px;
     }
 }

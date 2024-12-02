@@ -1,0 +1,227 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Topbar styles */
+        .Dashboard-topbar {
+            height: 50px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            /* position: sticky; */
+            top: 0;
+            z-index: 100;
+        }
+
+        .Dashboard-topbar.dark {
+            background-color: #444;
+        }
+
+        .Dashboard-logo {
+            font-weight: bold;
+            margin-left: 50px;
+        }
+
+        .Dashboard-right-icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .Dashboard-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #d8d8d8;
+        }
+
+        .Dashboard-hamburger-menu {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute;
+            left: 20px;
+        }
+
+        .Dashboard-hamburger-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+        }
+
+        /* Main Dashboard layout */
+        .Dashboard-dashboard {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            height: calc(100vh - 50px); /* Ensures content fits in full viewport */
+            overflow: hidden;
+        }
+
+        /* Sidebar styles */
+        .Dashboard-sidebar {
+            position: fixed;
+            top: 50px;  /* So it sticks just below the topbar */
+            left: 0;
+            width: 250px;
+            background-color: #ffffff;
+            padding: 20px;
+            height: calc(100vh - 50px); /* Full height of the viewport */
+            z-index: 90; /* Ensures the sidebar stays above the main content */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .Dashboard-sidebar.dark {
+            background-color: #444;
+        }
+
+        .Dashboard-sidebar ul {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .Dashboard-sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .Dashboard-sidebar ul li a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #202124;
+            padding: 10px;
+            position: relative;
+            margin-left: 25px;
+            transition: color 0.3s;
+        }
+
+        .Dashboard-sidebar ul li a.dark {
+            color: #000000;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .Dashboard-sidebar ul li a.dark:hover {
+            background-color: #e8e8e8;
+            color: #FF5722;
+        }
+
+        .Dashboard-icon-small {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .Dashboard-submenu {
+            display: none;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .Dashboard-dropdown a {
+            background-color: #dbdbdb00;
+            padding: 10px;
+            border-radius: 10px;
+            color: #202124;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .Dashboard-dropdown a:hover {
+            background-color: #e8e8e8;
+        }
+
+        /* Main content styles */
+        .Dashboard-main-content {
+            margin-left: 250px; /* Leaves space for the sidebar */
+            padding: 20px;
+            background-color: #f4f4f4;
+            height: calc(100vh - 50px); /* Adjusts for the top bar height */
+            overflow-y: auto; /* Enables vertical scrolling when content overflows */
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
+
+        .Dashboard-logout-button {
+            background-color: #ff3434;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+
+        .Dashboard-logout-button:hover {
+            background-color: #a70909;
+            transform: scale(1.05);
+        }
+
+        /* Mobile and tablet adjustments */
+        @media screen and (max-width: 768px) {
+            .Dashboard-sidebar {
+                width: 200px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .Dashboard-sidebar {
+                display: none;
+            }
+
+            .Dashboard-sidebar.active {
+                display: flex;
+                position: absolute;
+                width: 200px;
+                z-index: 100;
+                height: 100%;
+                background-color: #ffffff;
+            }
+
+            .Dashboard-hamburger-menu {
+                display: flex;
+            }
+
+            .Dashboard-main-content {
+                padding: 10px;
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .Dashboard-sidebar {
+                width: 150px;
+            }
+
+            .Dashboard-right-icons {
+                gap: 10px;
+            }
+
+            .Dashboard-logo {
+                font-size: 14px;
+                margin-left: 25px;
+            }
+
+            .Dashboard-hamburger-menu div {
+                width: 20px;
+                height: 2px;
+            }
+        }
+    

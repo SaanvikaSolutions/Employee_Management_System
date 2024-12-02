@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- <link rel="stylesheet" href="CSS/Dashboard.css"> -->
     <style>
         * {
             margin: 0;
@@ -58,7 +56,7 @@
             justify-content: center;
         }
 
-        .Dashboard-search-container input {
+        .Dashboard-search-container input { 
             width: 25%; 
             padding: 5px;
             border: 1px solid #ccc;
@@ -177,8 +175,6 @@
             transition: color 0.3s;
             box-shadow: 7px 2px 8px #636363ed;
         }
-
-
         /* --------------------------------------------------------------------------------------- */
         .Dashboard-sidebar ul li a.dark {
     color: #000000; /* Light text color for links in dark mode */
@@ -187,12 +183,10 @@
     padding: 10px; /* Optional: Add padding for better click area */
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
-
 .Dashboard-sidebar ul li a.dark:hover {
     background-color: #e8e8e8; /* Slightly lighter background on hover */
     color: #FF5722; /* White text color on hover */
 }
-
 
 /* ----------------------------------------------------------------------------------------- */
         .Dashboard-icon-small {
@@ -205,12 +199,6 @@
             margin-top: 10px;
             margin-left: 10px;
         }
-        
-
-
-
-        
-
         .Dashboard-dropdown a {
             background-color: #dbdbdb00; /* Light background for dropdowns */
             padding: 10px;
@@ -223,10 +211,6 @@
         .Dashboard-dropdown a:hover {
             background-color:  #e8e8e8; /* Light gray on hover */
         }
-        /* .Dashboard-dropdown a:hover {
-            background-color: #a8c7fa; 
-        } */
-
         .Dashboard-arrow {
             margin-left: auto;
     display: inline-block;
@@ -420,10 +404,6 @@
     padding: 0; /* Remove padding */
     border-bottom: 1px solid #ccc; /* Add 1px border at the bottom */
 }
-
-
-
-
 .Dashboard-sidebar ul li a {
     display: flex;
     align-items: center;
@@ -441,9 +421,6 @@
     background-color:rgb(255 255 255 / 10%); /* Light background for selected */
     color: #007bff; /* Text color for selected */
 }
-
-
-        
     </style>
 </head>  
 
@@ -543,33 +520,6 @@
             </ul>
             <button class="Dashboard-logout-button">Logout</button>
         </nav>
-<!-- 
-        <main class="Dashboard-main-content">
-            <div class="Dashboard-content">
-               
-                <div class="Dashboard-profile-card-section">
-
-                    <a href="#" class="Dashboard-profile-card">
-                        <img src="IMG/Employee.png" alt="Director Icon">
-                        <div class="Dashboard-count">2</div>
-                        <div class="Dashboard-role">Directors</div>
-                    </a>
-
-                    <a href="#" class="Dashboard-profile-card">
-                        <img src="IMG/Employee.png" alt="Director Icon">
-                        <div class="Dashboard-count">5</div>
-                        <div class="Dashboard-role">Managers</div>
-                    </a>
-
-                    <a href="#" class="Dashboard-profile-card">
-                        <img src="IMG/Employee.png" alt="Director Icon">
-                        <div class="Dashboard-count">30</div>
-                        <div class="Dashboard-role">Employees</div>
-                    </a>
-                </div>
-                
-            </div>
-        </main> -->
     </div>
     <script>
        function toggleDropdown(dropdownId) {
@@ -626,9 +576,7 @@ function toggleTheme() {
     const links = sidebar.querySelectorAll('a');
     links.forEach(link => link.classList.toggle('dark')); // Toggle dark class on sidebar links
 }
-
     </script>
-    
 </body>
 
 </html>

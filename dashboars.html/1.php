@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,21 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Management System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="CSS/Dashboard.css">
-    <link rel="stylesheet" href="CSS/EmployeesTable.css">
+    
 </head>
 
-<body class="Dashboard light">
-<header class="Dashboard-topbar light">
+<body class="Dashboard light"> -->
+    <header class="Dashboard-topbar light">
         <div class="Dashboard-hamburger-menu" onclick="toggleSidebar()">
             <div></div>
             <div></div>
             <div></div>
         </div>
         <div class="Dashboard-logo">EMS</div>
-        <!-- <div class="Dashboard-search-container">
-            <input type="text" placeholder="Search...">
-        </div> -->
         <div class="Dashboard-right-icons">
             <div class="Dashboard-circle Dashboard-notification-icon">
                 <i class="fa-regular fa-bell"></i>
@@ -40,33 +36,29 @@
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('profile-dropdown')">
                         <i class="fa-solid fa-users Dashboard-icon-small"></i> Profile
-                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
-                    
                     <ul id="profile-dropdown" class="Dashboard-submenu">
-                        <li><a href="CreateEmployee.php">Create Profile</a></li>
-                        <li><a href="EmployeesTable.php">View Profile</a></li>
+                        <li><a href="#">Create Profile</a></li>
+                        <li><a href="#">View Profile</a></li>
                     </ul>
                 </li>
- 
+
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('leads-dropdown')">
                         <i class="fa-regular fa-address-card Dashboard-icon-small"></i> Leads
-                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="leads-dropdown" class="Dashboard-submenu">
-                        <li><a href="CreateLead.php">Create Lead</a></li>
-                        <li><a href="Viewleads.php">View Lead</a></li>
+                        <li><a href="#">Create Lead</a></li>
+                        <li><a href="#">View Lead</a></li>
                     </ul>
                 </li>
 
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('costs-dropdown')">
                         <i class="fa-solid fa-calculator Dashboard-icon-small"></i> Cost Estimation
-                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="costs-dropdown" class="Dashboard-submenu">
-                        <li><a href="CostEstimation_Form.php">create Cost</a></li>
+                        <li><a href="#">Cost</a></li>
                         <li><a href="#">Costs</a></li>
                     </ul>
                 </li>
@@ -74,50 +66,43 @@
                 <li class="Dashboard-dropdown">
                     <a href="javascript:void(0);" onclick="toggleDropdown('tickets-dropdown')">
                         <i class="fa-solid fa-ticket Dashboard-icon-small"></i> Tickets
-                        <!-- <div class="Dashboard-arrow"></div> -->
                     </a>
                     <ul id="tickets-dropdown" class="Dashboard-submenu">
-                        <li><a href="CreateTicket.php">CreateTicket</a></li>
-                        <li><a href="#">View Ticket</a></li>
+                        <li><a href="#">View Tickets</a></li>
+                        <li><a href="#">Assign Tickets</a></li>
                     </ul>
                 </li>
 
                 <li class="Dashboard-dropdown">
-                    <a href="javascript:void(0);" onclick="toggleDropdown('expenses-dropdown')">
-                        <i class="fa-solid fa-wallet Dashboard-icon-small"></i> Expenses
-                        <!-- <div class="Dashboard-arrow"></div> -->
+                    <a href="javascript:void(0);" onclick="toggleDropdown('payroll-dropdown')">
+                        <i class="fa-regular fa-credit-card Dashboard-icon-small"></i> Payroll
                     </a>
-                    <ul id="expenses-dropdown" class="Dashboard-submenu">
-                    <li><a href="CreateExpense.php">Create Expenses</a></li>
-                        <li><a href="ViewExpenses.php">View Expenses</a></li>
-                        <!-- <li><a href="CreateExpense.php">Create Expenses</a></li> -->
+                    <ul id="payroll-dropdown" class="Dashboard-submenu">
+                        <li><a href="#">Add Payroll</a></li>
+                        <li><a href="#">View Payroll</a></li>
                     </ul>
                 </li>
 
-                <!-- <li class="Dashboard-dropdown">
-                    <a href="javascript:void(0);" onclick="toggleDropdown('WorkFlow-dropdown')">
-                        <i class="fa-solid fa-sitemap Dashboard-icon-small"></i>Workflow
-                    </a>
-                    <ul id="WorkFlow-dropdown" class="Dashboard-submenu">
-                        <li><a href="#">Flow</a></li>
-                        <li><a href="#">Flows</a></li>
-                    </ul>
-                </li> -->
-
                 <li class="Dashboard-dropdown">
-                    <a href="javascript:void(0);" onclick="toggleDropdown('ManageProject-dropdown')">
-                        <i class="fa-solid fa-tasks Dashboard-icon-small"></i>
-                    Manage Project
+                    <a href="#">
+                        <i class="fa-solid fa-book Dashboard-icon-small"></i> Report
                     </a>
-                    <ul id="ManageProject-dropdown" class="Dashboard-submenu">
-                        <li><a href="Create-Project.php">Create Project</a></li>
-                        <li><a href="View-Project.php">View Project</a></li>
-                    </ul>
+                </li>
+
+                <li>
+                    <button class="Dashboard-logout-button">Logout</button>
                 </li>
             </ul>
-            <button class="Dashboard-logout-button">Logout</button>
         </nav>
 
-        <!-- <div  class="master-table"> -->
- 
- 
+        <main class="Dashboard-main-content">
+            <h1>Dashboard Content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <p>... (Add more content for testing scrolling) ...</p>
+        </main>
+    </div>
+<!-- </body>
+
+
+
+</html> -->

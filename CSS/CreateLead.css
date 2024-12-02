@@ -51,13 +51,13 @@ textarea {
 
 .Create-Lead-form-input:focus,
 .Create-Lead-form-select:focus {
-    border-color: #007bff; 
+    border-color: #000000; 
     outline: none;
 }
 
 .Create-Lead-form-buttonss {
     padding: 12px;
-    background-color: #007bff;
+    background-color: #1a2633;
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,7 +69,7 @@ textarea {
 }
 
 .Create-Lead-form-buttonss:hover {
-    background-color: #0056b3;
+    background-color: #1e2833;
 }
 
 .Create-Lead-form-Dropdown {
@@ -125,4 +125,10 @@ textarea {
 
 .Create-Lead-form-section span {
     color: #dc3545; 
+}
+
+@media (min-width: 601px) {
+    .Create-Lead-lead-form {
+      margin-left: 250px;
+    }
 }
