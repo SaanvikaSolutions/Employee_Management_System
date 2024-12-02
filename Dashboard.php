@@ -78,7 +78,7 @@
                     </a>
                     <ul id="tickets-dropdown" class="Dashboard-submenu">
                         <li><a href="CreateTicket.php">CreateTicket</a></li>
-                        <li><a href="#">View Ticket</a></li>
+                        <li><a href="ViewTicket.php">View Ticket</a></li>
                     </ul>
                 </li>
 

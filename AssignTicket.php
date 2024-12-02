@@ -6,103 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assign Ticket</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-
-        .Assign_Ticket_Container {
-            width: 80%;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .Assign_Ticket_Header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .Assign_Form_Group {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .Assign_Form_Group_Label {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-
-        .Assign_Form_Group_Input,
-        .Assign_Form_Group_Select {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .Assign_Form_Group_Select {
-            box-sizing: border-box;
-        }
-
-        .Assign_Form_Group_Half_Width {
-            width: 48%;
-        }
-
-        .Assign_Form_Group_Full_Width {
-            width: 100%;
-            height: 40px;
-    margin-bottom: 20px;
-        }
-
-        .Assign_To_Wrapper {
-            display: none;
-        }
-
-        .Assign_Submit_Btn_Wrapper {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .Assign_Button {
-            padding: 12px 30px;
-            background-color: #242f3f;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            width: 50%;
-        }
-
-        .Assign_Button_Hover:hover {
-            background-color: #202d3a;
-        }
-
-        /* Responsive styling */
-        @media (max-width: 768px) {
-            .Assign_Form_Group {
-                grid-template-columns: 1fr;
-            }
-
-            .Assign_Button {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/AssignTicket.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css"> 
 </head>
 
 <body>
+
+    <?php
+    include('./Dashboard.php');
+    ?>
+
     <div class="Assign_Ticket_Container">
         <h1 class="Assign_Ticket_Header">Assign Ticket</h1>
         <form id="assignTicketForm">
@@ -176,43 +89,8 @@
         </form>
     </div>
 
-    <script>
-        // Add event listener for the Department dropdown
-        document.getElementById('department').addEventListener('change', function () {
-            const department = this.value;
-            const assignToWrapper = document.getElementById('assignToWrapper');
-            const assignToSelect = document.getElementById('assignTo');
-
-            // Clear previous options
-            assignToSelect.innerHTML = '';
-
-            if (department === 'Suresh') {
-                // Show assign-to dropdown and add options for Suresh
-                assignToWrapper.style.display = 'block';
-                assignToSelect.innerHTML = `
-                    <option value="Suresh1">Employee A</option>
-                    <option value="Suresh2">Employee B</option>
-                `;
-            } else if (department === 'Venkatesh') {
-                // Show assign-to dropdown and add options for Venkatesh
-                assignToWrapper.style.display = 'block';
-                assignToSelect.innerHTML = `
-                    <option value="Venkatesh1">Employee C</option>
-                    <option value="Venkatesh2">Employee D</option>
-                `;
-            } else if (department === 'Upendra') {
-                // Show assign-to dropdown and add options for Upendra
-                assignToWrapper.style.display = 'block';
-                assignToSelect.innerHTML = `
-                    <option value="Upendra1">Employee E</option>
-                    <option value="Upendra2">Employee F</option>
-                `;
-            } else {
-                // Hide the assign-to dropdown if no department is selected
-                assignToWrapper.style.display = 'none';
-            }
-        });
-    </script>
+    
 </body>
-
+<script src="JS/AssignTicket.js"></script>
+<script src="JS/Dashboard.js"></script>
 </html>
