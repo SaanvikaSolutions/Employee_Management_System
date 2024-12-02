@@ -1,0 +1,1574 @@
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => wqdfeqwd
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => wqdfeqwd
+            [phone_number] => 8340876167
+            [alternate_name] => Vinitha 2
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => keerthi@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => keerthi@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 36
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => keerthi@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Luxury
+                )
+
+            [1] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => King Bed
+                    [width] => 12
+                    [height] => -1
+                    [quality] => Premium
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 36
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 5bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 5bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 1
+                    [height] => 2
+                    [quality] => Luxury
+                )
+
+            [1] => Array
+                (
+                    [room] => Kitchen 1
+                    [item] => Bottom Cabinet
+                    [width] => 2
+                    [height] => 2
+                    [quality] => Premium
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 1
+    [height] => 2
+    [quality] => Luxury
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 2bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 2bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Premium
+                )
+
+            [1] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => King Bed
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Luxury
+                )
+
+            [2] => Array
+                (
+                    [room] => Kitchen 1
+                    [item] => Bottom Cabinet
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Basic
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 36
+    [quality] => Premium
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Premium
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 36
+    [quality] => Premium
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha_employee@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha_employee@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 2
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 24
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 2
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 24
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 26
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 26
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 24
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 24
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 2bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 2bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 12
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 12
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 12
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 12
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 6
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 6
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Error: Column 'project_type' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Received Data: Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 26
+                    [quality] => Premium
+                )
+
+            [1] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => King Bed
+                    [width] => 12
+                    [height] => 3
+                    [quality] => Basic
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 26
+    [quality] => Premium
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 2bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 2bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 36
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 2bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 36
+                    [quality] => Luxury
+                )
+
+            [1] => Array
+                (
+                    [room] => Kitchen 1
+                    [item] => Bottom Cabinet
+                    [width] => 12
+                    [height] => 26
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 36
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Received Data: Received Data: Received Data: Received Data: Received Data: Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 26
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 26
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 26
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 26
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika solutions
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 24
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 24
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 241
+                    [quality] => Luxury
+                )
+
+            [1] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => King Bed
+                    [width] => 12
+                    [height] => 25
+                    [quality] => Premium
+                )
+
+            [2] => Array
+                (
+                    [room] => Kitchen 1
+                    [item] => Bottom Cabinet
+                    [width] => 12
+                    [height] => 12
+                    [quality] => Premium
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 241
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Flat
+            [project_type] => Interior
+            [apartment_type] => 3bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 24
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 24
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => Vinitha 2
+            [alternate_phone] => 74185
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => Vinitha 2
+            [alternate_phone] => 74185
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 24
+                    [quality] => Luxury
+                )
+
+            [1] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => King Bed
+                    [width] => 12
+                    [height] => 30
+                    [quality] => Premium
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 24
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => Vinitha 2
+            [alternate_phone] => 74185
+            [property_type] => Villa
+            [project_type] => Interior
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 24
+                    [quality] => Luxury
+                )
+
+            [1] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => King Bed
+                    [width] => 12
+                    [height] => 30
+                    [quality] => Premium
+                )
+
+            [2] => Array
+                (
+                    [room] => Kitchen 1
+                    [item] => Bottom Cabinet
+                    [width] => 12
+                    [height] => 12
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 24
+    [quality] => Luxury
+)
+Error: Column 'room_name' cannot be nullReceived Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+        )
+
+)
+Received Data: Array
+(
+    [client] => Array
+        (
+            [company_name] => Saanvika 
+            [company_address] => Madhapur
+            [email] => vinitha@gmail.com
+            [contact_person] => Vinitha
+            [phone_number] => 8340876167
+            [alternate_name] => 
+            [alternate_phone] => 
+            [property_type] => Villa
+            [project_type] => Construction
+            [apartment_type] => 4bhk
+        )
+
+    [roomDetails] => Array
+        (
+            [0] => Array
+                (
+                    [room] => Bedroom 1
+                    [item] => Wardrobe Laminate
+                    [width] => 12
+                    [height] => 24
+                    [quality] => Luxury
+                )
+
+            [1] => Array
+                (
+                    [room] => Kitchen 1
+                    [item] => Bottom Cabinet
+                    [width] => 12
+                    [height] => 12
+                    [quality] => Luxury
+                )
+
+        )
+
+)
+Room Data: Array
+(
+    [room] => Bedroom 1
+    [item] => Wardrobe Laminate
+    [width] => 12
+    [height] => 24
+    [quality] => Luxury
+)
+Error: Column 'furniture' cannot be null
