@@ -16,18 +16,20 @@
   <?php
   include('./Dashboard.php');
   ?>
-
-  
-  <!-- <h1 class="Crateexp">Expense Form</h1> -->
-
   <form class="Expenses-form">
   <h1 class="Crateexp">Expense Form</h1>
     <!-- Employee Info Section -->
     <div class="Expenses-form-group">
-      <div>
-        <label for="empID" class="Expenses-label">Emp ID:</label>
-        <input type="text" id="empID" name="empID" class="Expenses-input" required>
-      </div>
+    <div>
+    <label for="empID" class="Expenses-label">Emp ID:</label>
+    <select id="empID" name="empID" class="Expenses-select" required>
+        <option value="">Select Emp ID</option>
+        <option value="EMP001">EMP001</option>
+        <option value="EMP002">EMP002</option>
+        <option value="EMP003">EMP003</option>
+    </select>
+</div>
+
       <div>
         <label for="date" class="Expenses-label">Date:</label>
         <input type="date" id="date" name="date" class="Expenses-input" required>

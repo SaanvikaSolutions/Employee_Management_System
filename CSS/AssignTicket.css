@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.Assign_Ticket_Container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.Assign_Ticket_Header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 45px;
+}
+
+.Assign_Form_Group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.Assign_Form_Group_Label {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.Assign_Form_Group_Input,
+.Assign_Form_Group_Select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.Assign_Form_Group_Select {
+    box-sizing: border-box;
+}
+
+.Assign_Form_Group_Half_Width {
+    width: 48%;
+}
+
+.Assign_Form_Group_Full_Width {
+    width: 100%;
+    height: 40px;
+margin-bottom: 20px;
+}
+
+.Assign_To_Wrapper {
+    display: none;
+}
+
+.Assign_Submit_Btn_Wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Assign_Button {
+    padding: 12px 30px;
+    background-color: #242f3f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 50%;
+}
+
+.Assign_Button_Hover:hover {
+    background-color: #202d3a;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .Assign_Form_Group {
+        grid-template-columns: 1fr;
+    }
+
+    .Assign_Button {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 601px) {
+    .Assign_Ticket_Container {
+      margin-left: 250px;
+    }
+}

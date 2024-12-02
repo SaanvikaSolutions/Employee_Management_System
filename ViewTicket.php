@@ -7,14 +7,14 @@
     <title>View Ticket</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/ViewTicket.css">
-    <link rel="stylesheet" href="CSS/Dashboard.css"> 
+    <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 
 <body>
     <?php
     include('./Dashboard.php');
     ?>
-    
+
     <div class="View_ticket">
         <h1 class="View_ticketTitle">View Ticket</h1>
         <input type="text" id="searchBar" class="View_ticketTitleSearchBar"
@@ -41,9 +41,14 @@
                         <td>Main Office</td>
                         <td class="priority-medium">Medium</td>
                         <td class="action-buttons-view-ticket">
-                            <button class="view-ticket-view-button">View Ticket</button>
-                            <button class="view-ticket-assign-button">Assign Ticket</button>
+                            <a href="AssignTicket.php">
+                                <button class="view-ticket-view-button">View Ticket</button>
+                            </a>
+                            <a href="AssignTicket.php">
+                                <button class="view-ticket-assign-button">Assign Ticket</button>
+                            </a>
                         </td>
+
                     </tr>
                     <tr>
                         <td>1002</td>
@@ -53,8 +58,12 @@
                         <td>Corporate Tower</td>
                         <td class="priority-high">High</td>
                         <td class="action-buttons-view-ticket">
-                            <button class="view-ticket-view-button">View Ticket</button>
-                            <button class="view-ticket-assign-button">Assign Ticket</button>
+                            <a href="AssignTicket.php">
+                                <button class="view-ticket-view-button">View Ticket</button>
+                            </a>
+                            <a href="AssignTicket.php">
+                                <button class="view-ticket-assign-button">Assign Ticket</button>
+                            </a>
                         </td>
                     </tr>
                     <tr>
@@ -65,8 +74,12 @@
                         <td>Mobile App</td>
                         <td class="priority-low">Low</td>
                         <td class="action-buttons-view-ticket">
-                            <button class="view-ticket-view-button">View Ticket</button>
-                            <button class="view-ticket-assign-button">Assign Ticket</button>
+                            <a href="AssignTicket.php">
+                                <button class="view-ticket-view-button">View Ticket</button>
+                            </a>
+                            <a href="AssignTicket.php">
+                                <button class="view-ticket-assign-button">Assign Ticket</button>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
@@ -76,4 +89,5 @@
 </body>
 <script src="JS/ViewTicket.js"></script>
 <script src="JS/Dashboard.js"></script>
+
 </html>
