@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/ViewExpenses.css">
     <link rel="stylesheet" href="CSS/Dashboard.css">
+   
 </head>
 
 <body>
-    
-  <?php
-  include('./Dashboard.php');
-  ?>
+    <?php
+    include('./Dashboard.php');
+    ?>
 
 
     <div class="view-Expenses">
@@ -25,6 +25,7 @@
             <table class="view-ExpensesTable">
                 <thead>
                     <tr>
+                        <th>Status</th> <!-- Added the Status column -->
                         <th>Emp ID</th>
                         <th>Expense Type</th>
                         <th>Expense Category</th>
@@ -40,6 +41,10 @@
                 </thead>
                 <tbody id="expenseData">
                     <tr>
+                        <td>
+                            <!-- Status button with new class name 'KSK' -->
+                            <button class="KSK KSK-open">Open</button>
+                        </td>
                         <td>1001</td>
                         <td>Travel</td>
                         <td>Transportation</td>
@@ -51,13 +56,17 @@
                         <td>500</td>
                         <td>1500</td>
                         <td class="action-buttons-Expenses">
-                            <a href="https://your-link-here.com">
+                            <a href="VerifyExpenses.php">
                                 <i class="fa-solid fa-pen-to-square view-Expenses-Edit-button"></i>
                             </a>
                             <i class="fa-solid fa-trash view-Expenses-delete-button"></i>
                         </td>
                     </tr>
                     <tr>
+                        <td>
+                            <!-- Status button with new class name 'KSK' -->
+                            <button class="KSK KSK-approved">Approved</button>
+                        </td>
                         <td>2</td>
                         <td>Materials</td>
                         <td>Cement</td>
@@ -69,13 +78,13 @@
                         <td>1000</td>
                         <td>2000</td>
                         <td class="action-buttons-Expenses">
-                            <a href="https://your-link-here.com">
+                            <a href="VerifyExpenses.php">
                                 <i class="fa-solid fa-pen-to-square view-Expenses-Edit-button"></i>
                             </a>
                             <i class="fa-solid fa-trash view-Expenses-delete-button"></i>
                         </td>
                     </tr>
-                  
+
                 </tbody>
             </table>
         </div>
@@ -83,5 +92,4 @@
 </body>
 <script src="JS/ViewExpenses.js"></script>
 <script src="JS/Dashboard.js"></script>
-
 </html>

@@ -31,7 +31,8 @@ body {
 
 .view-ExpensesWrapper {
     width: 100%;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
     margin-bottom: 20px;
 }
 
@@ -39,7 +40,8 @@ body {
 .view-ExpensesTable {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto; /* Allow columns to auto-adjust based on content */
+    table-layout: auto;
+    /* Allow columns to auto-adjust based on content */
 }
 
 .view-ExpensesTable th,
@@ -47,8 +49,10 @@ body {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
-    white-space: normal; /* Allow text to wrap */
-    word-wrap: break-word; /* Ensure long words are wrapped */
+    white-space: normal;
+    /* Allow text to wrap */
+    word-wrap: break-word;
+    /* Ensure long words are wrapped */
 }
 
 .view-ExpensesTable th {
@@ -99,7 +103,8 @@ body {
 @media (max-width: 768px) {
     .view-ExpensesTable {
         font-size: 14px;
-        min-width: 800px; /* Ensure the table has a minimum width to prevent columns from shrinking too much */
+        min-width: 800px;
+        /* Ensure the table has a minimum width to prevent columns from shrinking too much */
     }
 
     .view-ExpensesTitleSearchBar {
@@ -124,7 +129,7 @@ body {
 @media (max-width: 400px) {
     .view-ExpensesTable {
         font-size: 13px;
-        min-width: 600px; 
+        min-width: 600px;
     }
 
     .view-ExpensesTitleSearchBar {
@@ -135,18 +140,60 @@ body {
     .action-buttons-Expenses i {
         font-size: 14px;
     }
+
+    /* Adjust margins for smaller screens */
+    .view-Expenses {
+        margin-top: 30px;
+    }
 }
 
 @media (max-width: 600px) {
     .view-Expenses {
-      width: 100%;
-      margin-left: 0px;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 30px;  /* Apply margin-top for screens less than 600px */
     }
 }
-
 
 @media (min-width: 601px) {
     .view-Expenses {
-      margin-left: 250px;
+        margin-left: 250px;
     }
 }
+
+
+.KSK {
+    padding: 8px 12px;
+    width: 100px;
+    height: 40px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: inline-block; 
+    text-align: center; 
+}
+
+
+.KSK-open {
+    background-color: #f1c40f;
+    color: white;
+}
+
+
+.KSK-approved {
+    background-color: #2ecc71;
+    color: white;
+}
+
+
+.KSK:hover {
+    opacity: 0.8;
+}
+
+
+/* .KSK KSK-open{
+
+    background-color: red;
+} */
