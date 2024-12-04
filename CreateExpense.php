@@ -10,23 +10,44 @@
   <link rel="stylesheet" href="CSS/Dashboard.css">
 
 </head>
-
-<body>
-
-  <?php
+<?php
   include('./Dashboard.php');
+  include('./backend/includes/dbconnect.php');
+
   ?>
 
+<body>
   
   <!-- <h1 class="Crateexp">Expense Form</h1> -->
 
-  <form class="Expenses-form" action="" method="POST">
+  <form class="Expenses-form" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
     <h1 class="Crateexp">Expense Form</h1>
       <!-- Employee Info Section -->
       <div class="Expenses-form-group">
         <div>
+           <!-- Fetch Employee id's From Employees Table -->
+            <?php
+            $fetch_emp_id = "SELECT `id`, `employee_id`, `name`, `gender`, `dob`, `phone`, `alt_phone`, `email`, `hired_date`, `role_type`, `employee_type`, `assigned_to`, `department`, `address`, `city`, `postcode`, `state`, `country` FROM `employees`";
+            $fetch_emp_res = mysqli_query($conn,$fetch_emp_id);
+            
+            ?>
           <label for="empID" class="Expenses-label">Emp ID:</label>
-          <input type="text" id="empID" name="empID" class="Expenses-input" required>
+          <select id="empID" name="empID" class="Expenses-select" required>
+              <option value="">Select Emp ID</option>
+              <!-- <option value="EMP001">EMP001</option>
+              <option value="EMP002">EMP002</option>
+              <option value="EMP003">EMP003</option> -->
+              <?php
+              if($fetch_emp_res->num_rows > 0){
+                while ($row = $fetch_emp_res ->fetch_assoc()){
+                  echo "<option value=' " .$row['employee_id'] ." '>" . htmlspecialchars($row['employee_id']) . "</option>";
+                }
+              }else{
+                  echo "<option valuie=''>No Employees Found</option>";
+              }
+              
+              ?>
+            </select>
         </div>
         <div>
           <label for="date" class="Expenses-label">Date:</label>
@@ -68,24 +89,23 @@
         <div class="Expenses-form-group">
           <div class="full-width">
             <label for="projectType" class="Expenses-label">Project Type:</label>
-            <select id="projectType" name="projectType" class="Expenses-select" onchange="toggleProjectName()">
+            <select id="projectType" name="projectType" class="Expenses-select" onchange="getItem(this.value)">
               <option value="">Select Project Type</option>
               <option value="Interior">Interior</option>
               <option value="Construction">Construction</option>
+
+              
             </select>
           </div>
         </div>
-
-        <div class="Expenses-form-group" id="projectNameFields" style="display:none;">
+         <!-- Projects Dropdown (Values populated based on Project Type) -->
+        <div class="Expenses-form-group" id="projectNameFields" >
           <div class="full-width">
             <label for="projectName" class="Expenses-label">Project Name:</label>
             <select id="projectName" name="projectName" class="Expenses-select">
-              <option value="">Select Project Name</option>
-              <option value="Project A">Project A</option>
-              <option value="Project B">Project B</option>
-              <option value="Project C">Project C</option>
-              <option value="Other">Other</option>
+                <option value="">Select Project Name</option>
             </select>
+
           </div>
         </div>
 
@@ -99,22 +119,48 @@
       <div class="Expenses-form-group">
         <div>
           <label for="cost" class="Expenses-label">Cost:</label>
-          <input type="number" id="cost" name="cost" class="Expenses-input" required>
+          <input type="number" id="cost" name="cost" class="Expenses-input" oninput="calculatePending()" required>
         </div>
         <div>
           <label for="advance" class="Expenses-label">Advance:</label>
-          <input type="number" id="advance" name="advance" class="Expenses-input" required>
+          <input type="number" id="advance" name="advance" class="Expenses-input" oninput="calculatePending()" required>
         </div>
         <div>
           <label for="pending" class="Expenses-label">Pending:</label>
-          <input type="number" id="pending" name="pending" class="Expenses-input" required>
+          <input type="number" id="pending" name="pending" class="Expenses-input" readonly required>
         </div>
       </div>
 
-      <button type="submit" class="Expenses-submit">Submit</button>
+      <button type="submit" class="Expenses-submit" name="submit">Submit</button>
   </form>
+  <!-- Form DATA Inserting Code PHP -->
+  <?php
+  if(isset($_POST['submit'])){
+    $emp_id = mysqli_real_escape_string($conn,$_POST['empID']);
+    $date = mysqli_real_escape_string($conn,$_POST['date']);  
+    $expense_type = mysqli_real_escape_string($conn,$_POST['expenseType']);
+    $expense_category = mysqli_real_escape_string($conn,$_POST['expenseCategory']);
+    $project_type = mysqli_real_escape_string($conn,$_POST['projectType']);
+    $projectName = mysqli_real_escape_string($conn,$_POST['projectName']);
+    $otherExpense = mysqli_real_escape_string($conn,$_POST['specifyCategory']);
+    $cost = mysqli_real_escape_string($conn,$_POST['cost']);
+    $advance = mysqli_real_escape_string($conn,$_POST['advance']);
+    $pending = mysqli_real_escape_string($conn,$_POST['pending']);
+    // Determine project_id for insertion if selected
+    $project_id = ($expense_type === 'Project' && !empty($projectName)) ? $projectName : null;
+
+    $insert_query = "INSERT INTO `expenses`(`emp_id`, `expenses_date`, `expenses_type`, `expenses_category`,`project_type`,`project_id`,`other_expense`, `cost`, `Advance_amount`, `Pending_amount`, `Created_at`) VALUES ('$emp_id','$date','$expense_type','$expense_category','$project_type','$project_id','$otherExpense','$cost','$advance','$pending',Now())";
+    $res = mysqli_query($conn,$insert_query);
+    if($res){
+      echo "<script>alert('Success');window.location.href='createExpense.php';</script>";
+    }else{
+      echo "Error:".mysqli_error($conn);
+    }
+  }
+  ?>
 
 </body>
 <script src="JS/CreateExpense.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="JS/Dashboard.js"></script>
 </html>
