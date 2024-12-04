@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/form.css">
+    <link rel="stylesheet" href="CSS/Dashboard.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+        }
+
+        .form-title {
+            margin-bottom: 15px;
+            color: #333;
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-group {
+            flex: 1 1 calc(50% - 20px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .form-btn {
+            padding: 12px 25px;
+            background-color: #2b4a5f;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .form-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Align property buttons properly */
+        .property-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .property-btn,
+        .project-btn {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+            cursor: pointer;
+            font-size: 14px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .property-btn.selected,
+        .project-btn.selected {
+            border: 1px solid #2b4a5f;
+            color: #fff;
+            background: #2b4a5f;
+        }
+
+        /* New CSS for side-by-side fields */
+        .alternate-fields {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .alternate-fields .form-group {
+            flex: 1 1 45%;
+            /* Each input field takes 45% width */
+        }
+
+        /* Project selection buttons side by side */
+        .project-selection-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+            width: 100%;
+            /* Ensures full width of the container */
+        }
+
+        .project-option {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 200px;
+            /* Minimum width to make buttons wider */
+        }
+
+        .project-btn {
+            width: 250px;
+            /* Increased width for each button */
+            padding: 12px 24px;
+            /* Adjust padding for larger buttons */
+        }
+
+        /* Select Apartment Type Section next to Project buttons */
+        .apartment-type-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+            /* Ensure full width */
+        }
+
+        .apartment-type-container .form-group {
+            flex: 1 1 45%;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+
+            .property-btn,
+            .project-btn {
+                width: 100px;
+                /* Smaller width on smaller screens */
+            }
+
+            .property-types {
+                flex-wrap: wrap;
+                /* Allow buttons to stack on smaller screens */
+                justify-content: space-between;
+            }
+
+            .form-group {
+                flex: 1 1 100%;
+                /* Each form group takes full width */
+            }
+
+            /* Adjust alternate fields to stack vertically on smaller screens */
+            .alternate-fields {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .alternate-fields .form-group {
+                flex: 1 1 100%;
+            }
+
+            /* Project selection buttons should stack on smaller screens */
+            .project-selection-container {
+                flex-direction: column;
+                /* Stack vertically */
+            }
+
+            /* Adjust Apartment Type section to be stacked on small screens */
+            .apartment-type-container {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+
+            .property-btn,
+            .project-btn {
+                width: 160px;
+                /* Even smaller width on very small screens */
+            }
+
+            .apartment-type {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .property-types {
+                flex-wrap: wrap;
+                justify-content: center;
+                /* Center the buttons on very small screens */
+            }
+
+            /* Alternate fields should be stacked vertically with smaller gap */
+            .alternate-fields {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .alternate-fields .form-group {
+                flex: 1 1 100%;
+            }
+
+            .project-selection-container {
+                flex-direction: column;
+                /* Stack project selection buttons */
+                gap: 8px;
+                /* Reduce gap on very small screens */
+            }
+        }
+
+        /* --------------------------------------------------- */
+        .EMSS-COST-container h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .EMSS-COST-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            /* Centers text inside container */
+        }
+
+        #containerWrapper {
+            margin-bottom: 20px;
+        }
+
+        #buttonContainer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            /* Adds spacing between buttons */
+            flex-wrap: wrap;
+            /* Ensures buttons wrap on smaller screens */
+        }
+
+        .EMSS button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #384757;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .EMSS button:hover {
+            background-color: #9badc0;
+        }
+
+        .EMSS .EMSS-COST-room-name-display {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .EMSS .EMSS-COST-options-container {
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .EMSS table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+
+        .EMSS th,
+        .EMSS td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .EMSS th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .EMSS .EMSS-COST-furniture-column label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 70%;
+        }
+
+        .EMSS .EMSS-COST-sqft-input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .EMSS .EMSS-COST-total-sqft-box {
+            display: inline-block;
+            width: 80px;
+            text-align: center;
+            padding: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+        }
+
+        .EMSS .EMSS-COST-dropdown {
+            width: 60%;
+            margin-bottom: 30px;
+        }
+
+        .EMSS .EMSS-COST-add-room-btn {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Media query for screens less than 750px */
+        @media (max-width: 750px) {
+            .EMSS .EMSS-COST-container {
+                flex-direction: column;
+            }
+
+            .EMSS .EMSS-COST-room-selection {
+                width: 100%;
+            }
+
+            .EMSS .EMSS-COST-options-container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .EMSS .EMSS-COST-room-name-display {
+                font-size: 1.2em;
+            }
+
+            .EMSS .EMSS-COST-add-room-btn {
+                width: 100%;
+            }
+
+            /* Make the dropdown full width */
+            .EMSS .EMSS-COST-dropdown {
+                width: 100% !important;
+            }
+
+            /* Make the width, height, and total sqft boxes full width */
+            .EMSS .EMSS-COST-sqft-input,
+            .EMSS .EMSS-COST-total-sqft-box {
+                width: 100% !important;
+                text-align: center;
+            }
+        }
+
+        /* Media query for smaller screens (less than 300px) */
+        @media (max-width: 300px) {
+
+            .EMSS .EMSS-COST-sqft-input,
+            .EMSS .EMSS-COST-total-sqft-box {
+                width: 100% !important;
+            }
+
+            .EMSS .EMSS-COST-dropdown {
+                width: 100% !important;
+            }
+        }
+
+        /* ---------------------------------------------------- */
+        @media (min-width: 601px) {
+            .form-container {
+                margin-left: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Client Details</h2>
+        <form id="client-form" class="form">
+            <div class="form-group">
+                <label for="company-name" class="form-label">Company Name</label>
+                <input type="text" id="company-name" class="form-input" placeholder="Enter company name" required>
+            </div>
+            <div class="form-group">
+                <label for="company-address" class="form-label">Company Address</label>
+                <input type="text" id="company-address" class="form-input" placeholder="Enter company address" required>
+            </div>
+            <div class="form-group">
+                <label for="email-id" class="form-label">Email ID</label>
+                <input type="email" id="email-id" class="form-input" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-person-name" class="form-label">Contact Person Name</label>
+                <input type="text" id="contact-person-name" class="form-input" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone-number" class="form-label">Phone Number</label>
+                <input type="tel" id="phone-number" class="form-input" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="alternate-person-name">
+                <label for="alternate-person-name" class="form-label">Alternate Person Name</label>
+            </div>
+            <div id="alternate-fields" class="alternate-fields" style="display: none;">
+                <div class="form-group">
+                    <label for="alternate-name" class="form-label">Alternate Name</label>
+                    <input type="text" id="alternate-name" class="form-input" placeholder="Enter alternate name">
+                </div>
+                <div class="form-group">
+                    <label for="alternate-phone" class="form-label">Alternate Phone Number</label>
+                    <input type="tel" id="alternate-phone" class="form-input"
+                        placeholder="Enter alternate phone number">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="form-btn">Submit</button>
+            </div>
+
+        </form>
+
+        <!-- Select Your Property Type Section -->
+        <h2 class="form-title">Select Your Property Type</h2>
+        <div class="property-types">
+            <button type="button" class="property-btn">Flat</button>
+            <button type="button" class="property-btn">Villa</button>
+            <button type="button" class="property-btn">Individual House</button>
+            <button type="button" class="property-btn">Apartment</button>
+            <button type="button" class="property-btn">Office</button>
+        </div>
+
+        <!-- Choose the Project We Initiated Section -->
+        <h2 class="form-title">Choose the Project We Initiated</h2>
+        <div class="project-selection-container">
+            <div class="project-option">
+                <button type="button" class="project-btn">Construction</button>
+            </div>
+            <div class="project-option">
+                <button type="button" class="project-btn">Interior</button>
+            </div>
+        </div>
+
+        <!-- Select Apartment Type Section -->
+        <div class="apartment-type-container">
+            <div class="form-group">
+                <label for="apartment-type" class="form-label">Select Apartment Type</label>
+                <select id="apartment-type" class="form-input">
+                    <option value="1bhk">1 BHK</option>
+                    <option value="2bhk">2 BHK</option>
+                    <option value="3bhk">3 BHK</option>
+                    <option value="4bhk">4 BHK</option>
+                    <option value="5bhk">5 BHK</option>
+                    <option value="6bhk">6 BHK</option>
+                    <option value="7bhk">7 BHK</option>
+                    <option value="8bhk">8 BHK</option>
+                </select>
+            </div>
+        </div>
+        <!-- ----------------------------------------- -->
+        <div class="EMSS EMSS-COST-container">
+            <div id="containerWrapper">
+                <h1>Select Room Type</h1>
+            </div>
+            <div id="buttonContainer">
+                <button onclick="addRoom('Bedroom')"> Bedroom</button>
+                <button onclick="addRoom('Kitchen')"> Kitchen</button>
+                <button onclick="addRoom('Living Room')"> Living Room</button>
+                <button onclick="addRoom('Pooja Room')"> Pooja Room</button>
+                <button onclick="addRoom('Dining Room')"> Dining Room</button>
+            </div>
+        </div>
+        <!-- ----------------------------------------- -->
+    </div>
+</body>
+<script>
+    // JavaScript to toggle alternate person fields
+    document.getElementById('alternate-person-name').addEventListener('change', function () {
+        document.getElementById('alternate-fields').style.display = this.checked ? 'flex' : 'none';
+    });
+
+    // JavaScript to handle button selection
+    const propertyButtons = document.querySelectorAll('.property-btn');
+    const projectButtons = document.querySelectorAll('.project-btn');
+
+    // Add click event listener for property type buttons
+    propertyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            propertyButtons.forEach(btn => btn.classList.remove('selected')); // Remove selected class from all
+            button.classList.add('selected'); // Add selected class to clicked button
+        });
+    });
+
+    // Add click event listener for project buttons
+    projectButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            projectButtons.forEach(btn => btn.classList.remove('selected')); // Remove selected class from all
+            button.classList.add('selected'); // Add selected class to clicked button
+        });
+    });
+
+    /* ---------------------------------------------------- */
+    let roomCounters = { Bedroom: 1, Kitchen: 1, 'Living Room': 1, 'Pooja Room': 1, 'Dining Room': 1 };
+
+    // Function to add a room
+    function addRoom(room) {
+        const roomName = `${room} ${roomCounters[room]}`;
+        roomCounters[room]++;
+
+        const containerWrapper = document.getElementById('containerWrapper');
+        const newRow = document.createElement('div');
+        newRow.className = 'EMSS EMSS-COST-container';
+
+        const roomSelectionColumn = document.createElement('div');
+        roomSelectionColumn.className = 'EMSS EMSS-COST-room-selection';
+        const roomTypeButton = document.createElement('button');
+        roomTypeButton.innerHTML = `<span>${roomName}</span>`;
+        roomSelectionColumn.appendChild(roomTypeButton);
+        newRow.appendChild(roomSelectionColumn);
+
+        const optionsContainer = document.createElement('div');
+        optionsContainer.className = 'EMSS EMSS-COST-options-container';
+
+        const roomNameElement = document.createElement('div');
+        roomNameElement.className = 'EMSS EMSS-COST-room-name-display';
+        roomNameElement.innerText = roomName;
+        optionsContainer.appendChild(roomNameElement);
+
+        const table = document.createElement('table');
+        table.innerHTML = `
+<thead>
+    <tr>
+        <th>Furniture & Fixtures</th>
+        <th>Sqft</th>
+        <th>Quality Type</th>
+    </tr>
+</thead>
+<tbody></tbody>
+`;
+        const tbody = table.querySelector('tbody');
+
+        const options = {
+            'Bedroom': ['Wadrobe Laminate', 'Wadrobe Loft', 'Glass Shutter for Wardrobe', 'Draws 2 Nos', 'TV Unit small', 'Dressing Box with 1 draw & Mirror', 'Closet Mirror', 'Study Unit', 'King Bed', '2 Side Tables'],
+            'Kitchen': ['Bottom Cabinet - Chimney Side', 'Bottom Cabinet-Right Side', 'Bottom Cabinet -Fridge Side', 'Middle Cabinet-Right Side', 'Middle Cabinet -Fridge Side', 'Overhead Loft -Chimney Side', 'Overhead Loft -Right Side', 'Overhead Loft -Fridge Side', 'Corner Storage with Glass', 'Cutlery Basket', 'Thali Basket', 'Tandem Basket', 'Jolly Basket (Type 1)'],
+            'Living Room': ['T.V.UNIT -Laminate & Side Design', 'T.V.UNIT -Glassdoors with profile', 'T.V.UNIT -Side Design'],
+            'Pooja Room': ['Pooja unit near dining area -East Facing design with glass doors', 'Pooja Unit Storage (Drawers, Shelves)'],
+            'Dining Room': ['Design Mirror & Lights (2 lights 3000Rs)', 'Dining area storage as per design', 'Dining Table(Wooden)', 'Dining Table (Glass)', 'Extendable Dining Table', 'Crockery Unit With Glass Doors', 'Crockery Unit Open Shelving']
+        };
+
+        options[room].forEach(item => {
+            const row = document.createElement('tr');
+
+            const furnitureCell = document.createElement('td');
+            furnitureCell.innerHTML = `<label><input type="checkbox"> ${item}</label>`;
+            row.appendChild(furnitureCell);
+
+            const sqftCell = document.createElement('td');
+            sqftCell.innerHTML = ` 
+    <input type="number" class="EMSS EMSS-COST-sqft-input" placeholder="W" oninput="calculateSqft(this)"> x
+    <input type="number" class="EMSS EMSS-COST-sqft-input" placeholder="H" oninput="calculateSqft(this)"> =
+    <span class="EMSS EMSS-COST-total-sqft-box">0</span>
+`;
+            row.appendChild(sqftCell);
+
+            const qualityCell = document.createElement('td');
+            qualityCell.innerHTML = ` 
+    <select class="EMSS EMSS-COST-dropdown">
+        <option>Basic</option>
+        <option>Premium</option>
+        <option>Luxury</option>
+    </select>
+`;
+            row.appendChild(qualityCell);
+
+            tbody.appendChild(row);
+        });
+
+        optionsContainer.appendChild(table);
+
+        const addRoomButton = document.createElement('button');
+        addRoomButton.classList.add('EMSS', 'EMSS-COST-add-room-btn');
+        addRoomButton.innerHTML = '<span>+</span> Add Room';
+        addRoomButton.onclick = function () {
+            addRoom(room);
+        };
+        optionsContainer.appendChild(addRoomButton);
+
+        newRow.appendChild(optionsContainer);
+        containerWrapper.appendChild(newRow);
+    }
+
+    // Function to calculate sqft area
+    function calculateSqft(input) {
+        const row = input.closest('tr');
+        const widthInput = row.querySelector('.EMSS .EMSS-COST-sqft-input:nth-child(1)'); // Width input
+        const heightInput = row.querySelector('.EMSS .EMSS-COST-sqft-input:nth-child(2)'); // Height input
+        const totalBox = row.querySelector('.EMSS .EMSS-COST-total-sqft-box');
+
+        const width = parseFloat(widthInput.value) || 0;
+        const height = parseFloat(heightInput.value) || 0;
+
+        // Calculate the total square footage
+        const totalSqft = width * height;
+        totalBox.textContent = totalSqft ? totalSqft : '0';
+    }
+    /* ---------------------------------------------------- */
+</script>
+
+</html>

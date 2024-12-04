@@ -41,7 +41,7 @@
                         <td>Main Office</td>
                         <td class="priority-medium">Medium</td>
                         <td class="action-buttons-view-ticket">
-                            <a href="AssignTicket.php">
+                            <a href="View-Ticket-Details.php">
                                 <button class="view-ticket-view-button">View Ticket</button>
                             </a>
                             <a href="AssignTicket.php">
@@ -58,7 +58,7 @@
                         <td>Corporate Tower</td>
                         <td class="priority-high">High</td>
                         <td class="action-buttons-view-ticket">
-                            <a href="AssignTicket.php">
+                            <a href="View-Ticket-Details.php">
                                 <button class="view-ticket-view-button">View Ticket</button>
                             </a>
                             <a href="AssignTicket.php">
@@ -74,7 +74,7 @@
                         <td>Mobile App</td>
                         <td class="priority-low">Low</td>
                         <td class="action-buttons-view-ticket">
-                            <a href="AssignTicket.php">
+                            <a href="View-Ticket-Details.php">
                                 <button class="view-ticket-view-button">View Ticket</button>
                             </a>
                             <a href="AssignTicket.php">

@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.Verify_expense {
+    /* width: 50%; */
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+    margin-top: 100px;
+}
+
+.Verify_expense_title {
+    text-align: center;
+    color: #333;
+}
+
+.Verify_expense_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.Verify_expense_label {
+    font-size: 16px;
+    color: #333;
+}
+
+.Verify_expense_input,
+.Verify_expense_select,
+.Verify_expense_textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Verify_expense_submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.Verify_expense_submit:hover {
+    background-color: #45a049;
+}
+
+.Verify_expense_textarea {
+    resize: vertical;
+}
+
+.Verify_expense_form_group {
+    display: flex;
+    flex-direction: column;
+}
+
+.Verify_expense_form_group_select,
+.Verify_expense_form_group_input {
+    margin-top: 8px;
+}
+
+.Verify_expense_required {
+    color: red;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+    .Verify_expense {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .Verify_expense_submit {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .Verify_expense_label,
+    .Verify_expense_input,
+    .Verify_expense_select,
+    .Verify_expense_textarea {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Verify_expense {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .Verify_expense_submit {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .Verify_expense_label,
+    .Verify_expense_input,
+    .Verify_expense_select,
+    .Verify_expense_textarea {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 601px) {
+    .Verify_expense {
+        margin-left: 250px;
+    }
+}
+@media (max-width: 750px) and (min-width: 300px) {
+    .Verify_expense {
+        margin-top: 52px;
+        /* margin: 208px auto; */
+    }
+}

@@ -29,7 +29,7 @@ body.Dashboard.dark {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 46%);
     transition: background-color 0.3s;
     width: 100%;
     position: fixed;
@@ -104,7 +104,7 @@ body.Dashboard.dark {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: #d8d8d8; /* Light gray for icons */
+    background-color: #d8d8d8; 
     position: relative;
 }
 
@@ -120,7 +120,7 @@ body.Dashboard.dark {
 .Dashboard-hamburger-menu div {
     width: 25px;
     height: 3px;
-    background-color: black; /* Hamburger icon color */
+    background-color: black; 
 }
 
 .Dashboard-dashboard {
@@ -132,7 +132,7 @@ body.Dashboard.dark {
 
 .Dashboard-sidebar {
     width: 250px;
-    background-color: #ffffff; /* White sidebar */
+    background-color: #ffffff; 
     padding: 20px;
     flex-shrink: 0;
     display: flex;
@@ -140,14 +140,15 @@ body.Dashboard.dark {
     justify-content: space-between;
     height: 100vh;
     position: sticky;
-    top: 0; /* Keep it stuck at the top */
-    z-index: 10; /* Ensure sidebar stays above other content */
+    top: 0; 
+    z-index: 10; 
 }
 
 .Dashboard-sidebar.light {
     background-color: #ffffff; /* White sidebar */
     position: fixed;
     margin-top: 50px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 45%);
 }
 
 .Dashboard-sidebar.dark {

@@ -5,12 +5,10 @@
 
 .CreateTicket .form-container {
     width: 80%;
-    /* max-width: 900px; */
     margin: 30px auto;
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     margin-top: 70px;
 }
 
@@ -37,7 +35,6 @@
     margin-bottom: 0;
 }
 
-/* Flexbox for side-by-side layout */
 .CreateTicket .side-by-side {
     display: flex;
     gap: 20px;

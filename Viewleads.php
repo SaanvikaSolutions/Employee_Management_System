@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CSS/Viewleads.css">
-    <link rel="stylesheet" href="CSS/Dashboard.css"> 
+    <link rel="stylesheet" href="CSS/Dashboard.css">
 
 </head>
+
 <body>
 
     <?php
 include('./Dashboard.php');
 ?>
-
     <div class="EMSS-container">
         <h2 class="EMSS-heading">Upcoming Activity</h2>
         <div class="EMSS-task-card">
@@ -23,12 +24,13 @@ include('./Dashboard.php');
                 <h3>
                     <i class="fas fa-angle-right EMSS-icon-right"></i>
                     <i class="fas fa-caret-down EMSS-icon-down"></i>
-                    <p> Created by <span>Suraj Yadav</span></p>
+                    <p> Created by <span>Venkatesh</span></p>
                 </h3>
                 <span class="EMSS-due-date">Due: Today 12:00 AM</span>
             </div>
             <div class="EMSS-task-body">
-                <p>Prepare quote for Venkatesh. He is interested in our new product. Just address our product prices. He will buy at least one product in our company, make sure to contact and discuss.</p>
+                <p>Prepare quote for Venkatesh. He is interested in our new product. Just address our product prices. He
+                    will buy at least one product in our company, make sure to contact and discuss.</p>
                 <div class="EMSS-task-options">
                     <select>
                         <option>Lead Ty</option>
@@ -67,7 +69,8 @@ include('./Dashboard.php');
                     <span class="EMSS-due-date">Due: Today 12:00 AM</span>
                 </div>
                 <div class="EMSS-task-body EMSS-expandable">
-                    <p>Prepare quote for Suresh: He is interested in our new product. Just address our product prices. He will buy at least one product in our company, make sure to contact and discuss.</p>
+                    <p>Prepare quote for Suresh: He is interested in our new product. Just address our product prices.
+                        He will buy at least one product in our company, make sure to contact and discuss.</p>
                 </div>
             </div>
         </div>
