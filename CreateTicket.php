@@ -15,7 +15,7 @@
     <?php
     include('./Dashboard.php');
     ?>
-    
+
 
     <h2 class="CreateTicket">Create Ticket Form</h2>
     <div class="CreateTicket form-container">
@@ -42,21 +42,19 @@
 
                 <div class="CreateTicket side-by-side">
                     <div>
-                        <label for="issue_type" class="CreateTicket">Project Type:</label>
-                        <select id="issue_type" name="issue_type" class="CreateTicket">
-                            <option value="bug">Interior</option>
-                            <option value="feature_request">Construction</option>
+                        <label for="project_type" class="CreateTicket">Project Type:</label>
+                        <select id="project_type" name="project_type" class="CreateTicket">
+                            <option value="Select ">Select project Type</option>
+                            <option value="interior">Interior</option>
+                            <option value="construction">Construction</option>
                         </select>
                     </div>
                     <div>
-                        <label for="priority" class="CreateTicket">Project Name:</label>
-                        <select id="priority" name="priority" class="CreateTicket">
-                            <option value="low">Project A</option>
-                            <option value="medium">Project B</option>
-
+                        <label for="project_name" class="CreateTicket">Project Name:</label>
+                        <select id="project_name" name="project_name" class="CreateTicket">
+                            <!-- Options will be dynamically updated based on Project Type selection -->
                         </select>
                     </div>
-
 
                     <div>
                         <label for="priority" class="CreateTicket">Priority Level:</label>
@@ -101,12 +99,11 @@
                 <input type="file" id="attachments" name="attachments" class="CreateTicket">
             </div>
 
-
             <button type="submit" class="CreateTicket submit-btn">Submit Ticket</button>
 
         </form>
     </div>
-
 </body>
+<script src="JS/CreateTicket.js"></script>
 <script src="JS/Dashboard.js"></script>
 </html>

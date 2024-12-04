@@ -29,7 +29,7 @@ body.Dashboard.dark {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 46%);
     transition: background-color 0.3s;
     width: 100%;
     position: fixed;
@@ -148,7 +148,7 @@ body.Dashboard.dark {
     background-color: #ffffff; /* White sidebar */
     position: fixed;
     margin-top: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 45%);
 }
 
 .Dashboard-sidebar.dark {
