@@ -19,22 +19,22 @@
 
     <h2 class="CreateTicket">Create Ticket Form</h2>
     <div class="CreateTicket form-container">
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="#" method="POST" enctype="multipart/form-data">
 
             <div class="CreateTicket form-section">
                 <h3 class="CreateTicket"> Create New Ticket </h3>
                 <div class="CreateTicket side-by-side">
-                    <div>
+                    <!-- <div>
                         <label for="ticket_id" class="CreateTicket">Ticket ID:</label>
                         <input type="text" id="ticket_id" name="ticket_id" required class="CreateTicket">
-                    </div>
+                    </div> -->
                     <div>
-                        <label for="title" class="CreateTicket">Client name:</label>
-                        <input type="text" id="title" name="title" required class="CreateTicket">
+                        <label for="client_name" class="CreateTicket">Client name:</label>
+                        <input type="text" id="client_name" name="cname" required class="CreateTicket">
                     </div>
 
                     <div>
-                        <label for="title" class="CreateTicket">Title:</label>
+                        <label for="title" class="CreateTicket">Issue:</label>
                         <input type="text" id="title" name="title" required class="CreateTicket">
                     </div>
 
@@ -43,16 +43,22 @@
                 <div class="CreateTicket side-by-side">
                     <div>
                         <label for="project_type" class="CreateTicket">Project Type:</label>
-                        <select id="project_type" name="project_type" class="CreateTicket">
-                            <option value="Select ">Select project Type</option>
-                            <option value="interior">Interior</option>
-                            <option value="construction">Construction</option>
+                        <select id="project_type" name="project_type" class="CreateTicket" onchange="fetchProjectNames()">
+                            <option value="">Select project Type</option>
+                            <?php
+                            include('./backend/includes/dbconnect.php');
+                            $query = "SELECT DISTINCT project_type FROM projects";
+                            $result = mysqli_query($conn, $query);
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<option value='" . htmlspecialchars($row['project_type']) . "'>" . htmlspecialchars($row['project_type']) . "</option>";
+                            }
+                            ?>
                         </select>
                     </div>
                     <div>
                         <label for="project_name" class="CreateTicket">Project Name:</label>
                         <select id="project_name" name="project_name" class="CreateTicket">
-                            <!-- Options will be dynamically updated based on Project Type selection -->
+                            <option value="">Select Project Name</option>
                         </select>
                     </div>
 
@@ -102,8 +108,50 @@
             <button type="submit" class="CreateTicket submit-btn">Submit Ticket</button>
 
         </form>
+        <?php
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Generate Unique Ticket ID
+            $ticket_id = "TKT-" . strtoupper(bin2hex(random_bytes(4)));
+
+            // Capture Form Data
+            $client_name = mysqli_real_escape_string($conn, $_POST['cname']);
+            $Issue = mysqli_real_escape_string($conn, $_POST['title']);
+            $project_type = mysqli_real_escape_string($conn, $_POST['project_type']);
+            $project_name = mysqli_real_escape_string($conn, $_POST['project_name']);
+            $priority = mysqli_real_escape_string($conn, $_POST['priority']);
+            $description = mysqli_real_escape_string($conn, $_POST['description']);
+            $name = mysqli_real_escape_string($conn, $_POST['name']);
+            $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+            $date_of_issue = mysqli_real_escape_string($conn, $_POST['date_of_issue']);
+            $address = mysqli_real_escape_string($conn, $_POST['address']);
+
+            // Handle File Upload
+            $attachments = null;
+            if (!empty($_FILES['attachments']['name'])) {
+                $target_dir = "./uploads/";
+                $target_file = $target_dir . basename($_FILES['attachments']['name']);
+                if (move_uploaded_file($_FILES['attachments']['tmp_name'], $target_file)) {
+                    $attachments = $target_file;
+                }
+            }
+
+            // Insert into Database
+            $query = "INSERT INTO tickets (ticket_id, Issue, client_name, project_type, project_id, priority, description, name, phone, date_of_issue, address, attachments) 
+                    VALUES ('$ticket_id', '$Issue', '$client_name', '$project_type', '$project_name', '$priority', '$description', '$name', '$phone', '$date_of_issue', '$address', '$attachments')";
+
+            if (mysqli_query($conn, $query)) {
+                echo "Ticket created successfully with Ticket ID: $ticket_id";
+                echo "<script>alert('$ticket_id Ticket Created Successfully');window.location.href='createTicket.php';</script>";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+        ?>
+
     </div>
 </body>
+
 <script src="JS/CreateTicket.js"></script>
 <script src="JS/Dashboard.js"></script>
 </html>

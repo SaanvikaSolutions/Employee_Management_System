@@ -1,32 +1,48 @@
- // JavaScript to dynamically change project names based on project type selection
- document.addEventListener('DOMContentLoaded', function() {
-    const projectTypeSelect = document.getElementById('project_type');
-    const projectNameSelect = document.getElementById('project_name');
+function fetchProjectNames() {
+    const projectTypeDropdown = document.getElementById("project_type");
+    const projectNameDropdown = document.getElementById("project_name");
 
-    // Function to update project names
-    function updateProjectNames() {
-        const projectType = projectTypeSelect.value;
-        projectNameSelect.innerHTML = ''; // Clear existing options
+    const projectType = projectTypeDropdown.value;
 
-        let options = [];
-        if (projectType === 'interior') {
-            options = ['Interior i1', 'Interior i2'];
-        } else if (projectType === 'construction') {
-            options = ['Construction c1', 'Construction c2'];
-        }
+    // Clear existing options
+    projectNameDropdown.innerHTML = "<option value=''>Select Project Name</option>";
+    
+    if (projectType) {
+        fetch(`fetch_project_names.php?type=${encodeURIComponent(projectType)}`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Fetched project names:", data); // Debugging
 
-        // Add new options to the project name select element
-        options.forEach(function(optionText) {
-            const option = document.createElement('option');
-            option.value = optionText.toLowerCase().replace(' ', '_'); // Set value as a simplified version
-            option.textContent = optionText;
-            projectNameSelect.appendChild(option);
-        });
+                const uniqueProjects = new Set();
+
+                if (data.length > 0) {
+                    data.forEach((project) => {
+                        if (!uniqueProjects.has(project.project_id)) {
+                            uniqueProjects.add(project.project_id);
+
+                            const option = document.createElement("option");
+                            option.value = project.project_id;
+                            option.textContent = project.project_name;
+                            projectNameDropdown.appendChild(option);
+                        }
+                    });
+                } else {
+                    projectNameDropdown.innerHTML = "<option value=''>No projects available</option>";
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching project names:", error);
+                alert("Failed to fetch project names. Please try again later.");
+            });
     }
+}
 
-    // Add event listener to update project names when project type changes
-    projectTypeSelect.addEventListener('change', updateProjectNames);
-
-    // Initialize the project names when the page loads
-    updateProjectNames();
+document.addEventListener("DOMContentLoaded", () => {
+    const projectTypeDropdown = document.getElementById("project_type");
+    projectTypeDropdown.addEventListener("change", fetchProjectNames);
 });

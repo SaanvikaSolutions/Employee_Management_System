@@ -1,44 +1,33 @@
 function showAssignedSection() {
-    const employeeType = document.getElementById('employeeType').value;
-    const assignedSection = document.getElementById('assignedSection');
-    const assignedToSelect = document.getElementById('assignedTo');
-    const departmentSection = document.getElementById('departmentSection');
-    const employeeDepartmentSection = document.getElementById('employeeDepartmentSection');
-    const genderSection = document.getElementById('gender');  // Gender will always be shown
-
-    // Clear the current dropdown options in the 'Assigned To' section
-    assignedToSelect.innerHTML = '<option value="">Select Assigned To</option>'; 
-    departmentSection.classList.add('hidden'); // Hide department section by default
-    employeeDepartmentSection.classList.add('hidden'); // Hide employee department section by default
-    genderSection.classList.remove('hidden'); // Ensure gender section is visible
+    var employeeType = document.getElementById('employeeType').value;
+    var assignedSection = document.getElementById('assignedSection');
+    var departmentSection = document.getElementById('departmentSection');
+    var employeeDepartmentSection = document.getElementById('employeeDepartmentSection');
+    
+    // Reset visibility of all sections
+    assignedSection.classList.add('hidden');
+    departmentSection.classList.add('hidden');
+    employeeDepartmentSection.classList.add('hidden');
 
     if (employeeType === 'director' || employeeType === 'manager' || employeeType === 'employee') {
         assignedSection.classList.remove('hidden');
+        if (employeeType === 'manager' || employeeType === 'employee') {
+            employeeDepartmentSection.classList.remove('hidden');
+        } else {
+            departmentSection.classList.remove('hidden');
+        }
 
-        // Make an AJAX request to fetch the options based on employee type
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', `CreateEmployee.php?employeeType=${employeeType}`, true);
+        // Make an AJAX request to populate the Assigned To dropdown
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'CreateEmployee.php?employeeType=' + employeeType, true);
         xhr.onload = function() {
             if (xhr.status === 200) {
-                // Populate the dropdown with the response from the server
-                assignedToSelect.innerHTML = xhr.responseText;
-               
-
-
+                document.getElementById('assignedTo').innerHTML = xhr.responseText;
+            } else {
+                alert('Error fetching data.');
             }
         };
         xhr.send();
-
-        // Logic for specific employee types
-        if (employeeType === 'manager') {
-            departmentSection.classList.remove('hidden'); // Show department section for managers
-        } else if (employeeType === 'employee') {
-            employeeDepartmentSection.classList.remove('hidden'); // Show employee department section for employees
-        }
-        
-        // Removed the condition that hides the gender section for director/manager roles
-    } else {
-        assignedSection.classList.add('hidden');
     }
 }
 

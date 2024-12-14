@@ -14,3 +14,9 @@ document.getElementById('searchBar').addEventListener('keyup', function () {
         }
     });
 });
+function confirmDelete(projectId) {
+    if (confirm("Are you sure you want to delete this project?")) {
+        // Redirect to delete-project.php with the project ID
+        window.location.href = "delete-project.php?project_id=" + projectId;
+    }
+}

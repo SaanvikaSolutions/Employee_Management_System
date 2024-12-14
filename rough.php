@@ -1,196 +1,143 @@
-<?php
-include ('./backend/includes/dbconnect.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Employee Profile</title>
-    <link rel="stylesheet" href="CSS/CreateEmployee.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="CSS/CreateExpense.css">
+  <link rel="stylesheet" href="CSS/Dashboard.css">
+
 </head>
+
 <body>
 
-<form class="createEmployee-employee-profile-form" action ="" method = "POST" >
-    <h2>Create Employee Profile</h2>
+  <?php
+  include('./Dashboard.php');
+  include('./backend/includes/dbconnect.php');
 
-    <div class="createEmployee-form-section">
-        <label for="employeeId">Employee ID<span>*</span></label>
-        <input type="text" id="employeeId" name="emp_id" class="createEmployee-form-input" required>
-    </div>
+  ?>
 
-    <div class="createEmployee-form-section">
-        <label for="fullName">Full Name<span>*</span></label>
-        <input type="text" id="fullName" name="name" class="createEmployee-form-input" required>
-    </div>
+  
+  <!-- <h1 class="Crateexp">Expense Form</h1> -->
 
-    <div class="createEmployee-flex">
-        <div class="createEmployee-form-section">
-            <label for="gender">Gender<span>*</span></label>
-            <select id="gender" class="createEmployee-form-select" name="gender" required>
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="non-binary">Non-Binary</option>
+  <form class="Expenses-form" action="" method="POST">
+    <h1 class="Crateexp">Expense Form</h1>
+      <!-- Employee Info Section -->
+      <div class="Expenses-form-group">
+        <div>
+           <!-- Fetch Employee id's From Employees Table -->
+            <?php
+            $fetch_emp_id = "SELECT `id`, `employee_id`, `name`, `gender`, `dob`, `phone`, `alt_phone`, `email`, `hired_date`, `role_type`, `employee_type`, `assigned_to`, `department`, `address`, `city`, `postcode`, `state`, `country` FROM `employees`";
+            $fetch_emp_res = mysqli_query($conn,$fetch_emp_id);
+            
+            ?>
+          <label for="empID" class="Expenses-label">Emp ID:</label>
+          <select id="empID" name="empID" class="Expenses-select" required>
+              <option value="">Select Emp ID</option>
+              <!-- <option value="EMP001">EMP001</option>
+              <option value="EMP002">EMP002</option>
+              <option value="EMP003">EMP003</option> -->
+              <?php
+              if($fetch_emp_res->num_rows > 0){
+                while ($row = $fetch_emp_res ->fetch_assoc()){
+                  echo "<option value=' " .$row['employee_id'] ." '>" . htmlspecialchars($row['employee_id']) . "</option>";
+                }
+              }else{
+                  echo "<option valuie=''>No Employees Found</option>";
+              }
+              
+              ?>
             </select>
         </div>
-
-        <div class="createEmployee-form-section">
-            <label for="dob">Date of Birth<span>*</span></label>
-            <input type="date" id="dob" class="createEmployee-form-input" name="dob" required>
+        <div>
+          <label for="date" class="Expenses-label">Date:</label>
+          <input type="date" id="date" name="date" class="Expenses-input" required>
         </div>
-    </div>
+      </div>
 
-    <div class="createEmployee-flex">
-        <div class="createEmployee-form-section">
-            <label for="phone">Phone Number<span>*</span></label>
-            <input type="tel" id="phone" class="createEmployee-form-input" name="phno" required>
+      <!-- Expense Type Section -->
+      <div class="Expenses-form-group">
+        <div>
+          <label for="expenseType" class="Expenses-label">Expense Type:</label>
+          <select id="expenseType" name="expenseType" class="Expenses-select" onchange="toggleExpenseFields()" required>
+            <option value="">Select Expense Type</option>
+            <option value="Office">Office</option>
+            <option value="Project">Project</option>
+          </select>
         </div>
+      </div>
 
-        <div class="createEmployee-form-section">
-            <label for="emergencyContact">Second Number<span></span></label>
-            <input type="tel" id="emergencyContact" class="createEmployee-form-input" name="altphno" >
+      <!-- Office Fields Section -->
+      <div id="officeFields" class="Expenses-hidden-fields">
+        <label for="expenseCategory" class="Expenses-label">Expense Category:</label>
+        <select id="expenseCategory" name="expenseCategory" class="Expenses-select" onchange="toggleSpecifyCategory()">
+          <option value="">Select Expense Category</option>
+          <option value="Inventory">Inventory Purchase</option>
+          <option value="Travel">Travel</option>
+          <option value="Event">Event</option>
+          <option value="Gifts">Gifts</option>
+          <option value="Other">Other</option>
+        </select>
+        <div id="specifyCategoryTextbox" style="display:none; margin-top: 10px;">
+          <label for="specifyCategory" class="Expenses-label">Please Specify:</label>
+          <input type="text" id="specifyCategory" name="specifyCategory" class="Expenses-input">
         </div>
-    </div>
+      </div>
 
-    <div class="createEmployee-form-section">
-        <label for="email">Email<span>*</span></label>
-        <input type="email" id="email" class="createEmployee-form-input" name="email" required>
-    </div>
+      <!-- Project Fields Section -->
+      <div id="projectFields" class="Expenses-hidden-fields">
+        <div class="Expenses-form-group">
+          <div class="full-width">
+            <label for="projectType" class="Expenses-label">Project Type:</label>
+            <select id="projectType" name="projectType" class="Expenses-select" onchange="getItem(this.value)">
+              <option value="">Select Project Type</option>
+              <option value="Interior">Interior</option>
+              <option value="Construction">Construction</option>
 
-    <div class="createEmployee-flex">
-        <div class="createEmployee-form-section">
-            <label for="dateOfHire">Date of Hire<span>*</span></label>
-            <input type="date" id="dateOfHire" class="createEmployee-form-input" name="hiredate" required>
-        </div>
-
-        <div class="createEmployee-form-section">
-            <label for="employmentType">Role Type<span>*</span></label>
-            <select id="employmentType" class="createEmployee-form-select" name="roletype" required>
-                <option value="">Select</option>
-                <option value="full-time">Full-Time</option>
-                <option value="part-time">Part-Time</option>
-                <option value="contract">Contract</option>
-                <option value="intern">Intern</option>
+              
             </select>
+          </div>
         </div>
-    </div>
-
-    <div class="createEmployee-form-section">
-        <label for="employeeType">Employee Type<span>*</span></label>
-        <select id="employeeType" class="createEmployee-form-select" name="emptype" required onchange="showAssignedSection()">
-            <option value="">Select</option>
-            <option value="ManagingDirector">Managing Director</option>
-            <option value="director">Director</option>
-            <option value="manager">Manager</option>
-            <option value="employee">Employee</option>
-        </select>
-    </div>
-
-    <div id="assignedSection" class="createEmployee-form-section hidden">
-        <label for="assignedTo">Assigned To<span>*</span></label>
-        <select id="assignedTo" class="createEmployee-form-select" name="assignedto">
-            <option value="">Select</option>
-        </select>
-    </div>
-
-    <div id="departmentSection" class="createEmployee-form-section hidden">
-        <label for="department">Department<span>*</span></label>
-        <select id="department" class="createEmployee-form-select" name="department" >
-            <option value="">Select</option>
-            <option value="sales">Sales Manager</option>
-            <option value="operations">Operation Manager</option>
-            <option value="finance">Financial Manager</option>
-            <option value="hr">HR</option>
-            <option value="rnd">R&D</option>
-        </select>
-    </div>
-
-    <div id="employeeDepartmentSection" class="createEmployee-form-section hidden">
-        <label for="employeeDepartment">Department<span>*</span></label>
-        <select id="employeeDepartment" class="createEmployee-form-select" name="department" >
-            <option value="">Select</option>
-            <option value="sales">Sales</option>
-            <option value="operations">Operations</option>
-            <option value="rnd">R&D</option>
-        </select>
-    </div>
-
-    <div class="createEmployee-form-section">
-        <label for="address">Permanent Address<span>*</span></label>
-        <input type="text" id="address" class="createEmployee-form-input" name="address" required>
-    </div>
-
-    <div class="createEmployee-flex">
-        <div class="createEmployee-form-section">
-            <label for="postcode">Postcode<span>*</span></label>
-            <input type="text" id="postcode" class="createEmployee-form-input" name="pincode" required>
-        </div>
-
-        <div class="createEmployee-form-section">
-            <label for="city">City<span>*</span></label>
-            <input type="text" id="city" class="createEmployee-form-input" name="city" required>
-        </div>
-    </div>
-
-    <div class="createEmployee-flex">
-        <div class="createEmployee-form-section">
-            <label for="state">State<span>*</span></label>
-            <input type="text" id="state" class="createEmployee-form-input" name="state" required>
-        </div>
-
-        <div class="createEmployee-form-section">
-            <label for="country">Country<span>*</span></label>
-            <select id="country" class="createEmployee-form-select" name="country" required>
-                <option value="">Select</option>
-                <!-- Countries will be populated here -->
+         <!-- Projects Dropdown (Values populated based on Project Type) -->
+        <div class="Expenses-form-group" id="projectNameFields" >
+          <div class="full-width">
+            <label for="projectName" class="Expenses-label">Project Name:</label>
+            <select id="projectName" name="projectName" class="Expenses-select">
+                <option value="">Select Project Name</option>
             </select>
+
+          </div>
         </div>
-    </div>
 
-    <button type="submit" class="createEmployee-form-button" name="submit">Submit</button>
-</form>
-<?php
-// Include database connection
-include ('./backend/includes/dbconnect.php');
+        <div id="otherProjectNameTextbox" style="display:none;">
+          <label for="otherProjectName" class="Expenses-label">Please Specify Project Name:</label>
+          <input type="text" id="otherProjectName" name="otherProjectName" class="Expenses-input">
+        </div>
+      </div>
 
-if (isset($_POST['submit'])) {
-    // Retrieve and sanitize form data
-    $emp_id = mysqli_real_escape_string($conn, $_POST['emp_id']);
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-    $dob = mysqli_real_escape_string($conn, $_POST['dob']);
-    $phno = mysqli_real_escape_string($conn, $_POST['phno']);
-    $altphno = mysqli_real_escape_string($conn, $_POST['altphno']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $hiredate = mysqli_real_escape_string($conn, $_POST['hiredate']);
-    $roletype = mysqli_real_escape_string($conn, $_POST['roletype']);
-    $emptype = mysqli_real_escape_string($conn, $_POST['emptype']);
-    $assignedto = isset($_POST['assignedto']) ? mysqli_real_escape_string($conn, $_POST['assignedto']) : NULL;
-    $department = mysqli_real_escape_string($conn, $_POST['department']);
-    $address = mysqli_real_escape_string($conn, $_POST['address']);
-    $city = mysqli_real_escape_string($conn, $_POST['city']);
-    $pincode = mysqli_real_escape_string($conn, $_POST['pincode']);
-    $state = mysqli_real_escape_string($conn, $_POST['state']);
-    $country = mysqli_real_escape_string($conn, $_POST['country']);
-    
-    // Insert into database
-    $sql = "INSERT INTO employees (employee_id, name, gender, dob, phone, alt_phone, email, hired_date, role_type, employee_type, assigned_to, department, address, city, postcode, state, country) 
-            VALUES ('$emp_id', '$name', '$gender', '$dob', '$phno', '$altphno', '$email', '$hiredate', '$roletype', '$emptype', ".(is_null($assignedto) ? "NULL" : "'$assignedto'").", '$department', '$address', '$city', '$pincode', '$state', '$country')";
+      <!-- Cost, Advance, Pending Section -->
+      <div class="Expenses-form-group">
+        <div>
+          <label for="cost" class="Expenses-label">Cost:</label>
+          <input type="number" id="cost" name="cost" class="Expenses-input" required>
+        </div>
+        <div>
+          <label for="advance" class="Expenses-label">Advance:</label>
+          <input type="number" id="advance" name="advance" class="Expenses-input" required>
+        </div>
+        <div>
+          <label for="pending" class="Expenses-label">Pending:</label>
+          <input type="number" id="pending" name="pending" class="Expenses-input" required>
+        </div>
+      </div>
 
-    // Execute query
-    if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Employee profile created successfully!');</script>";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+      <button type="submit" class="Expenses-submit">Submit</button>
+  </form>
 
-    // Close connection
-    mysqli_close($conn);
-}
-?>
-
-
-<script src="JS/CreateEmployee.js"></script>
 </body>
+<script src="JS/CreateExpense.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="JS/Dashboard.js"></script>
 </html>
