@@ -1,3 +1,34 @@
+<?php
+// Include database connection
+include('./backend/includes/dbconnect.php'); 
+
+// Fetch ticket ID from the URL
+$ticket_id = isset($_GET['ticket_id']) ? $_GET['ticket_id'] : null;
+
+if ($ticket_id) {
+    // Query to fetch ticket details along with the project name
+    $query = "
+        SELECT t.*, p.project_name 
+        FROM tickets t
+        LEFT JOIN projects p ON t.project_id = p.project_id
+        WHERE t.ticket_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $ticket_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Fetch the ticket data with the project name
+        $ticket = $result->fetch_assoc();
+    } else {
+        echo "Ticket not found.";
+        exit;
+    }
+} else {
+    echo "No Ticket ID provided.";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,14 +40,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/View-Ticket-Details.css">
     <link rel="stylesheet" href="CSS/Dashboard.css">
-
 </head>
 
 <body>
-
-    <?php
-    include('./Dashboard.php');
-    ?>
+    <?php include('./Dashboard.php'); ?>
     
     <div class="view-ticket-details-wrapper">
         <div class="view-ticket-details-container">
@@ -28,51 +55,49 @@
                 <!-- Ticket ID -->
                 <div class="view-ticket-details-item">
                     <label for="ticketId">Ticket ID</label>
-                    <input type="text" id="ticketId" value="TKT-001" disabled>
+                    <input type="text" id="ticketId" value="<?php echo htmlspecialchars($ticket['ticket_id']); ?>" disabled>
                 </div>
 
                 <!-- Client Name -->
                 <div class="view-ticket-details-item">
                     <label for="clientName">Client Name</label>
-                    <input type="text" id="clientName" value="Jagadeesh" disabled>
+                    <input type="text" id="clientName" value="<?php echo htmlspecialchars($ticket['client_name']); ?>" disabled>
                 </div>
 
                 <!-- Title -->
                 <div class="view-ticket-details-item">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" value="Issue with Plan" disabled>
+                    <label for="title">Issue</label>
+                    <input type="text" id="title" value="<?php echo htmlspecialchars($ticket['Issue']); ?>" disabled>
                 </div>
 
                 <!-- Project Type -->
                 <div class="view-ticket-details-item">
                     <label for="projectType">Project Type</label>
-                    <input type="text" id="projectType" value="Interior" disabled>
+                    <input type="text" id="projectType" value="<?php echo htmlspecialchars($ticket['project_type']); ?>" disabled>
                 </div>
 
                 <!-- Priority Level -->
                 <div class="view-ticket-details-item">
                     <label for="priorityLevel">Priority Level</label>
-                    <input type="text" id="priorityLevel" value="Medium" disabled class="priority-medium">
+                    <input type="text" id="priorityLevel" value="<?php echo htmlspecialchars($ticket['priority']); ?>" disabled class="priority-medium">
                 </div>
 
                 <!-- Project Name -->
                 <div class="view-ticket-details-item">
                     <label for="projectName">Project Name</label>
-                    <input type="text" id="projectName" value="Sri Rama Villa" disabled>
+                    <input type="text" id="projectName" value="<?php echo htmlspecialchars($ticket['project_name']); ?>" disabled>
                 </div>
 
                 <!-- Phone Number -->
                 <div class="view-ticket-details-item">
                     <label for="phoneNumber">Phone Number</label>
-                    <input type="text" id="phoneNumber" value="(+91) 9999999999" disabled>
+                    <input type="text" id="phoneNumber" value="<?php echo htmlspecialchars($ticket['phone']); ?>" disabled>
                 </div>
 
                 <!-- Address -->
                 <div class="view-ticket-details-item">
                     <label for="address">Address</label>
-                    <input type="text" id="address"
-                        value="Sri Rama colony, Madhapur,500011, guttala begham pet Telangana" disabled
-                        class="full-width">
+                    <input type="text" id="address" value="<?php echo htmlspecialchars($ticket['address']); ?>" disabled class="full-width">
                 </div>
 
                 <!-- Attachments Button -->
@@ -85,23 +110,18 @@
                 <div class="view-ticket-details-description view-ticket-details-item">
                     <label for="description">Description</label>
                     <textarea id="description" disabled>
-Life is full of joy and challenges.
-Life is full of moments of joy, pleasure, success, and comfort, but it also has misery, defeat, failures, and problems. Difficulties test a person's courage, patience, perseverance, and hard work. 
-Hard work pays off.
-If you work hard, it will pay off. History has shown that people who work hard are successful.
+                    <?php echo htmlspecialchars($ticket['description']); ?>
                     </textarea>
                 </div>
             </div>
 
             <div class="view-ticket-details-buttons">
-    <a href="ViewTicket.php" class="view-ticket-details-close-btn">
-        <button>Close</button>
-    </a>
-</div>
-
+                <a href="ViewTicket.php" class="view-ticket-details-close-btn">
+                    <button>Close</button>
+                </a>
+            </div>
         </div>
     </div>
-
 </body>
 <script src="JS/Dashboard.js"></script>
 </html>
