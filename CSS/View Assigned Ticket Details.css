@@ -1,0 +1,149 @@
+body {
+    background: #f7f9fc;
+    color: #333;
+    margin: 0;
+}
+
+.ViewAssignedTicketDetails-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.ViewAssignedTicketDetails-container {
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.4s ease;
+}
+
+.ViewAssignedTicketDetails-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.ViewAssignedTicketDetails-header .name {
+    font-size: 32px;
+    font-weight: 600;
+    color: #004d40;
+}
+
+.ViewAssignedTicketDetails-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.ViewAssignedTicketDetails-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.ViewAssignedTicketDetails-item label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.ViewAssignedTicketDetails-item input,
+.ViewAssignedTicketDetails-description textarea {
+    border: none;
+    padding: 14px 18px;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.ViewAssignedTicketDetails-description textarea {
+    height: 300px;
+    resize: vertical;
+}
+
+.ViewAssignedTicketDetails-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.ViewAssignedTicketDetails-buttons button {
+    background: #111421;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ViewAssignedTicketDetails-close-btn {
+    color: #fff;
+    font-weight: 600;
+}
+
+.ViewAssignedTicketDetails-priority-high {
+    background-color: red;
+    color: white;
+}
+
+.ViewAssignedTicketDetails-priority-medium,
+.ViewAssignedTicketDetails-priority-low {
+    background-color: blue;
+    color: white;
+}
+
+.ViewAssignedTicketDetails-attachments-btn {
+    background-color: #2b4a5f;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ViewAssignedTicketDetails-attachments-btn:hover {
+    background-color: #004d40;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .ViewAssignedTicketDetails-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 601px) {
+    .ViewAssignedTicketDetails-container {
+        margin-left: 250px;
+        margin-top: 200px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 399px) {
+    .ViewAssignedTicketDetails-container {
+        margin-top: 575px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .ViewAssignedTicketDetails-container {
+        margin-top: 540px;
+    }
+}

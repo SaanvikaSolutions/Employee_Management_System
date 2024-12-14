@@ -3,7 +3,7 @@ body {
     padding: 0;
 }
 
-.View_ticket {
+.View_Assigned_Ticket_details {
     margin-top: 35px;
     width: 100%;
     background: white;
@@ -13,13 +13,13 @@ body {
     margin-right: 30px;
 }
 
-.View_ticketTitle {
+.View_Assigned_Ticket_detailsTitle {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-.View_ticketTitleSearchBar {
+.View_Assigned_Ticket_detailsTitleSearchBar {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
@@ -29,21 +29,21 @@ body {
     box-sizing: border-box;
 }
 
-.View_ticketWrapper {
+.View_Assigned_Ticket_detailsWrapper {
     width: 100%;
     overflow-x: auto;
     margin-bottom: 20px;
 }
 
 /* Styling for the project table */
-.View_ticketTable {
+.View_Assigned_Ticket_detailsTable {
     width: 100%;
     border-collapse: collapse;
     table-layout: auto;
 }
 
-.View_ticketTable th,
-.View_ticketTable td {
+.View_Assigned_Ticket_detailsTable th,
+.View_Assigned_Ticket_detailsTable td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
@@ -51,28 +51,28 @@ body {
     word-wrap: break-word;
 }
 
-.View_ticketTable th {
+.View_Assigned_Ticket_detailsTable th {
     background-color: #2b4a5f;
     color: white;
     font-weight: bold;
 }
 
-.View_ticketTable tr:nth-child(even) {
+.View_Assigned_Ticket_detailsTable tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.View_ticketTable tr:hover {
+.View_Assigned_Ticket_detailsTable tr:hover {
     background-color: #e0e0e0;
 }
 
-.action-buttons-view-ticket {
+.action-buttons-view-assigned-ticket-details {
     display: flex;
     gap: 10px;
     justify-content: center;
 }
 
-.action-buttons-view-ticket i,
-.action-buttons-view-ticket button {
+.action-buttons-view-assigned-ticket-details i,
+.action-buttons-view-assigned-ticket-details button {
     font-size: 16px;
     cursor: pointer;
     padding: 8px 16px;
@@ -81,88 +81,79 @@ body {
     border: none;
 }
 
-.view-ticket-assign-button {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.view-ticket-assign-button:hover {
-    background-color: #45a049;
-}
-
-.view-ticket-view-button {
+.view-assigned-ticket-details-view-button {
     background-color: #3498db;
     color: white;
 }
 
-.view-ticket-view-button:hover {
+.view-assigned-ticket-details-view-button:hover {
     background-color: #2980b9;
 }
 
-.priority-high {
+.priority-level-high {
     color: red;
 }
 
-.priority-medium {
+.priority-level-medium {
     color: blue;
 }
 
-.priority-low {
+.priority-level-low {
     color: green;
 }
 
 @media (max-width: 768px) {
-    .View_ticketTable {
+    .View_Assigned_Ticket_detailsTable {
         font-size: 14px;
         min-width: 800px;
     }
 
-    .View_ticketTitleSearchBar {
+    .View_Assigned_Ticket_detailsTitleSearchBar {
         font-size: 14px;
         padding: 10px;
     }
 
-    .View_ticketTable th,
-    .View_ticketTable td {
+    .View_Assigned_Ticket_detailsTable th,
+    .View_Assigned_Ticket_detailsTable td {
         padding: 10px;
     }
 
-    .action-buttons-view-ticket {
+    .action-buttons-view-assigned-ticket-details {
         gap: 8px;
     }
 
-    .action-buttons-view-ticket i,
-    .action-buttons-view-ticket button {
+    .action-buttons-view-assigned-ticket-details i,
+    .action-buttons-view-assigned-ticket-details button {
         font-size: 14px;
     }
 }
 
 @media (max-width: 400px) {
-    .View_ticketTable {
+    .View_Assigned_Ticket_detailsTable {
         font-size: 13px;
         min-width: 600px;
     }
 
-    .View_ticketTitleSearchBar {
+    .View_Assigned_Ticket_detailsTitleSearchBar {
         font-size: 12px;
         padding: 8px;
     }
 
-    .action-buttons-view-ticket i,
-    .action-buttons-view-ticket button {
+    .action-buttons-view-assigned-ticket-details i,
+    .action-buttons-view-assigned-ticket-details button {
         font-size: 14px;
     }
 }
 
 @media (max-width: 600px) {
-    .View_ticket {
+    .View_Assigned_Ticket_details {
         width: 100%;
         margin-left: 0px;
     }
 }
 
 @media (min-width: 601px) {
-    .View_ticket {
+    .View_Assigned_Ticket_details {
         margin-left: 250px;
     }
 }
