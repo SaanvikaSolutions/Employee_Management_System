@@ -79,6 +79,7 @@
                     <ul id="tickets-dropdown" class="Dashboard-submenu">
                         <li><a href="CreateTicket.php">CreateTicket</a></li>
                         <li><a href="ViewTicket.php">View Ticket</a></li>
+                        <li><a href="ViewAssignedTickets.php">View Assigned Tickets</a></li>
                     </ul>
                 </li>
 

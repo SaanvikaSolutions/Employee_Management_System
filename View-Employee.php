@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="CSS/Dashboard.css">
 </head>
 
-<body>
+<body> 
     <?php
     include('./Dashboard.php');
     include('./backend/includes/dbconnect.php');

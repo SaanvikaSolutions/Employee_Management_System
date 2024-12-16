@@ -17,12 +17,6 @@
     include('./backend/includes/dbconnect.php');
     ?>
 
-
-<?php
-include('./Dashboard.php');
-include('./backend/includes/dbconnect.php');
-?>
-
 <div class="view-Expenses">
     <h1 class="view-ExpensesTitle">View Expenses</h1>
     <input type="text" id="searchBar" class="view-ExpensesTitleSearchBar"

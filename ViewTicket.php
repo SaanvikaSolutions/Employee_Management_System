@@ -67,9 +67,8 @@
             </table>
         </div>
     </div>
-
-    <script>
-        // JavaScript to filter tickets based on search input
+    <!-- <script>
+      
         function filterTickets() {
             const searchInput = document.getElementById('searchBar').value.toLowerCase();
             const rows = document.querySelectorAll('#ticketData tr');
@@ -82,7 +81,10 @@
                 row.style.display = match ? '' : 'none';
             });
         }
-    </script>
+    </script> -->
+
 </body>
+<script src="js/ViewTicket.js"></script>
+<script src="JS/Dashboard.js"></script>
 
 </html>
