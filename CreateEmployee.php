@@ -206,38 +206,79 @@ include('./Dashboard.php');
             </select>
         </div>
     </div>
+    <!-- Password Fields in Form -->
+    <div class="createEmployee-flex">
+        <div class="createEmployee-form-section">
+            <label for="pwd">Password<span>*</span></label>
+            <input type="password" id="pwd" class="createEmployee-form-input" name="password" required>
+        </div>
 
-    <button type="submit" class="createEmployee-form-button" name="submit">Submit</button>
+        <div class="createEmployee-form-section">
+            <label for="conf_pwd">Confirm Password<span>*</span></label>
+            <input type="password" id="conf_pwd" class="createEmployee-form-input" name="confirm_password" required>
+        </div>
+    </div>
+
+    <button type="submit" class="createEmployee-form-button" name="submit">Create Profile</button>
 </form>
 <?php
+// Handle form submission
 if (isset($_POST['submit'])) {
     // Sanitize and retrieve form inputs
-    $emp_id = $_POST['emp_id'];
-    $name = $_POST['name'];
-    $gender = $_POST['gender'];
-    $dob = $_POST['dob'];
-    $phno = $_POST['phno'];
-    $altphno = $_POST['altphno'];
-    $email = $_POST['email'];
-    $hiredate = $_POST['hiredate'];
-    $roletype = $_POST['roletype'];
-    $emptype = $_POST['emptype'];
-    $assignedto = $_POST['assignedto']; // Managing Director ID
-    $department = $_POST['department'];
-    $address = $_POST['address'];
-    $city = $_POST['city'];
-    $postcode = $_POST['pincode'];
-    $state = $_POST['state'];
-    $country = $_POST['country'];
+    $emp_id = trim($_POST['emp_id']);
+    $name = trim($_POST['name']);
+    $gender = trim($_POST['gender']);
+    $dob = trim($_POST['dob']);
+    $phno = trim($_POST['phno']);
+    $altphno = trim($_POST['altphno']);
+    $email = trim($_POST['email']);
+    $hiredate = trim($_POST['hiredate']);
+    $roletype = trim($_POST['roletype']);
+    $emptype = trim($_POST['emptype']);
+    $assignedto = trim($_POST['assignedto']);
+    $department = trim($_POST['department']);
+    $address = trim($_POST['address']);
+    $city = trim($_POST['city']);
+    $postcode = trim($_POST['pincode']);
+    $state = trim($_POST['state']);
+    $country = trim($_POST['country']);
+    $password = trim($_POST['password']);
+    $conf_password = trim($_POST['confirm_password']);
+
+    // Check if passwords match
+    if ($password !== $conf_password) {
+        echo "<script>alert('Passwords do not match. Please try again.');</script>";
+        exit;
+    }
+    // Check for duplicate employee ID
+    $stmt_check = $conn->prepare("SELECT employee_id FROM employees WHERE employee_id = ?");
+    $stmt_check->bind_param("s", $emp_id);
+    $stmt_check->execute();
+    $result_check = $stmt_check->get_result();
+    if ($result_check->num_rows > 0) {
+        echo "<script>alert('Employee ID already exists. Please use a unique ID.');</script>";
+        exit;
+    }
+    $stmt_check->close();
+    // Check for duplicate employee ID
+    $stmt_check = $conn->prepare("SELECT employee_id FROM employees WHERE employee_id = ?");
+    $stmt_check->bind_param("s", $emp_id);
+    $stmt_check->execute();
+    $result_check = $stmt_check->get_result();
+    if ($result_check->num_rows > 0) {
+        echo "<script>alert('Employee ID already exists. Please use a unique ID.');</script>";
+        exit;
+    }
+    $stmt_check->close();
 
     // Prepared statement for inserting into the database
-    $stmt = $conn->prepare("INSERT INTO `employees`(`employee_id`, `name`, `gender`, `dob`, `phone`, `alt_phone`, `email`, `hired_date`, `role_type`, `employee_type`, `assigned_to`, `department`, `address`, `city`, `postcode`, `state`, `country`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssssssssssss", $emp_id, $name, $gender, $dob, $phno, $altphno, $email, $hiredate, $roletype, $emptype, $assignedto, $department, $address, $city, $postcode, $state, $country);
+    $stmt = $conn->prepare("INSERT INTO `employees`(`employee_id`, `name`, `gender`, `dob`, `phone`, `alt_phone`, `email`, `hired_date`, `role_type`, `employee_type`, `assigned_to`, `department`, `address`, `city`, `postcode`, `state`, `country`,`password`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssssssssssss", $emp_id, $name, $gender, $dob, $phno, $altphno, $email, $hiredate, $roletype, $emptype, $assignedto, $department, $address, $city, $postcode, $state, $country,$password);
 
     if ($stmt->execute()) {
         echo "<script>alert('Employee profile created successfully!');</script>";
     } else {
-        echo "<script>alert('Error: " . $stmt->error . "');</script>";
+        echo "<script>alert('Error: Could not save employee profile.');</script>";
     }
     $stmt->close();
 }
