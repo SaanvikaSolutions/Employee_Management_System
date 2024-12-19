@@ -25,9 +25,15 @@
             <div class="Dashboard-circle Dashboard-notification-icon">
                 <i class="fa-regular fa-bell"></i>
             </div>
-            <div class="Dashboard-circle Dashboard-user-profile">
+            <!-- <div class="Dashboard-circle Dashboard-user-profile">
                 <i class="fa-regular fa-user"></i>
-            </div>
+            </div> -->
+
+            <a href="View-Employee-Profile.php">
+    <div class="Dashboard-circle Dashboard-user-profile">
+        <i class="fa-regular fa-user"></i>
+    </div>
+</a>
             <div class="Dashboard-circle" onclick="toggleTheme()" style="cursor: pointer;">
                 <i class="fa-solid fa-moon" id="theme-icon"></i>
             </div>
