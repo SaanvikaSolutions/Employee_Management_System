@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+// Check if user is logged in and is an admin
+// if (!isset($_SESSION['employee_id']) || $_SESSION['role'] !== 'Admin') {
+//     echo "<script>alert('Access Denied: Admins only.');window.location.href='login.php';</script>";
+//     exit();
+// }
+// ?>
+
+<?php
 // Include the database connection file
 include ('./backend/includes/dbconnect.php');
 
@@ -18,7 +28,7 @@ if (isset($_GET['employeeType'])) {
             $stmt->bind_param("s", $employeeType);
             break;
         case 'director':
-            $employeeType = 'ManagingDirector';
+            $employeeType = 'Admin';
             $stmt = $conn->prepare("SELECT employee_id , name FROM employees WHERE employee_type = ?");
             $stmt->bind_param("s", $employeeType);
             break;
@@ -138,7 +148,7 @@ include('./Dashboard.php');
         <label for="employeeType">Employee Type<span>*</span></label>
         <select id="employeeType" class="createEmployee-form-select" name="emptype" required onchange="showAssignedSection()">
             <option value="">Select</option>
-            <option value="ManagingDirector">Managing Director</option>
+            <option value="Admin">Admin</option>
             <option value="director">Director</option>
             <option value="manager">Manager</option>
             <option value="employee">Employee</option>

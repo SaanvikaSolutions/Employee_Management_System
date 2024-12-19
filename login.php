@@ -1,3 +1,6 @@
+<?php
+session_start(); // Start the session
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -160,47 +163,57 @@
                 <button class="VarnaaSubmitButton" type="submit">Login</button>
             </form>
             <?php
-            // process login
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                // Sanitize input to prevent SQL injection
-                $empid = $_POST['empid'] ?? null;
-                $password = $_POST['password'] ?? null;
+        
 
-                if ($empid && $password) {
-                    // Database connection
-                    include('./backend/includes/dbconnect.php');
-                    try {
-                        $stmt = $conn->prepare("SELECT password FROM employees WHERE employee_id = ?");
-                        $stmt->bind_param("s", $empid);
-                        $stmt->execute();
-                        $stmt->store_result();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $empid = $_POST['empid'] ?? null;
+            $password = $_POST['password'] ?? null;
 
-                        if ($stmt->num_rows > 0) {
-                            $stmt->bind_result($db_password);
-                            $stmt->fetch();
+            if ($empid && $password) {
+                // Database connection
+                include('./backend/includes/dbconnect.php');
 
-                            // Verify password
-                            if ($password === $db_password) { 
-                                echo "<script>alert('Login successful! Welcome.');window.location.href='CreateEmployee.php';</script>";
-                                // header("Location:CreateEmployee.php");
+                try {
+                    // Fetch employee data (password and role)
+                    $stmt = $conn->prepare("SELECT password, employee_type FROM employees WHERE employee_id = ?");
+                    $stmt->bind_param("s", $empid);
+                    $stmt->execute();
+                    $stmt->store_result();
+
+                    if ($stmt->num_rows > 0) {
+                        $stmt->bind_result($db_password, $role);
+                        $stmt->fetch();
+
+                        // Verify password
+                        if ($password === $db_password) { // Replace with password_verify() if using hashed passwords
+                            if ($role === 'Admin') {
+                                // Set session variables
+                                $_SESSION['employee_id'] = $empid;
+                                $_SESSION['role'] = $role;
+
+                                echo "<script>alert('Login successful! Welcome, Admin.');window.location.href='CreateEmployee.php';</script>";
                                 exit();
                             } else {
-                                echo "<p style='color: red;'>Incorrect password.</p>";
+                                echo "<p style='color: red;'>Access Denied: Only admins can access this page.</p>";
                             }
                         } else {
-                            echo "<p style='color: red;'>Employee ID not found.</p>";
+                            echo "<p style='color: red;'>Incorrect password.</p>";
                         }
-
-                        $stmt->close();
-                    } catch (Exception $e) {
-                        echo "<p style='color: red;'>Error: " . $e->getMessage() . "</p>";
+                    } else {
+                        echo "<p style='color: red;'>Employee ID not found.</p>";
                     }
-                    $conn->close();
-                } else {
-                    echo "<p style='color: red;'>Please fill out all fields.</p>";
+
+                    $stmt->close();
+                } catch (Exception $e) {
+                    echo "<p style='color: red;'>Error: " . $e->getMessage() . "</p>";
                 }
+                $conn->close();
+            } else {
+                echo "<p style='color: red;'>Please fill out all fields.</p>";
             }
-            ?>
+        }
+        ?>
+
         </div>
     </div>
 

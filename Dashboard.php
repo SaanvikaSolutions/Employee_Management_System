@@ -116,7 +116,7 @@
                     </ul>
                 </li>
             </ul>
-            <button class="Dashboard-logout-button">Logout</button>
+            <button class="Dashboard-logout-button"><a href="logout.php" style="text-decoration:none;color:white;">Logout</a></button>
         </nav>
 
         <!-- <div  class="master-table"> -->
